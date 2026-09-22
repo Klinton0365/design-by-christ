@@ -1,0 +1,124 @@
+/* Service-Single page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 4431px tall, background #FFFFFF */
+/* Header, Banner/breadcrumb, Counter, Footer are identical in structure to about.css / services.css — breadcrumb title differs: "Service Single" / "Home / Services Single" */
+
+/* ===== Details / intro section ===== */
+position: absolute;
+width: 1200px;
+height: 471px;
+top: 695px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 97px;
+/* Left: big heading "We set the trends of modern living Services." Right: two paragraphs stacked */
+
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+color: #292F36;
+
+/* First paragraph (accent color, larger) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #CDA274;
+
+/* Second paragraph (body color) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* "Services" content block (1200x1248, top 695px) — icon/image grid, not captured in this paste, likely a service icon showcase like Homepage's icon block */
+
+/* ===== Client Logo strip (placeholder boxes here, actual logos should be exported as SVG) ===== */
+position: absolute;
+top: 1316px;
+gap: 108px;
+/* 5 logo placeholders, background: #292F36 */
+
+/* ===== Video / showcase section ===== */
+position: absolute;
+width: 1200px;
+height: 374px;
+top: 1569px;
+background: #292F36;
+border-radius: 70px;
+/* full background photo behind, via background: url(...) */
+
+/* Play button, centered, 132x132px circle */
+background: #FFFFFF;
+filter: drop-shadow(0px 10px 20px rgba(192,192,192,0.25));
+/* triangle play icon: background #CDA274 */
+
+/* ===== "Points" section (2-column feature list: "Use of Interior" / "Make An Art") ===== */
+position: absolute;
+width: 1036px;
+height: 347px;
+top: 2093px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 83px;
+/* Each column: heading + 5-item numbered list + vertical divider line (#CECECE) between the two columns */
+
+/* Column heading e.g. "Use of Interior", "Make An Art" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* List numbers "1".."5", positioned to the left of each line */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 20px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #CDA274;
+
+/* List text block (5 lines, generous line-height acts as the row spacing) */
+/* e.g. "We provide high quality design services. / Project on time and Latest Design. / Scientific Skills For getting a better result. / Renovations / Benefit of Service We are confident about our projects." */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 270%; /* generous line-height = ~59px row spacing, acts as list item gap */
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* ===== "We love design. That's how we got here." result/CTA section ===== */
+position: absolute;
+width: 1200px;
+height: 377px;
+top: 2590px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 82px;
+/* Image left (600x377, border-radius 70px, background #C4C4C4 photo fill), text+button right */
+
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Button "Our Portfolio" — same style as elsewhere: background #292F36, border-radius 18px, box-shadow 0px 10px 20px rgba(192,192,192,0.35) */
+
+/* Counter section ("12 Years Of Experiance" etc, top 3167px) and Footer (top 3824px) — identical to homepage-part1.css, reuse those styles */

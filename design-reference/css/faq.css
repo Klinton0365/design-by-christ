@@ -1,0 +1,65 @@
+/* FAQ's page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 3273px tall, background #FFFFFF */
+/* Header, Banner, Footer identical to other pages — breadcrumb title: "Faq's" / "Home / Faq" */
+
+/* ===== FAQ section (repeated twice: "Every Question Answered" top, "Project related questions" below) ===== */
+width: 1200px;
+height: 807px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 50px;
+/* Section 1 at top: 695px. Section 2 at top: 1652px */
+
+/* Section heading */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Row: accordion list (585px) + image (555px), gap 60px */
+/* Image position alternates: section 1 has image on right, section 2 has image on left (mirrored layout) */
+
+/* Image block */
+width: 555px;
+height: 678px;
+background: #C4C4C4;
+border-radius: 40px;
+/* photo via background: url(...) */
+
+/* ===== Accordion (5 items per section) ===== */
+/* Closed item: title row + divider line */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Chevron icon (closed, pointing right/down): border 2px solid #292F36, rotate 180deg */
+/* Chevron icon (open item, pointing up): rotate 90deg then inner vector rotate -90deg */
+
+/* Open/expanded item (2nd item in each section) — title turns accent color and answer text shows below */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #CDA274; /* expanded item's title color */
+
+/* Answer paragraph (shown only on expanded item) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Divider line under each item */
+border: 1px solid #CDA274;
+
+/* Section 1 questions: "What is the Hipcouch Interior Design Service?" / "So, how exactly does this work?" (expanded) / "What cities do you currently operate in?" / "Hipcouch Interior Design Service?" / "What kind of interior designers do you have?" */
+/* Section 2 questions: "How long does it take?" / "Can I use my existing furnishings?" (expanded) / "I put into redesigning my interior?" / "What do your services cost?" / "Do you offer free consultations?" */

@@ -1,0 +1,177 @@
+/* Blog Details (single article) page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 4834px tall, background #FFFFFF */
+/* Header, Banner, Footer identical to other pages — breadcrumb not captured in this paste but follows the same pattern */
+
+/* ===== Page layout: 2-column, article (804px) + sidebar (345px), gap 52px ===== */
+position: absolute;
+width: 1201px;
+top: 690px;
+display: flex;
+flex-direction: row;
+gap: 52px;
+
+/* ===== Article: first content block (title/excerpt/numbered points) ===== */
+/* Heading e.g. "Design sprints are great" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Body paragraph */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Numbered points list (1/2/3), number + paragraph per row */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 20px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #CDA274; /* number */
+/* paragraph text uses same body style as above */
+
+/* Inline image block */
+background: #C4C4C4;
+border-radius: 50px;
+/* photo via background: url(...) */
+
+/* Tags row + social icons row (below inline image, above divider) */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 20px;
+line-height: 125%;
+color: #000000; /* "Tags" label */
+
+/* Tag pill (dark, e.g. "Kitchan") */
+background: #292F36;
+border-radius: 10px;
+padding: 13px 25px;
+font-family: 'Jost';
+font-weight: 400;
+font-size: 18px;
+color: #FFFFFF;
+
+/* Tag pill (light, e.g. "Bedroom") */
+background: #F4F0EC;
+border-radius: 10px;
+padding: 13px 22px;
+color: #292F36;
+
+/* Divider lines between sections */
+border: 1px solid #E5E5E5;
+
+/* ===== Quote block ===== */
+width: 799px;
+height: 267px;
+background: #F4F0EC;
+border-radius: 50px;
+padding: 53px 227px;
+/* Quote text */
+font-family: 'DM Serif Display';
+font-style: italic;
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #CDA274;
+/* Giant decorative quote mark, same style as about.css */
+
+/* ===== Article: second content block (title/image/meta/body) ===== */
+/* Same heading style as first block, e.g. "Let's Get Solution for Building Construction Work" */
+/* Image: 799x539px, background #C4C4C4, border-radius 50px */
+/* Meta row: date (Jost 16px #4D5053) + tags list (Jost 16px #4D5053), e.g. "26 December,2022" / "Interior / Design / Home / Decore" */
+/* Long body paragraph — same style as body copy above */
+
+/* ===== "Leave a Reply" comment form ===== */
+/* Section heading */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Form fields: Name + Email side by side (378px each, gap 44px), then Website + Phone row, then full-width message field — each with bottom-border line (#000000) and Jost 22px #4D5053 label, same pattern as about.css contact form */
+
+/* Checkbox + "Save my name, email, and website..." label */
+width: 17px; height: 17px;
+border: 2px solid #CDA274;
+border-radius: 3px;
+font-family: 'Jost';
+font-size: 18px;
+letter-spacing: 0.02em;
+color: #CDA274;
+
+/* Submit button "Send Now" — same style as elsewhere: background #292F36, border-radius 18px, Jost 600 18px #FFFFFF text, gold vector icon */
+
+/* ===== Sidebar ===== */
+width: 345px;
+display: flex;
+flex-direction: column;
+gap: 50px;
+
+/* Search box */
+width: 344.93px;
+height: 101px;
+background: #F4F0EC;
+border-radius: 20px;
+padding: 34px 33px;
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #CDA274;
+/* search icon: background #CDA274 */
+
+/* "Latest News" list (3 items) */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36; /* "Latest News" heading */
+
+/* Each list item: title + date, separated by divider line */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 20px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36; /* item title e.g. "We Focus On Comfort And Gorgeous" */
+
+font-family: 'Jost';
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.01em;
+text-transform: capitalize;
+color: #4D5053; /* item date e.g. "06/02/2020" */
+
+border: 1px solid #CDA274; /* divider between items */
+
+/* "Categories" box */
+width: 344px;
+height: 359px;
+background: #F4F0EC;
+border-radius: 20px;
+padding: 27px 32px;
+/* Heading same style as "Latest News" heading */
+/* List: Decoration / Door / Windows / Home / Land / Roof / Installation — Jost 22px line-height 300% (row spacing), color #4D5053, divider lines #CDA274 between groups */
+
+/* "Tags" pill cloud */
+/* Heading same style as "Categories"/"Latest News" heading */
+/* Pills: first pill per row dark (background #292F36, color #FFFFFF), rest light (background #F4F0EC, color #292F36 or #000000) — e.g. Kitchen, Bedroom, Building, Architecture, Kitchen Planning, Bedroom */
+border-radius: 10px;
+padding: 9px 30px;
+font-family: 'Jost';
+font-weight: 400;
+font-size: 18px;
+letter-spacing: 0.02em;

@@ -1,0 +1,217 @@
+/* About page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 4971px tall, background #FFFFFF */
+/* Same content grid guides as other pages (4 vertical lines at x: 361/761/1161/1561, color #E6E6E6) */
+
+/* ===== HEADER (site-wide, applies to all pages) ===== */
+position: absolute;
+width: 1200px;
+height: 50px;
+top: 44px;
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 399px; /* gap between logo and menubar */
+
+/* Logo "Interno" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 40px;
+line-height: 125%;
+color: #292F36;
+/* small gold accent mark to the left of the wordmark, background: #CDA274 */
+
+/* Menu: Home / Pages / Services / Project / Blog / Contact */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 20px;
+line-height: 125%;
+text-align: center;
+color: #292F36;
+/* menu items laid out in a row, ~572px wide total */
+
+/* Search icon, 21x21px, opacity 0.8, outline #141414 */
+
+/* ===== BANNER / HERO (page title banner) ===== */
+position: absolute;
+width: 1920px;
+height: 356px;
+top: 139px;
+background: #CDA274; /* accent color overlaying a photo background */
+/* full-width background photo behind, via background: url(...) */
+
+/* Breadcrumb card overlapping bottom of banner */
+position: absolute;
+width: 503px;
+height: 178px;
+left: 708px;
+top: 317px;
+background: #FFFFFF;
+border-radius: 37px 37px 0px 0px;
+padding: 41px 152px;
+text-align: center;
+
+/* Page title e.g. "About Us" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+color: #292F36;
+
+/* Breadcrumb e.g. "Home / About Us" */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* ===== "What We Do" section ===== */
+position: absolute;
+width: 1200px;
+height: 377px;
+top: 1323px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 41px;
+/* Layout: text content on left, image on right (659x377, border-radius 70px, background #C4C4C4 photo fill) */
+
+/* Heading "What We Do" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Body text */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Button "Our Concept" */
+background: #292F36;
+box-shadow: 0px 10px 20px rgba(192,192,192,0.35);
+border-radius: 18px;
+padding: 26px 41px;
+font-family: 'Jost';
+font-weight: 600;
+font-size: 18px;
+color: #FFFFFF;
+
+/* ===== Quotes section ===== */
+position: absolute;
+width: 875.5px;
+height: 428px;
+top: 695px;
+/* left/right side borders as decorative pattern: 25px solid #F4F0EC frame, border-radius 70px */
+
+/* Opening quote mark */
+font-family: 'DM Serif Display';
+font-style: italic;
+font-size: 85px;
+line-height: 125%;
+color: #292F36;
+
+/* Quote text: "I like an interior that defies labeling..." */
+font-family: 'DM Serif Display';
+font-style: italic;
+font-weight: 400;
+font-size: 35px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Attribution "-BUNNY WILLIAMS" */
+font-family: 'Jost';
+font-size: 25px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* ===== "The End Result" section ===== */
+position: absolute;
+width: 1201px;
+height: 377px;
+top: 1850px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 90px;
+/* Layout: image on left (659x377, border-radius 70px), text content on right */
+
+/* Heading "The End Result" — same style as "What We Do" heading */
+/* Body text — same style as body above */
+/* Button "Our Portfolio" — same style as "Our Concept" button, padding 26px 40px */
+
+/* ===== Team section ("What the People Thinks About Us" — team photo strip) ===== */
+position: absolute;
+width: 1920px;
+height: 968px;
+top: 2400px;
+background: #F4F0EC;
+
+/* Heading (same style as other section headings) */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Photo strip: 4 images in a row, gap 22px, each 283.55x433px, border-radius 30px, background #C4C4C4 */
+/* 3rd slot is a team-member detail card instead of a plain photo: background #FFFFFF */
+/* Team member name e.g. "Nattasha / Julie Design, Australia" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Contact line e.g. "+1 (378) 400-1234 / julie@email.com" */
+font-family: 'Jost';
+font-size: 18px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Social icons row below name, Font Awesome, color #292F36 */
+
+/* ===== "Mail Box" / Contact form section ===== */
+position: absolute;
+width: 796px;
+height: 632px;
+top: 3581px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 77px;
+
+/* Heading "Creative project? Let's have a productive talk." */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Form: Name + Email fields side by side (378px each, gap 40px), each with a bottom border #000000 line and a label above (Jost 22px, color #4D5053), then a full-width "subject/message" field below, then Send button */
+/* Send button: same style as other buttons, "Send Now" text with small gold-accent vector icon */
+
+/* ===== Footer (identical to other pages — see homepage-part1.css footer notes) ===== */
+position: absolute;
+width: 1920px;
+height: 577px;
+top: 4348px;

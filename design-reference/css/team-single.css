@@ -1,0 +1,177 @@
+/* Team-Single (individual member profile) page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 5071px tall, background #FFFFFF */
+/* Header, Banner, Footer identical to other pages — breadcrumb title: "Professional Single" / "Home / Team Single" */
+
+/* ===== Team Member Detail (hero profile section) ===== */
+position: absolute;
+width: 1201px;
+height: 689px;
+top: 695px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 59px;
+
+/* Photo: 590x689px, background #C4C4C4, border-radius 50px */
+
+/* Name e.g. "John Smith" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Role e.g. "Designer" */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Bio paragraph — same style as role but not centered */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Contact rows (Email / Phone / Website), each: circular icon (52x52px, background #F4F0EC, gold vector icon border 2px solid #CDA274) + text */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Social icons row, same style as team.css */
+
+/* ===== "Short Biography" + skills + Q&A section ===== */
+position: absolute;
+width: 1201px;
+height: 883px;
+top: 1484px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 45px;
+
+/* Section heading e.g. "Short Biography", "Qustion And Answer" (typo in source) */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #292F36;
+/* smaller sub-headings within (e.g. "Simplicity and Functionality") use 25px instead of 50px, same font/color */
+
+/* Long body paragraph */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Skill progress bars (3: "Project Design" 65%, "Team Management" 95%, "Client Satisfaction" 75%) */
+/* Label row: skill name + percentage */
+font-family: 'Jost';
+font-weight: 500;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053; /* skill name */
+
+font-family: 'Jost';
+font-weight: 500;
+font-size: 15px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053; /* percentage e.g. "65%" */
+
+/* Progress bar track */
+border: 5px solid #F4F0EC;
+/* Progress bar fill (width proportional to %) */
+border: 5px solid #CDA274;
+/* End-of-fill dot/handle */
+width: 22px; height: 22px;
+background: #FFFFFF;
+border: 5px solid #CDA274;
+
+/* Q&A accordion (3 items) */
+/* Closed/inactive item */
+background: #F4F0EC;
+border-radius: 18px;
+padding: 24px 22px;
+/* Open/active-style items (2nd, 3rd) */
+background: #FFFFFF;
+border: 1px solid #CDA274;
+border-radius: 18px;
+padding: 14px 22px;
+
+/* Question text */
+font-family: 'Jost';
+font-weight: 600;
+font-size: 18px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Answer text (shown in first/expanded item) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* "+" toggle icon, circular, background #F4F0EC or #FFFFFF, plus sign color #292F36 */
+
+/* ===== "Our Team Members" section (4-member row, background block) ===== */
+position: absolute;
+width: 1920px;
+height: 968px;
+top: 2567px;
+background: #F4F0EC;
+
+/* Heading "Our Team Members" — same style as "Short Biography" heading */
+
+/* 4 member cards in a row, gap 22px, each 283.55x433px */
+/* Members 1,2,4: plain photo cards (background #C4C4C4, border-radius 30px) */
+/* Member 3: highlighted detail card instead of photo (background #FFFFFF) with name/social/contact overlay — same pattern as about.css Team section 3rd slot */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #292F36; /* name e.g. "Nattasha Julie" */
+
+font-family: 'Jost';
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053; /* contact e.g. "+1 (378) 400-1234 / julie@email.com" */
+
+/* ===== "Contact Me" form ===== */
+position: absolute;
+width: 796px;
+height: 535px;
+top: 3735px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 41px;
+
+/* Heading "Contact Me" — same style as other page headings, 50px */
+
+/* Form: Name + Email side by side (378px each), then full-width "Sent Your Message" field, then checkbox + Send button — identical pattern to about.css / blog-details.css contact forms */

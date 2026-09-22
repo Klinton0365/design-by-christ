@@ -1,0 +1,97 @@
+/* Blog (listing) page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 3542px tall, background #FFFFFF */
+/* Header, Banner, Footer identical to other pages — breadcrumb title: "Articles & News" / "Home / Blog" */
+
+/* ===== "Latest Post" featured section ===== */
+position: absolute;
+width: 1201px;
+height: 612px;
+top: 695px;
+
+/* Section heading "Latest Post" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Featured post card */
+width: 1201px;
+height: 522px;
+border: 1px solid #E7E7E7;
+filter: drop-shadow(0px 10px 30px rgba(255,255,255,0.25));
+border-radius: 62px;
+padding: 22px;
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 65px;
+/* Image left: 569x478px, border-radius 50px, background #C4C4C4 photo fill. Content right: title + excerpt + date/arrow row */
+
+/* Featured post title e.g. "Low Cost Latest Invented Interior Designing Ideas" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Featured post excerpt (long body copy) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Date + circular arrow-link, same style as blog cards elsewhere: date text Jost 16px #4D5053, arrow circle 52x52px bg #F4F0EC border 2px solid #292F36 */
+
+/* ===== "Articles & News" grid (5 cards, same visual style as Homepage blog cards) ===== */
+position: absolute;
+width: 1201px;
+height: 1268px;
+top: 1457px;
+
+/* Section heading "Articles & News" — same style as "Latest Post" heading */
+
+/* Grid: 2 rows, 3 cards each (5 real cards, 6th slot repeats), gap 28px */
+/* Card: 382x521px, border 1px solid #E7E7E7, border-radius 62px, padding 21px, drop-shadow(0px 10px 30px rgba(255,255,255,0.25)) */
+/* Middle card in each row of 3 has background: #F4F0EC instead of transparent (alternating highlight pattern, same as Homepage) */
+
+/* Card image: 340x289.27px, background #EAEAEA, border-radius 45px 45px 0px 0px, photo via background: url(...) */
+
+/* Card tag pill (top-left over image, e.g. "Kitchan Design", "Living Design", "Interior Design") */
+background: #FFFFFF;
+border-radius: 8px 8px 8px 0px;
+padding: 8px 10px;
+font-family: 'Jost';
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.01em;
+text-transform: capitalize;
+color: #4D5053;
+
+/* Card title e.g. "Let's Get Solution For Building Construction Work", "Low Cost Latest Invented Interior Designing Ideas.", "Best For Any Office & Business Interior Solution" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Card date + arrow row: date text same style as Homepage blog cards, arrow circle 52x52px bg #F4F0EC (or #FFFFFF on highlighted cards) border 2px solid #292F36 */
+
+/* ===== Pagination ===== */
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 20px;
+/* Same as project.css pagination: page "01" active (filled #F4F0EC), "02"/"03" outlined (border 1px solid #CDA274), next-arrow circle outlined */
+font-family: 'Jost';
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+text-transform: capitalize;
+color: #292F36;

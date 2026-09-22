@@ -1,0 +1,108 @@
+/* Services page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 5691px tall, background #FFFFFF */
+/* Header, Banner/breadcrumb, Footer, Contact CTA are all identical in structure to about.css / homepage-part1.css — only the breadcrumb title text differs: "Services" / "Home / Services" */
+
+/* ===== Services grid (6 service cards, title + text + "Read More" link) ===== */
+position: absolute;
+width: 1158px;
+height: 704px;
+top: 695px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 88px;
+/* 2 rows: row 1 has 3 plain cards (gap 42px), row 2 has 3 cards (gap 22px) where the MIDDLE card is highlighted */
+
+/* Card title e.g. "Project Plan", "Interior Work", "Retail Design", "2d/3d Art Work", "Decoration Work" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+text-align: center;
+color: #292F36;
+
+/* Card body text (shared lorem-ipsum-style copy across all cards) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* "Read More" link with small gold vector arrow */
+font-family: 'Jost';
+font-weight: 600;
+font-size: 18px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #4D5053;
+/* arrow icon: border 2px solid #CDA274 */
+
+/* Highlighted card (2nd item, 2nd row) */
+width: 398px;
+height: 391px;
+background: #F4F0EC;
+border-radius: 30px;
+padding: 83px 20px;
+
+/* ===== "How We Work" section (4-step process) ===== */
+position: absolute;
+width: 1199px;
+height: 2718.42px;
+top: 1599px;
+background: #F4F0EC;
+border-radius: 70px;
+padding: 160px 116px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 100px;
+
+/* Heading "How We Work" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+text-align: center;
+color: #363B41;
+
+/* Subtext below heading */
+font-family: 'Jost';
+font-size: 22px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Steps list: 4 rows alternating image-left/text-right and text-left/image-right, gap 70px between rows */
+/* Each row's image: rotated 180deg trick in Figma, border-radius "326.5px 0px 123px" (large pill/blob shape), background #C4C4C4 photo fill — in real code just build as a normal rounded image block, ignore literal rotate transforms */
+
+/* Big numbered icon badge behind each step number ("01".."04") */
+width: ~90px; height: ~90px; /* varies slightly per step: 92/86/90/87px */
+background: #CDA274;
+/* number rendered on top of badge */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 120px;
+line-height: 125%;
+text-align: center;
+color: #FFFFFF;
+
+/* Step title e.g. "Concept & Details", "Idea for Work", "Design", "Perfection" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 35px;
+line-height: 125%;
+color: #292F36;
+
+/* Step body text (shared lorem-ipsum copy) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Contact CTA "Wanna join the interno?" and Footer — identical to about.css / homepage-part1.css, reuse those styles */

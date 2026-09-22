@@ -1,0 +1,73 @@
+/* Project (gallery/listing) page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 4976px tall, background #FFFFFF */
+/* Header, Banner/breadcrumb, Footer identical to other pages — breadcrumb title: "Our Project" / "Home / Project" */
+
+/* ===== Category filter tabs ===== */
+width: 880px;
+height: 75px;
+border: 1px solid #CDA274;
+border-radius: 18px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 96px;
+/* Tabs: Bathroom, Bed Room (active/selected), Kitchan, Living Area */
+
+/* Inactive tab label */
+font-family: 'Jost';
+font-weight: 600;
+font-size: 18px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Active tab pill (e.g. "Bed Room") */
+background: #CDA274;
+border-radius: 18px;
+padding: 26px 66px;
+color: #FFFFFF; /* label color on active pill */
+
+/* ===== Project masonry grid (8 items, 2-column staggered layout) ===== */
+width: 1201px;
+height: 3230px;
+/* Items alternate tall (853px, e.g. #1,#3,#5,#7... actually #01/#03/#05 are tall) and short (522px) cards in a 2-column masonry, each 585-586px wide, gap ~24px vertical within a card between image and text row */
+
+/* Card image */
+background: #C4C4C4;
+/* photo via background: url(...), no border-radius on gallery images (flush edges) */
+
+/* Card title e.g. "Minimal Bedroom", "Classic Minimal Bedroom", "System Table", "Modern Bedroom" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Card category e.g. "Decor / Artchitecture" (same on every card) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Circular arrow-link button, bottom-right of each card's text row */
+width: 70px; height: 70px;
+background: #F4F0EC;
+border: 2px solid #292F36; /* arrow icon */
+
+/* ===== Pagination ===== */
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 20px;
+/* 4 circles: page "01" (active, filled #F4F0EC bg, no border), "02", "03" pages (outlined, border 1px solid #CDA274), then a "next" arrow circle (outlined) */
+
+font-family: 'Jost';
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+text-transform: capitalize;
+color: #292F36;

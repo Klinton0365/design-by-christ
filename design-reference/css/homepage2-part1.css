@@ -1,0 +1,19 @@
+/* PARTIAL — Homepage variant 2 — Part 1 (message cut off mid "Testimonial" section again, same as homepage-part1.css) */
+/* This variant reuses the exact same components as Homepage-1 (footer, CTA, blog cards, counter, projects, client logos, testimonials) with identical copy/colors/fonts — only vertical positions differ because total page height is 8184px vs 8025px. See homepage-part1.css for full component style notes; they apply here unchanged. */
+/* Decorative icon/logo vector-path layers (Client Logo section) omitted again — export as SVG from Figma */
+
+/* Page canvas */
+width: 1920px;
+height: 8184px;
+background: #FFFFFF;
+
+/* Section Y offsets in this variant (for reference only, not needed once building responsively) */
+/* Footer: top 7561px (was 7402px) */
+/* Contact CTA: top 7052px (was 6828px) */
+/* Blog: top 6136px (was 5914px) */
+/* Counter: top 5479px (was 5257px) */
+/* Project gallery: top 3788px (was 3516px) */
+/* Client Logo strip: top 3535px (was 3263px) */
+/* Testimonial: top 2706px (was 2434px) */
+
+/* [TRUNCATED again — Header/Hero section (top of page, above Testimonial at 2706px) still not received in any paste so far] */

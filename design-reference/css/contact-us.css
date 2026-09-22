@@ -1,0 +1,54 @@
+/* Contact Us page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 2879px tall, background #FFFFFF */
+/* Header, Banner, Footer identical to other pages — breadcrumb title: "Contact Us" / "Home / Contact" */
+
+/* ===== Contact Form section ===== */
+position: absolute;
+width: 1201px;
+height: 724px;
+top: 695px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 80px;
+
+/* Heading "We love meeting new people and helping them." */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Row: Details card (left) + Form (right), gap 55px */
+
+/* Details card */
+width: 349px;
+height: 436.99px;
+background: #F4F0EC;
+border-radius: 50px;
+padding: 76px 32px;
+
+/* Contact rows (Email / Phone / Address), each: circular icon 52x52px background #FFFFFF, gold vector icon border 2px solid #CDA274, text beside it */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+/* e.g. "info@yourdomain.com" / "+1 (378) 400-1234" / "www.yourdomain.com" */
+
+/* Social icons row below contact rows — same style as team-single.css */
+
+/* Form (Name/Email, Subject/Phone, Message, Send button) — identical pattern to about.css / blog-details.css contact forms: fields have bottom-border line (#000000) + Jost 22px #4D5053 label, Send button background #292F36 border-radius 18px */
+
+/* ===== Map section ===== */
+position: absolute;
+width: 1199px;
+height: 501px;
+top: 1569px;
+background: #292F36;
+border-radius: 70px;
+/* map image via background: url(...) */
+/* location pin icon: background #CDA274 */

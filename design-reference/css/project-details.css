@@ -1,0 +1,74 @@
+/* Project Details page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 2841px tall, background #FFFFFF */
+/* Header, Banner, Footer identical in structure to other pages — note: this paste's Banner didn't include the breadcrumb title card text (likely "Project Details" / "Home / Project Details", following the pattern of other pages) */
+
+/* ===== Project details text row (info card + title/description) ===== */
+position: absolute;
+width: 1200px;
+height: 437px;
+top: 695px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 42px;
+
+/* Info card (left) — client/category/tags/date/link key-value list */
+width: 500px;
+height: 379px;
+background: #F4F0EC;
+border-radius: 70px;
+padding: 55px 84px;
+
+/* Info labels column: "Client / Category / Tags / Date / Link" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Info values column: "Your client name / Interiors interior, Home / [tags] / 23.02.2022 / example.com" */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Title/description block (right) */
+width: 658px;
+height: 437px;
+display: flex;
+flex-direction: column;
+gap: 11px;
+
+/* Project title e.g. "Minimal Look Bedrooms" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Description paragraph (long lorem-ipsum body copy) */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* ===== Main project image with zoom button ===== */
+position: absolute;
+width: 1201px;
+height: 799px;
+top: 1232px;
+background: #C4C4C4;
+border-radius: 70px;
+/* photo via background: url(...) */
+
+/* Zoom button, centered on image, 132x132px circle */
+background: #FFFFFF;
+filter: drop-shadow(0px 10px 20px rgba(192,192,192,0.25));
+/* zoom icon: background #CDA274 */

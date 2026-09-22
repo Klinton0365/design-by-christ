@@ -1,0 +1,238 @@
+/* PARTIAL — Homepage — Part 1 (message cut off mid "Testimonial" section, continues in homepage-part2.css) */
+/* Decorative icon/logo vector-path layers (Client Logo section etc.) omitted — export those as SVG from Figma instead */
+
+/* Page canvas */
+width: 1920px;
+height: 8025px;
+background: #FFFFFF;
+
+/* Content grid lines (guides only, not real content) */
+/* 4 vertical guide lines at x: 360, 760, 1160, 1560, color #E6E6E6 */
+
+/* ===== Footer (same as Style Guide footer) ===== */
+position: absolute;
+width: 1920px;
+height: 577px;
+top: 7402px;
+/* See design-part1.css footer notes — logo, nav columns (Pages/Services/Contact), copyright bar, divider #E5E5E5 */
+
+/* ===== Contact CTA block ===== */
+position: absolute;
+width: 1199px;
+height: 374px;
+top: 6828px;
+background: #292F36;
+border-radius: 70px;
+padding: 80px 315px;
+text-align: center;
+
+/* Heading "Wanna join the interno?" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+color: #FFFFFF;
+
+/* Subtext */
+font-family: 'Jost';
+font-size: 22px;
+line-height: 150%;
+color: #FFFFFF;
+
+/* CTA Button "Contact With Us" */
+background: #CDA274;
+box-shadow: 0px 10px 20px #1F2022;
+border-radius: 18px;
+padding: 26px 37px;
+font-family: 'Jost';
+font-weight: 600;
+font-size: 18px;
+color: #FFFFFF;
+
+/* ===== Blog / Articles & News section ===== */
+position: absolute;
+width: 1200px;
+height: 714px;
+top: 5914px;
+
+/* Heading "Articles & News" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+text-align: center;
+color: #292F36;
+
+/* Subtext */
+font-family: 'Jost';
+font-size: 22px;
+line-height: 150%;
+text-align: center;
+color: #4D5053;
+
+/* Blog cards row: 3 cards, gap 27px, width 382px each */
+/* Card container */
+border: 1px solid #E7E7E7;
+border-radius: 62px;
+padding: 21px;
+box-shadow: 0px 10px 30px rgba(255,255,255,0.25);
+/* Middle card (2nd) has background: #F4F0EC instead of transparent */
+
+/* Card image area */
+width: 340px;
+height: 289.27px;
+background: #EAEAEA;
+border-radius: 45px 45px 0px 0px;
+/* image via background: url(...), cropped/positioned absolutely */
+
+/* Card title, e.g. "Let's Get Solution For Building Construction Work" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Card date text, e.g. "26 December,2022" */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.01em;
+text-transform: capitalize;
+color: #4D5053;
+
+/* Card arrow button (circle) */
+width: 52px; height: 52px;
+background: #F4F0EC; /* or #FFFFFF on middle card */
+border: 2px solid #292F36; /* arrow icon */
+
+/* Card tag pill, e.g. "Kitchan Design" */
+background: #FFFFFF;
+border-radius: 8px 8px 8px 0px;
+font-family: 'Jost';
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.01em;
+text-transform: capitalize;
+color: #4D5053;
+
+/* ===== Counter / Stats section ===== */
+position: absolute;
+width: 1920px;
+height: 457px;
+top: 5257px;
+background: #F4F0EC;
+
+/* 4 stat items in a row, gap 76px, each separated by 1px vertical line (#CDA274) */
+/* Big number e.g. "12", "85", "15", "95" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 85px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #CDA274;
+
+/* Stat label e.g. "Years Of Experiance", "Success Project", "Active Project", "Happy Customers" */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* ===== Project / "Follow Our Projects" gallery ===== */
+position: absolute;
+width: 1201px;
+height: 1541px;
+top: 3516px;
+
+/* Heading */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Subtext */
+font-family: 'Jost';
+font-size: 22px;
+line-height: 150%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Project rows: pairs of image + text blocks, rotated -90/90/180deg (Figma auto-layout trick for a horizontal-looking strip) — in actual code, just build as a normal horizontal image gallery, ignore the literal rotate transforms */
+/* Image block */
+background: #C4C4C4;
+border-radius: 0px 80px 0px 0px; /* corner radius varies by position in grid */
+
+/* Project title e.g. "Modern Kitchan" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Project category e.g. "Decor / Artchitecture" */
+font-family: 'Jost';
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Circular arrow link button */
+width: 70px; height: 70px;
+background: #F4F0EC;
+border: 2px solid #292F36;
+
+/* ===== Client Logo strip ===== */
+/* 5 client logo marks, row, centered, gap 108px — EXPORT THESE AS SVG FROM FIGMA, don't rebuild from CSS */
+position: absolute;
+top: 3263px;
+
+/* ===== Testimonial section ===== */
+position: absolute;
+width: 1199px;
+height: 679px;
+top: 2434px;
+background: #F4F0EC;
+border-radius: 70px;
+
+/* Heading "What the People Thinks About Us" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+color: #292F36;
+
+/* Testimonial cards row, gap 20px, 370px wide each */
+background: #FFFFFF;
+
+/* Avatar */
+width: 77px; height: 77px;
+background: #C4C4C4;
+/* photo via background: url(...) */
+
+/* Person name/location e.g. "Nattasha Mith / Sydney, USA" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Testimonial quote text */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* [TRUNCATED — message cut off mid second testimonial card. Rest of Homepage CSS (hero section, header/nav, remaining sections above testimonial) not yet received — hero/header is likely earlier in the page, near top: 0px, which hasn't come through yet] */

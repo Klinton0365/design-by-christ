@@ -1,0 +1,703 @@
+/* PARTIAL FILE — Section: Design — Part 1 of multiple (user's paste was cut off by a 50,000 character message limit, continues in design-part2.css etc.) */
+
+/* Style Guid  */
+
+position: relative;
+width: 1920px;
+height: 7235px;
+
+
+
+/* Bg */
+
+position: absolute;
+width: 1920px;
+height: 7354px;
+left: 0px;
+top: 0px;
+
+
+
+/* BG */
+
+position: absolute;
+width: 1920px;
+height: 7235px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+
+
+/* Line */
+
+position: absolute;
+width: 1200px;
+height: 7354px;
+left: 360px;
+top: 0px;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 7354px;
+height: 0px;
+left: 760px;
+top: 0px;
+
+border: 1px solid #E6E6E6;
+transform: rotate(90deg);
+
+
+/* Line 4 */
+
+position: absolute;
+width: 7354px;
+height: 0px;
+left: 360px;
+top: 0px;
+
+border: 1px solid #E6E6E6;
+transform: rotate(90deg);
+
+
+/* Line 2 */
+
+position: absolute;
+width: 7354px;
+height: 0px;
+left: 1160px;
+top: 0px;
+
+border: 1px solid #E6E6E6;
+transform: rotate(90deg);
+
+
+/* Line 3 */
+
+position: absolute;
+width: 7354px;
+height: 0px;
+left: 1560px;
+top: 0px;
+
+border: 1px solid #E6E6E6;
+transform: rotate(90deg);
+
+
+/* Footer */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 134px;
+
+position: absolute;
+width: 1920px;
+height: 577px;
+left: 0px;
+top: 6615px;
+
+
+
+/* Interno */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 101px;
+
+width: 1199px;
+height: 370px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Interno */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 31px;
+
+width: 393px;
+height: 188px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Sub Content */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 18px;
+
+width: 393px;
+height: 134px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Logo */
+
+width: 177px;
+height: 50px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Interno */
+
+position: absolute;
+width: 133px;
+height: 50px;
+left: 44px;
+top: 0px;
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 125%;
+display: flex;
+align-items: center;
+
+color: #292F36;
+
+
+
+/* Logo */
+
+position: absolute;
+width: 34px;
+height: 34px;
+left: 0px;
+top: 8px;
+
+
+
+/* Logo */
+
+position: absolute;
+left: 0%;
+right: 91.35%;
+top: 5.97%;
+bottom: 68.66%;
+
+background: #CDA274;
+
+
+/* It is a long established fact that a reader will be distracted lookings. */
+
+width: 393px;
+height: 66px;
+
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #4D5053;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icons */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 54px;
+
+width: 225px;
+height: 23px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Pages */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 9px;
+
+width: 125px;
+height: 370px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Pages */
+
+width: 64px;
+height: 31px;
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+display: flex;
+align-items: center;
+
+color: #292F36;
+
+
+/* About Us Our Projects Our Team Contact Us Services */
+
+width: 125px;
+height: 330px;
+
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 300%;
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #4D5053;
+
+
+/* Services */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 9px;
+
+width: 120px;
+height: 370px;
+
+
+/* Services */
+
+width: 94px;
+height: 31px;
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+display: flex;
+align-items: center;
+
+color: #292F36;
+
+
+/* Kitchan Living Area Bathroom Dinning Hall Bedroom */
+
+width: 120px;
+height: 330px;
+
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 300%;
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #4D5053;
+
+
+/* Contact */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 26px;
+
+width: 258px;
+height: 272px;
+
+
+/* Contact */
+
+width: 87px;
+height: 31px;
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+display: flex;
+align-items: center;
+
+color: #292F36;
+
+
+/* 55 East Birchwood Ave. Brooklyn, New York 11201 contact@interno.com (123) 456 - 7890 */
+
+width: 258px;
+height: 215px;
+
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #4D5053;
+
+
+/* Copyright */
+
+width: 1920px;
+height: 73px;
+
+
+/* Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow */
+
+position: absolute;
+width: 752px;
+height: 33px;
+left: 584px;
+top: 544px;
+
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+
+color: #4D5053;
+
+
+
+/* Line */
+
+position: absolute;
+width: 1920px;
+height: 0px;
+left: 0px;
+top: 504px;
+
+border: 1px solid #E5E5E5;
+
+
+/* Form */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 100px;
+
+position: absolute;
+width: 1199px;
+height: 490px;
+left: 361px;
+top: 5925px;
+
+
+/* Contact Form */
+
+position: absolute;
+width: 301px;
+height: 63px;
+left: 0px;
+top: 0px;
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+display: flex;
+align-items: center;
+
+color: #292F36;
+
+
+/* Button */
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 26px 54px;
+gap: 10px;
+
+width: 220.14px;
+height: 75px;
+
+background: #292F36;
+box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+border-radius: 18px;
+
+
+/* Send Now */
+
+font-family: 'Jost';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 125%;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #FFFFFF;
+
+
+/* Block Quotes */
+
+position: absolute;
+width: 1199px;
+height: 267px;
+left: 360px;
+top: 5558px;
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+color: #292F36;
+
+
+/* Quotes box */
+
+width: 799px;
+height: 267px;
+
+background: #F4F0EC;
+border-radius: 50px;
+
+
+/* Quote text */
+
+font-family: 'DM Serif Display';
+font-style: italic;
+font-weight: 400;
+font-size: 25px;
+line-height: 125%;
+text-align: center;
+letter-spacing: 0.02em;
+
+color: #CDA274;
+
+
+/* Icons block */
+
+position: absolute;
+width: 1200px;
+height: 812px;
+left: 360px;
+top: 4646px;
+
+background: #F7F7F7;
+border-radius: 70px;
+
+
+/* Icon circle */
+
+background: #F4F0EC;
+
+
+/* Star */
+
+background: #FFA928;
+border-radius: 2px;
+
+
+/* Buttons block */
+
+position: absolute;
+width: 1199.28px;
+height: 584px;
+left: 360px;
+top: 3962px;
+
+background: #F7F7F7;
+border-radius: 70px;
+
+
+/* Default Button */
+
+background: #292F36;
+box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+border-radius: 18px;
+
+
+/* Color Button (Primary) */
+
+background: #CDA274;
+box-shadow: 0px 10px 20px rgba(192, 192, 192, 0.35);
+border-radius: 18px;
+
+
+/* Typo block */
+
+position: absolute;
+width: 1201px;
+height: 2634px;
+left: 360px;
+top: 1228px;
+
+background: #F7F7F7;
+border-radius: 70px;
+
+
+/* Typography heading */
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 125%;
+color: #292F36;
+
+
+/* Display text */
+
+font-family: 'DM Serif Display';
+font-style: normal;
+font-weight: 400;
+font-size: 85px;
+line-height: 125%;
+color: #292F36;
+
+
+/* Heading scale: H1 85px / H2? 50px / H3 35px / H4 25px / H5 22px / H6 20px / H7 18px (DM Serif Display) */
+
+/* H1 - 50px */
+font-family: 'DM Serif Display';
+font-size: 50px;
+line-height: 125%;
+color: #292F36;
+
+/* H2 - 35px */
+font-family: 'DM Serif Display';
+font-size: 35px;
+line-height: 125%;
+color: #292F36;
+
+/* H3 - 25px */
+font-family: 'DM Serif Display';
+font-size: 25px;
+line-height: 125%;
+color: #292F36;
+
+/* H4 - 22px */
+font-family: 'DM Serif Display';
+font-size: 22px;
+line-height: 125%;
+color: #292F36;
+
+/* H5 - 20px */
+font-family: 'DM Serif Display';
+font-size: 20px;
+line-height: 125%;
+color: #292F36;
+
+/* H6 - 18px */
+font-family: 'DM Serif Display';
+font-size: 18px;
+line-height: 125%;
+color: #292F36;
+
+
+/* Paragraph scale: Large 22px / Medium 20px / Small 18px (Jost) */
+
+/* Large Paragraph */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Medium Paragraph */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* Small Paragraph */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+
+/* Text variants on Jost 22px: regular / bold(700) / italic */
+font-family: 'Jost';
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+/* variant: font-weight 400 (regular) */
+/* variant: font-weight 700 (bold) */
+/* variant: font-style italic, font-weight 400 */
+
+/* [TRUNCATED — message cut off here at "List" section. Rest of Design/Style Guide CSS not yet received.] */

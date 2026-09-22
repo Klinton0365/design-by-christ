@@ -1,0 +1,47 @@
+/* Licenses page — COMPLETE (received in full, no truncation) */
+/* Page canvas: 1920px wide, 3811px tall, background #FFFFFF */
+/* Header, Footer identical to other pages — breadcrumb title: "Licenses" / "Home / Licenses" */
+/* NOTE: this page is template attribution/credits content (fonts, stock photo sources) — likely not needed for the actual site build, kept for completeness only */
+
+/* Section heading style (shared across "Photography", "Pexels/Unsplash credits", "Icon & Font" blocks) */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 50px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* Body paragraph */
+font-family: 'Jost';
+font-weight: 400;
+font-size: 22px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #4D5053;
+
+/* ===== "Photography" intro block ===== */
+position: absolute;
+top: 695px;
+/* Credits text re: Unsplash/Pexels image licensing */
+
+/* ===== Credit sections (Unsplash, Pexels, Icon & Font) — each a rounded panel with a 3-photo row ===== */
+background: #F4F0EC;
+border-radius: 70px;
+/* Unsplash panel: top 980px, height 671px. Pexels panel: top 1751px, height 670px. Icon & Font panel: top 2521px, height 472px */
+
+/* Sub-heading e.g. "Pexels", "Unsplash", "Font", "Icon" */
+font-family: 'DM Serif Display';
+font-weight: 400;
+font-size: 35px;
+line-height: 150%;
+letter-spacing: 0.01em;
+color: #292F36;
+
+/* 3-photo credit row */
+width: 341px;
+height: 339px;
+background: #FFFFFF;
+border-radius: 31px;
+/* photo via background: url(...) */
+
+/* "Aa" font specimen pair (DM Serif Display / Jost), 85px, color #292F36 */

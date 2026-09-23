@@ -44,8 +44,8 @@ const navItems: { label: string; href: string; children?: { label: string; href:
 
 export default function Header() {
   return (
-    <header className="absolute inset-x-0 top-0 z-30 w-full bg-gradient-to-b from-black/55 via-black/20 to-transparent">
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-11">
+    <header className="relative z-30 w-full bg-base">
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-9">
         <Logo />
         <nav className="flex items-center gap-8">
           <ul className="flex items-center gap-8 font-body text-[20px] text-ivory">

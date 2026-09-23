@@ -47,7 +47,7 @@ export default function ProjectDetailsPage() {
         </div>
 
         <div className="relative mt-14 flex h-[420px] items-center justify-center rounded-[70px] bg-placeholder sm:h-[799px]">
-          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-surface shadow-[0_0_0_1px_rgba(202,154,62,0.35),0_0_30px_-6px_rgba(233,200,120,0.55)]">
+          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-surface glow-gold-sm">
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none">
               <circle cx="10" cy="10" r="7" stroke="#CA9A3E" strokeWidth="2" />
               <path d="M15 15l6 6" stroke="#CA9A3E" strokeWidth="2" strokeLinecap="round" />

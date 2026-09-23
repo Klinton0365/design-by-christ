@@ -1,30 +1,31 @@
+import Image from "next/image";
 import Button from "@/components/Button";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cream pb-24 pt-[220px]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-40 top-0 h-[600px] w-[600px] rounded-full bg-gold/10 blur-[160px]"
-      />
-      <div className="relative mx-auto flex max-w-[1200px] flex-col items-center gap-14 px-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex max-w-[560px] flex-col items-start gap-7 text-left">
-          <p className="font-body text-[13px] uppercase tracking-[0.35em] text-gold">
-            Interior Design Studio
-          </p>
-          <h1 className="font-heading text-[56px] leading-[1.15] text-ivory sm:text-[70px]">
-            We Create Spaces That Feel Like Home
-          </h1>
-          <p className="font-body text-[22px] leading-relaxed text-body">
-            Bespoke interiors shaped by light, material, and story —
-            designed to feel effortless, built to last.
-          </p>
-          <Button href="/project">Our Projects</Button>
-        </div>
+    <section className="relative">
+      <div className="relative h-[420px] w-full overflow-hidden rounded-bl-[60px] sm:h-[600px] sm:rounded-bl-[140px] lg:h-[760px] xl:h-[820px] xl:rounded-bl-[291px]">
+        <Image
+          src="/hero-photo.jpg"
+          alt="Minimal, light-filled living room by Design By Chris"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
 
-        <div className="glow-gold-lg relative h-[420px] w-full max-w-[560px] overflow-hidden rounded-[70px] bg-placeholder sm:h-[520px]">
-          <div className="absolute inset-0 flex items-center justify-center font-body text-sm text-body/70">
-            hero image
+      <div className="pointer-events-none absolute inset-0 flex items-center">
+        <div className="pointer-events-auto mx-auto w-full max-w-[1200px] px-6">
+          <div className="flex max-w-[567px] flex-col items-start gap-6">
+            <h1 className="font-heading text-[40px] leading-[1.2] text-[#292F36] sm:text-[60px] lg:text-[85px]">
+              Let Your Home Be Unique
+            </h1>
+            <p className="max-w-[553px] font-body text-[18px] leading-relaxed text-[#4D5053] sm:text-[22px]">
+              There are many variations of the passages of lorem Ipsum from
+              available, variations of the passages.
+            </p>
+            <Button href="/contact">Get Started</Button>
           </div>
         </div>
       </div>

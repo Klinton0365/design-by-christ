@@ -71,7 +71,7 @@ export default function ServiceSinglePage() {
 
       <section className="mx-auto max-w-[1200px] px-6 pb-14">
         <div className="relative flex h-[280px] items-center justify-center rounded-[70px] bg-dark sm:h-[374px]">
-          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-surface shadow-[0_0_0_1px_rgba(202,154,62,0.35),0_0_30px_-6px_rgba(233,200,120,0.55)]">
+          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-surface glow-gold-sm">
             <div className="ml-1 h-0 w-0 border-y-[14px] border-l-[22px] border-y-transparent border-l-gold" />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import SocialIcons from "./SocialIcons";
+import ThemeToggle from "./ThemeToggle";
 
 const pageLinks = [
   { label: "About Us", href: "/about" },
@@ -70,9 +71,21 @@ export default function Footer() {
 
         <hr className="border-t border-divider" />
 
-        <p className="text-center font-body text-[16px] text-body">
-          Copyright &copy; Design By Chris {new Date().getFullYear()}
-        </p>
+        <div className="flex flex-col-reverse items-center justify-center gap-6 sm:flex-row sm:justify-between">
+          <p className="font-body text-[16px] text-body">
+            Copyright &copy; Design By Chris {new Date().getFullYear()}
+          </p>
+
+          <div className="flex items-center gap-3">
+            <span className="font-body text-[13px] uppercase tracking-[0.25em] text-body">
+              Dark
+            </span>
+            <ThemeToggle />
+            <span className="font-body text-[13px] uppercase tracking-[0.25em] text-body">
+              Light
+            </span>
+          </div>
+        </div>
       </div>
     </footer>
   );

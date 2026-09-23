@@ -1,40 +1,96 @@
 @import "tailwindcss";
 
-@theme inline {
+/* ---- Raw palette, redefined per theme. These plain custom properties are
+   what actually change at runtime; @theme below only maps Tailwind's color
+   tokens onto them so utilities like `bg-base` stay reactive. ---- */
+:root {
+  color-scheme: dark;
+
+  --raw-base: #0a0806;
+  --raw-surface: #17130c;
+  --raw-dark: #000000;
+
+  --raw-ivory: #f3ecda;
+  --raw-body: #b7ae9b;
+
+  --raw-gold-deep: #6b4a12;
+  --raw-gold: #ca9a3e;
+  --raw-gold-light: #e9c878;
+  --raw-gold-glow: #f6de9a;
+
+  --raw-cream: #201808;
+  --raw-offwhite: #120e08;
+  --raw-border: #ca9a3e33;
+  --raw-divider: #ca9a3e26;
+  --raw-placeholder: #2a2419;
+  --raw-placeholder-light: #221c12;
+
+  --raw-glow-soft: rgba(233, 200, 120, 0.55);
+  --raw-glow-ring: rgba(202, 154, 62, 0.35);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --raw-base: #ffffff;
+  --raw-surface: #ffffff;
+  --raw-dark: #15110a;
+
+  --raw-ivory: #221b10;
+  --raw-body: #5b5343;
+
+  --raw-gold-deep: #8a611c;
+  --raw-gold: #b9852b;
+  --raw-gold-light: #d9a94f;
+  --raw-gold-glow: #eecf8c;
+
+  --raw-cream: #f8f5ee;
+  --raw-offwhite: #fbfaf6;
+  --raw-border: #b9852b45;
+  --raw-divider: #b9852b30;
+  --raw-placeholder: #ece7db;
+  --raw-placeholder-light: #f2efe6;
+
+  --raw-glow-soft: rgba(185, 133, 43, 0.28);
+  --raw-glow-ring: rgba(185, 133, 43, 0.35);
+}
+
+@theme {
   --font-heading: var(--font-playfair);
   --font-body: var(--font-jost);
 
-  /* Base surfaces (near-black, warm undertone to match the brand mark) */
-  --color-base: #0a0806;
-  --color-surface: #17130c;
-  --color-dark: #000000;
+  --color-base: var(--raw-base);
+  --color-surface: var(--raw-surface);
+  --color-dark: var(--raw-dark);
 
-  /* Text */
-  --color-ivory: #f3ecda;
-  --color-body: #b7ae9b;
+  --color-ivory: var(--raw-ivory);
+  --color-body: var(--raw-body);
 
-  /* Gold, sampled from the Design By Chris monogram */
-  --color-gold-deep: #6b4a12;
-  --color-gold: #ca9a3e;
-  --color-gold-light: #e9c878;
-  --color-gold-glow: #f6de9a;
+  --color-gold-deep: var(--raw-gold-deep);
+  --color-gold: var(--raw-gold);
+  --color-gold-light: var(--raw-gold-light);
+  --color-gold-glow: var(--raw-gold-glow);
 
-  /* repurposed secondary tokens (kept for existing component prop names) */
-  --color-cream: #201808;
-  --color-offwhite: #120e08;
-  --color-border: #ca9a3e33;
-  --color-divider: #ca9a3e26;
-  --color-placeholder: #2a2419;
-  --color-placeholder-light: #221c12;
-}
-
-html {
-  color-scheme: dark;
+  --color-cream: var(--raw-cream);
+  --color-offwhite: var(--raw-offwhite);
+  --color-border: var(--raw-border);
+  --color-divider: var(--raw-divider);
+  --color-placeholder: var(--raw-placeholder);
+  --color-placeholder-light: var(--raw-placeholder-light);
 }
 
 body {
   background: var(--color-base);
   color: var(--color-body);
+}
+
+body,
+body * {
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 ::selection {
@@ -45,20 +101,20 @@ body {
 /* Reusable premium glow utilities */
 .glow-gold {
   box-shadow:
-    0 0 0 1px rgba(202, 154, 62, 0.35),
-    0 0 45px -10px rgba(233, 200, 120, 0.55);
+    0 0 0 1px var(--raw-glow-ring),
+    0 0 45px -10px var(--raw-glow-soft);
 }
 
 .glow-gold-sm {
   box-shadow:
-    0 0 0 1px rgba(202, 154, 62, 0.3),
-    0 0 22px -6px rgba(233, 200, 120, 0.5);
+    0 0 0 1px var(--raw-glow-ring),
+    0 0 22px -6px var(--raw-glow-soft);
 }
 
 .glow-gold-lg {
   box-shadow:
-    0 0 0 1px rgba(202, 154, 62, 0.4),
-    0 0 80px -12px rgba(233, 200, 120, 0.6);
+    0 0 0 1px var(--raw-glow-ring),
+    0 0 80px -12px var(--raw-glow-soft);
 }
 
 .text-gold-shimmer {
@@ -73,4 +129,25 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Theme toggle — pendant-lamp switch, driven entirely by the [data-theme]
+   attribute on <html> so it reacts instantly with no JS state/flash. */
+[data-theme="light"] .theme-toggle-track {
+  opacity: 1;
+}
+
+[data-theme="light"] .theme-toggle-sparkle {
+  opacity: 1;
+}
+
+[data-theme="light"] .theme-toggle-knob {
+  transform: translateX(38px);
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+[data-theme="light"] .theme-toggle-bulb {
+  fill: currentColor;
+  fill-opacity: 0.9;
 }

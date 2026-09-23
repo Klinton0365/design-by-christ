@@ -30,7 +30,7 @@ export default function TeamStrip({
             m.name ? (
               <div
                 key={i}
-                className="flex h-[433px] flex-col items-center justify-center gap-6 bg-surface px-6 text-center"
+                className="flex h-[433px] flex-col items-center justify-center gap-6 border border-border bg-surface px-6 text-center"
               >
                 <p className="font-heading text-[25px] text-ivory">
                   {m.name}

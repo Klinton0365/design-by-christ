@@ -57,7 +57,7 @@ export default function PricingPage() {
               key={plan.title}
               className={`flex flex-col items-center gap-7 rounded-[33px] bg-cream px-6 py-14 text-center ${
                 plan.highlighted
-                  ? "shadow-[0_0_0_1px_rgba(202,154,62,0.5),0_0_45px_-8px_rgba(233,200,120,0.7)]"
+                  ? "glow-gold"
                   : "border border-border"
               }`}
             >
@@ -86,7 +86,7 @@ export default function PricingPage() {
 
               <Link
                 href="/contact"
-                className={`inline-flex items-center gap-2.5 rounded-[18px] px-9 py-6 font-body text-[18px] font-semibold text-white shadow-[0_0_0_1px_rgba(202,154,62,0.4),0_0_35px_-6px_rgba(233,200,120,0.65)] transition-opacity hover:opacity-90 ${
+                className={`inline-flex items-center gap-2.5 rounded-[18px] px-9 py-6 font-body text-[18px] font-semibold text-white glow-gold transition-opacity hover:opacity-90 ${
                   plan.highlighted ? "bg-dark" : "bg-gold"
                 }`}
               >

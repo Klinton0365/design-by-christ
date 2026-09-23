@@ -16,14 +16,14 @@ export default function ServiceCard({
       }`}
     >
       <div className="flex flex-col items-center gap-3">
-        <h3 className="font-heading text-[25px] text-dark">{title}</h3>
+        <h3 className="font-heading text-[25px] text-ivory">{title}</h3>
         <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
           {body}
         </p>
       </div>
       <Link
         href="/services/1"
-        className="inline-flex items-center gap-3 font-body text-[18px] font-semibold tracking-wide text-body hover:text-dark"
+        className="inline-flex items-center gap-3 font-body text-[18px] font-semibold tracking-wide text-body hover:text-ivory"
       >
         Read More
         <span aria-hidden className="inline-block h-[13px] w-[15px] border-2 border-gold" />

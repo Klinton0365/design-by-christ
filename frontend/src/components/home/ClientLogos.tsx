@@ -7,7 +7,7 @@ export default function ClientLogos() {
         {logos.map((l) => (
           <div
             key={l}
-            className="flex h-[60px] w-[130px] items-center justify-center rounded bg-dark/10 font-body text-sm text-dark"
+            className="flex h-[60px] w-[130px] items-center justify-center rounded border border-border bg-surface font-body text-sm text-body"
           >
             client {l}
           </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Pricing & Plan | Interno",
+  title: "Pricing & Plan | Design By Chris",
 };
 
 const plans = [
@@ -56,15 +56,17 @@ export default function PricingPage() {
             <div
               key={plan.title}
               className={`flex flex-col items-center gap-7 rounded-[33px] bg-cream px-6 py-14 text-center ${
-                plan.highlighted ? "shadow-[0px_10px_20px_rgba(136,136,136,0.25)]" : ""
+                plan.highlighted
+                  ? "shadow-[0_0_0_1px_rgba(202,154,62,0.5),0_0_45px_-8px_rgba(233,200,120,0.7)]"
+                  : "border border-border"
               }`}
             >
               <div className="flex flex-col items-center gap-9">
                 <div className="flex flex-col items-center gap-2">
-                  <h3 className="font-heading text-[25px] text-dark">
+                  <h3 className="font-heading text-[25px] text-ivory">
                     {plan.title}
                   </h3>
-                  <p className="font-heading text-[25px] text-dark">
+                  <p className="font-heading text-[25px] text-ivory">
                     {plan.price} /month
                   </p>
                 </div>
@@ -73,11 +75,7 @@ export default function PricingPage() {
                     Most Popular Plan
                   </span>
                 )}
-                <hr
-                  className={`w-full ${
-                    plan.highlighted ? "border-dark" : "border-gold"
-                  }`}
-                />
+                <hr className="w-full border-gold" />
               </div>
 
               <ul className="flex flex-col gap-2 font-body text-[18px] text-body">
@@ -88,7 +86,7 @@ export default function PricingPage() {
 
               <Link
                 href="/contact"
-                className={`inline-flex items-center gap-2.5 rounded-[18px] px-9 py-6 font-body text-[18px] font-semibold text-white shadow-[0px_10px_20px_rgba(192,192,192,0.35)] transition-opacity hover:opacity-90 ${
+                className={`inline-flex items-center gap-2.5 rounded-[18px] px-9 py-6 font-body text-[18px] font-semibold text-white shadow-[0_0_0_1px_rgba(202,154,62,0.4),0_0_35px_-6px_rgba(233,200,120,0.65)] transition-opacity hover:opacity-90 ${
                   plan.highlighted ? "bg-dark" : "bg-gold"
                 }`}
               >

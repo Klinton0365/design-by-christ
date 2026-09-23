@@ -5,7 +5,7 @@ import TeamStrip from "@/components/TeamStrip";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Professional Single | Interno",
+  title: "Professional Single | Design By Chris",
 };
 
 const skills = [
@@ -35,7 +35,7 @@ export default function TeamSinglePage() {
 
           <div className="flex flex-1 flex-col gap-10">
             <div className="flex flex-col gap-3">
-              <h1 className="font-heading text-[44px] text-dark sm:text-[50px]">
+              <h1 className="font-heading text-[44px] text-ivory sm:text-[50px]">
                 John Smith
               </h1>
               <p className="font-body text-[22px] text-body">Designer</p>
@@ -58,7 +58,7 @@ export default function TeamSinglePage() {
       <section className="mx-auto max-w-[1200px] px-6 pb-20">
         <div className="flex flex-col items-center gap-16">
           <div className="w-full text-center">
-            <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+            <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
               Short Biography
             </h2>
             <p className="mx-auto mt-6 max-w-[1000px] font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -72,7 +72,7 @@ export default function TeamSinglePage() {
           <div className="flex w-full flex-col gap-16 sm:flex-row">
             <div className="flex flex-1 flex-col gap-8">
               <div className="flex flex-col gap-2">
-                <h3 className="font-heading text-[25px] text-dark">
+                <h3 className="font-heading text-[25px] text-ivory">
                   Simplicity and Functionality
                 </h3>
                 <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -100,7 +100,7 @@ export default function TeamSinglePage() {
 
             <div className="flex flex-1 flex-col gap-5">
               <div className="flex flex-col gap-2">
-                <h3 className="font-heading text-[25px] text-dark">
+                <h3 className="font-heading text-[25px] text-ivory">
                   Question And Answer
                 </h3>
                 <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -113,17 +113,17 @@ export default function TeamSinglePage() {
                   <div
                     key={f.question}
                     className={`flex flex-col gap-3 rounded-[18px] px-6 py-5 ${
-                      i === 0 ? "bg-cream" : "border border-gold bg-white"
+                      i === 0 ? "bg-cream" : "border border-gold bg-surface"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-4">
-                      <span className="font-body text-[18px] font-semibold text-dark">
+                      <span className="font-body text-[18px] font-semibold text-ivory">
                         {f.question}
                       </span>
                       <span
                         className={`flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-full ${
-                          i === 0 ? "bg-white" : "bg-cream"
-                        } font-body text-[24px] font-light text-dark`}
+                          i === 0 ? "bg-surface" : "bg-cream"
+                        } font-body text-[24px] font-light text-ivory`}
                       >
                         +
                       </span>
@@ -144,7 +144,7 @@ export default function TeamSinglePage() {
       <TeamStrip heading="Our Team Members" />
 
       <section className="mx-auto flex max-w-[800px] flex-col items-center gap-10 px-6 py-20 text-center">
-        <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
           Contact Me
         </h2>
         <ContactForm variant="full" />

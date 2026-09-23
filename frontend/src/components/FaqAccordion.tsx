@@ -34,7 +34,7 @@ export default function FaqAccordion({
             >
               <span
                 className={`font-heading text-[22px] sm:text-[25px] ${
-                  isOpen ? "text-gold" : "text-dark"
+                  isOpen ? "text-gold" : "text-ivory"
                 }`}
               >
                 {item.question}
@@ -46,7 +46,7 @@ export default function FaqAccordion({
                 }`}
                 fill="none"
               >
-                <path d="M1 1l7 6-7 6" stroke="#292F36" strokeWidth="2" />
+                <path d="M1 1l7 6-7 6" stroke="#CA9A3E" strokeWidth="2" />
               </svg>
             </button>
             {isOpen && item.answer && (
@@ -64,7 +64,7 @@ export default function FaqAccordion({
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-14">
       <div className="flex flex-col items-center gap-12">
-        <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
           {heading}
         </h2>
         <div className="flex w-full flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-[60px]">

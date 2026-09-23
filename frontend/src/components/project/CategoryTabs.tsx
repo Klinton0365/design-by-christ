@@ -15,7 +15,7 @@ export default function CategoryTabs() {
           type="button"
           onClick={() => setActive(cat)}
           className={`rounded-[18px] px-6 py-3 font-body text-[18px] font-semibold tracking-wide transition-colors ${
-            active === cat ? "bg-gold text-white" : "text-dark hover:text-gold"
+            active === cat ? "bg-gold text-white" : "text-ivory hover:text-gold"
           }`}
         >
           {cat}

@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-16">
       <div className="flex flex-col items-center gap-3 text-center">
-        <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
           Follow Our Projects
         </h2>
         <p className="max-w-[700px] font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -24,7 +24,7 @@ export default function Projects() {
             <div className="h-[350px] w-full rounded-[40px] bg-placeholder" />
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-heading text-[25px] text-dark">
+                <h3 className="font-heading text-[25px] text-ivory">
                   {p.title}
                 </h3>
                 <p className="font-body text-[18px] text-body">
@@ -35,7 +35,7 @@ export default function Projects() {
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
                   <path
                     d="M5 12h14M13 6l6 6-6 6"
-                    stroke="#292F36"
+                    stroke="#CA9A3E"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"

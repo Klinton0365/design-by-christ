@@ -4,7 +4,7 @@ import ImageTextSplit from "@/components/ImageTextSplit";
 import Counter from "@/components/home/Counter";
 
 export const metadata: Metadata = {
-  title: "Service Single | Interno",
+  title: "Service Single | Design By Chris",
 };
 
 const pointsA = [
@@ -26,7 +26,7 @@ const pointsB = [
 function PointsList({ heading, points }: { heading: string; points: string[] }) {
   return (
     <div className="flex-1">
-      <h3 className="font-heading text-[36px] text-dark sm:text-[50px]">
+      <h3 className="font-heading text-[36px] text-ivory sm:text-[50px]">
         {heading}
       </h3>
       <ul className="mt-8 flex flex-col gap-5">
@@ -52,7 +52,7 @@ export default function ServiceSinglePage() {
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
         <div className="flex flex-col gap-8 sm:flex-row sm:gap-24">
-          <h2 className="max-w-[450px] font-heading text-[36px] leading-tight text-dark sm:text-[50px]">
+          <h2 className="max-w-[450px] font-heading text-[36px] leading-tight text-ivory sm:text-[50px]">
             We set the trends of modern living Services.
           </h2>
           <div className="flex flex-col gap-6">
@@ -71,7 +71,7 @@ export default function ServiceSinglePage() {
 
       <section className="mx-auto max-w-[1200px] px-6 pb-14">
         <div className="relative flex h-[280px] items-center justify-center rounded-[70px] bg-dark sm:h-[374px]">
-          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-white shadow-[0px_10px_20px_rgba(192,192,192,0.25)]">
+          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-surface shadow-[0_0_0_1px_rgba(202,154,62,0.35),0_0_30px_-6px_rgba(233,200,120,0.55)]">
             <div className="ml-1 h-0 w-0 border-y-[14px] border-l-[22px] border-y-transparent border-l-gold" />
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function ServiceSinglePage() {
       <section className="mx-auto max-w-[1030px] px-6 pb-20">
         <div className="flex flex-col gap-14 sm:flex-row">
           <PointsList heading="Use of Interior" points={pointsA} />
-          <div className="hidden w-px bg-[#CECECE] sm:block" />
+          <div className="hidden w-px bg-gold/25 sm:block" />
           <PointsList heading="Make An Art" points={pointsB} />
         </div>
       </section>

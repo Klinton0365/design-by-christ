@@ -20,20 +20,20 @@ const serviceLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white pb-9 pt-24">
+    <footer className="bg-surface pb-9 pt-24">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-8 px-6">
         <div className="flex flex-col flex-wrap gap-16 sm:flex-row sm:justify-between">
           <div className="flex max-w-[393px] flex-col gap-[18px]">
             <Logo />
             <p className="font-body text-[18px] leading-relaxed text-body">
-              It is a long established fact that a reader will be distracted
-              lookings.
+              Designing spaces, defining stories — timeless interiors crafted
+              with intention.
             </p>
             <SocialIcons className="gap-[30px]" />
           </div>
 
           <div className="flex flex-col gap-[9px]">
-            <h3 className="font-heading text-[25px] text-dark">Pages</h3>
+            <h3 className="font-heading text-[25px] text-ivory">Pages</h3>
             <ul className="font-body text-[18px] leading-[2.6] text-body">
               {pageLinks.map((l) => (
                 <li key={l.label}>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-[9px]">
-            <h3 className="font-heading text-[25px] text-dark">Services</h3>
+            <h3 className="font-heading text-[25px] text-ivory">Services</h3>
             <ul className="font-body text-[18px] leading-[2.6] text-body">
               {serviceLinks.map((s) => (
                 <li key={s}>{s}</li>
@@ -55,13 +55,13 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-[26px]">
-            <h3 className="font-heading text-[25px] text-dark">Contact</h3>
+            <h3 className="font-heading text-[25px] text-ivory">Contact</h3>
             <p className="font-body text-[18px] leading-relaxed text-body">
               55 East Birchwood Ave.
               <br />
               Brooklyn, New York 11201
               <br />
-              contact@interno.com
+              contact@designbychris.com
               <br />
               (123) 456 - 7890
             </p>
@@ -71,7 +71,7 @@ export default function Footer() {
         <hr className="border-t border-divider" />
 
         <p className="text-center font-body text-[16px] text-body">
-          Copyright &copy; Interno {new Date().getFullYear()}
+          Copyright &copy; Design By Chris {new Date().getFullYear()}
         </p>
       </div>
     </footer>

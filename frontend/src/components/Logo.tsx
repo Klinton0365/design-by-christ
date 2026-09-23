@@ -1,17 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Logo({ light = false }: { light?: boolean }) {
+export default function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <Link
-      href="/"
-      className="relative inline-flex items-center pl-11 font-heading text-[40px] leading-none"
-      style={{ color: light ? "#fff" : "#292F36" }}
-    >
-      <span
-        aria-hidden
-        className="absolute left-0 top-1/2 h-[18px] w-[18px] -translate-y-1/2 bg-gold"
+    <Link href="/" className="group inline-flex items-center gap-3">
+      <Image
+        src="/logo-mark.png"
+        alt="Design By Chris monogram"
+        width={44}
+        height={36}
+        priority
+        className="h-9 w-auto drop-shadow-[0_0_10px_rgba(233,200,120,0.45)] transition-transform duration-300 group-hover:scale-105"
       />
-      Interno
+      {!compact && (
+        <span className="flex flex-col leading-none">
+          <span className="font-heading text-[10px] uppercase tracking-[0.35em] text-gold">
+            Design By
+          </span>
+          <span className="text-gold-shimmer font-heading text-[26px] font-bold uppercase tracking-wide">
+            Chris
+          </span>
+        </span>
+      )}
     </Link>
   );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Changelog | Interno",
+  title: "Changelog | Design By Chris",
 };
 
 const entries = [{ version: "V.1", description: "Initial site release." }];
@@ -18,7 +18,7 @@ export default function ChangelogPage() {
             key={e.version}
             className="flex flex-col items-center gap-3 rounded-[70px] bg-cream px-10 py-16 text-center sm:flex-row sm:justify-center sm:gap-4"
           >
-            <span className="font-heading text-[40px] text-dark sm:text-[50px]">
+            <span className="font-heading text-[40px] text-ivory sm:text-[50px]">
               {e.version}
             </span>
             <span className="font-body text-[18px] text-body sm:text-[22px]">

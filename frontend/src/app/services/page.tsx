@@ -5,7 +5,7 @@ import HowWeWork from "@/components/services/HowWeWork";
 import ContactCta from "@/components/home/ContactCta";
 
 export const metadata: Metadata = {
-  title: "Services | Interno",
+  title: "Services | Design By Chris",
 };
 
 const services = [

@@ -5,7 +5,7 @@ import CategoryTabs from "@/components/project/CategoryTabs";
 import Pagination from "@/components/project/Pagination";
 
 export const metadata: Metadata = {
-  title: "Our Project | Interno",
+  title: "Our Project | Design By Chris",
 };
 
 const projects = [
@@ -37,7 +37,7 @@ export default function ProjectPage() {
               <div className="h-[350px] w-full bg-placeholder sm:h-[522px]" />
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-heading text-[25px] text-dark">
+                  <h3 className="font-heading text-[25px] text-ivory">
                     {title}
                   </h3>
                   <p className="font-body text-[22px] text-body">
@@ -48,7 +48,7 @@ export default function ProjectPage() {
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
                     <path
                       d="M5 12h14M13 6l6 6-6 6"
-                      stroke="#292F36"
+                      stroke="#CA9A3E"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"

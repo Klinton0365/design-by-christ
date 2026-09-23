@@ -1,20 +1,76 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-heading: var(--font-dm-serif-display);
+  --font-heading: var(--font-playfair);
   --font-body: var(--font-jost);
 
-  --color-dark: #292f36;
-  --color-gold: #cda274;
-  --color-body: #4d5053;
-  --color-cream: #f4f0ec;
-  --color-offwhite: #f7f7f7;
-  --color-border: #e6e6e6;
-  --color-divider: #e5e5e5;
-  --color-placeholder: #c4c4c4;
-  --color-placeholder-light: #eaeaea;
+  /* Base surfaces (near-black, warm undertone to match the brand mark) */
+  --color-base: #0a0806;
+  --color-surface: #17130c;
+  --color-dark: #000000;
+
+  /* Text */
+  --color-ivory: #f3ecda;
+  --color-body: #b7ae9b;
+
+  /* Gold, sampled from the Design By Chris monogram */
+  --color-gold-deep: #6b4a12;
+  --color-gold: #ca9a3e;
+  --color-gold-light: #e9c878;
+  --color-gold-glow: #f6de9a;
+
+  /* repurposed secondary tokens (kept for existing component prop names) */
+  --color-cream: #201808;
+  --color-offwhite: #120e08;
+  --color-border: #ca9a3e33;
+  --color-divider: #ca9a3e26;
+  --color-placeholder: #2a2419;
+  --color-placeholder-light: #221c12;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
+  background: var(--color-base);
   color: var(--color-body);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #000;
+}
+
+/* Reusable premium glow utilities */
+.glow-gold {
+  box-shadow:
+    0 0 0 1px rgba(202, 154, 62, 0.35),
+    0 0 45px -10px rgba(233, 200, 120, 0.55);
+}
+
+.glow-gold-sm {
+  box-shadow:
+    0 0 0 1px rgba(202, 154, 62, 0.3),
+    0 0 22px -6px rgba(233, 200, 120, 0.5);
+}
+
+.glow-gold-lg {
+  box-shadow:
+    0 0 0 1px rgba(202, 154, 62, 0.4),
+    0 0 80px -12px rgba(233, 200, 120, 0.6);
+}
+
+.text-gold-shimmer {
+  background: linear-gradient(
+    115deg,
+    var(--color-gold-deep) 0%,
+    var(--color-gold-light) 25%,
+    var(--color-gold-glow) 45%,
+    var(--color-gold) 70%,
+    var(--color-gold-deep) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

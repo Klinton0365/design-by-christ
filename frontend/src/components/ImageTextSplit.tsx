@@ -22,7 +22,7 @@ export default function ImageTextSplit({
   const text = (
     <div className="flex flex-1 flex-col items-start gap-8">
       <div className="flex flex-col gap-6">
-        <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
           {heading}
         </h2>
         <p className="max-w-[500px] font-body text-[18px] leading-relaxed text-body sm:text-[22px]">

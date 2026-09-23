@@ -20,11 +20,11 @@ export default function BlogSidebar() {
       </div>
 
       <div className="flex flex-col gap-8">
-        <h3 className="font-heading text-[25px] text-dark">Latest News</h3>
+        <h3 className="font-heading text-[25px] text-ivory">Latest News</h3>
         <div className="flex flex-col gap-6">
           {latestNews.map((n, i) => (
             <div key={i} className="flex flex-col gap-4 border-b border-gold pb-6 last:border-0">
-              <p className="max-w-[200px] font-heading text-[20px] leading-snug text-dark">
+              <p className="max-w-[200px] font-heading text-[20px] leading-snug text-ivory">
                 {n.title}
               </p>
               <span className="font-body text-[16px] text-body">{n.date}</span>
@@ -34,7 +34,7 @@ export default function BlogSidebar() {
       </div>
 
       <div className="flex flex-col gap-4 rounded-[20px] bg-cream px-8 py-7">
-        <h3 className="font-heading text-[25px] text-dark">Categories</h3>
+        <h3 className="font-heading text-[25px] text-ivory">Categories</h3>
         <ul className="flex flex-col font-body text-[22px] leading-[3] text-body">
           {categories.map((c) => (
             <li key={c} className="border-b border-gold/40 last:border-0">
@@ -45,13 +45,13 @@ export default function BlogSidebar() {
       </div>
 
       <div className="flex flex-col gap-6">
-        <h3 className="font-heading text-[25px] text-dark">Tags</h3>
+        <h3 className="font-heading text-[25px] text-ivory">Tags</h3>
         <div className="flex flex-wrap gap-3">
           {tags.map((t, i) => (
             <span
               key={i}
               className={`rounded-[10px] px-6 py-2.5 font-body text-[18px] ${
-                i === 0 ? "bg-dark text-white" : "bg-cream text-dark"
+                i === 0 ? "bg-dark text-white" : "bg-cream text-ivory"
               }`}
             >
               {t}

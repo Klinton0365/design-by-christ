@@ -35,7 +35,7 @@ export default function SocialIcons({
           key={s.name}
           href={s.href}
           aria-label={s.name}
-          className="text-dark transition-opacity hover:opacity-70"
+          className="text-ivory transition-opacity hover:opacity-70"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" className={iconClassName}>
             <path d={s.path} />

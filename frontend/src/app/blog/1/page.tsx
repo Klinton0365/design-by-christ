@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 
 export const metadata: Metadata = {
-  title: "Blog Details | Interno",
+  title: "Blog Details | Design By Chris",
 };
 
 const points = [
@@ -25,7 +25,7 @@ export default function BlogDetailsPage() {
         <div className="flex flex-col gap-14 lg:flex-row lg:gap-14">
           <article className="flex flex-1 flex-col gap-12">
             <div className="flex flex-col gap-6">
-              <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+              <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
                 Design sprints are great
               </h2>
               <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -51,12 +51,12 @@ export default function BlogDetailsPage() {
             <div className="h-[280px] w-full rounded-[50px] bg-placeholder sm:h-[365px]" />
 
             <div className="flex flex-wrap items-center gap-4 border-t border-divider pt-8">
-              <span className="font-heading text-[20px] text-dark">Tags</span>
+              <span className="font-heading text-[20px] text-ivory">Tags</span>
               {tags.map((t, i) => (
                 <span
                   key={t}
                   className={`rounded-[10px] px-6 py-3 font-body text-[18px] ${
-                    i === 0 ? "bg-dark text-white" : "bg-cream text-dark"
+                    i === 0 ? "bg-dark text-white" : "bg-cream text-ivory"
                   }`}
                 >
                   {t}
@@ -70,7 +70,7 @@ export default function BlogDetailsPage() {
             />
 
             <div className="flex flex-col gap-6">
-              <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+              <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
                 Let&apos;s Get Solution for Building Construction Work
               </h2>
               <div className="h-[280px] w-full rounded-[50px] bg-placeholder sm:h-[539px]" />
@@ -87,7 +87,7 @@ export default function BlogDetailsPage() {
             </div>
 
             <div className="flex flex-col gap-10">
-              <h3 className="font-heading text-[25px] text-dark">
+              <h3 className="font-heading text-[25px] text-ivory">
                 Leave a Reply
               </h3>
               <ContactForm variant="full" />

@@ -26,7 +26,7 @@ export default function HowWeWork() {
     <section className="mx-auto max-w-[1200px] px-6 py-14">
       <div className="rounded-[70px] bg-cream px-6 py-20 sm:px-16">
         <div className="mx-auto flex max-w-[800px] flex-col items-center gap-3 text-center">
-          <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+          <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
             How We Work
           </h2>
           <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -46,7 +46,7 @@ export default function HowWeWork() {
                   {step.number}
                 </span>
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-heading text-[28px] text-dark sm:text-[35px]">
+                  <h3 className="font-heading text-[28px] text-ivory sm:text-[35px]">
                     {step.title}
                   </h3>
                   <p className="max-w-[456px] font-body text-[18px] leading-relaxed text-body sm:text-[22px]">

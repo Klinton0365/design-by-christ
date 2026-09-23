@@ -3,7 +3,7 @@ import PageBanner from "@/components/PageBanner";
 import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "FAQ's | Interno",
+  title: "FAQ's | Design By Chris",
 };
 
 const set1 = [

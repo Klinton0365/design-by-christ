@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Project Details | Interno",
+  title: "Project Details | Design By Chris",
 };
 
 const info = [
@@ -34,7 +34,7 @@ export default function ProjectDetailsPage() {
           </div>
 
           <div className="flex flex-1 flex-col gap-3">
-            <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+            <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
               Minimal Look Bedrooms
             </h2>
             <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
@@ -47,10 +47,10 @@ export default function ProjectDetailsPage() {
         </div>
 
         <div className="relative mt-14 flex h-[420px] items-center justify-center rounded-[70px] bg-placeholder sm:h-[799px]">
-          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-white shadow-[0px_10px_20px_rgba(192,192,192,0.25)]">
+          <div className="flex h-[132px] w-[132px] items-center justify-center rounded-full bg-surface shadow-[0_0_0_1px_rgba(202,154,62,0.35),0_0_30px_-6px_rgba(233,200,120,0.55)]">
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none">
-              <circle cx="10" cy="10" r="7" stroke="#CDA274" strokeWidth="2" />
-              <path d="M15 15l6 6" stroke="#CDA274" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="10" cy="10" r="7" stroke="#CA9A3E" strokeWidth="2" />
+              <path d="M15 15l6 6" stroke="#CA9A3E" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </div>
         </div>

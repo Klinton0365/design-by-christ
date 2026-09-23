@@ -22,7 +22,7 @@ export default function TeamStrip({
   return (
     <section className={`${bg} py-16`}>
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-10 px-6">
-        <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
           {heading}
         </h2>
         <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-4">
@@ -30,9 +30,9 @@ export default function TeamStrip({
             m.name ? (
               <div
                 key={i}
-                className="flex h-[433px] flex-col items-center justify-center gap-6 bg-white px-6 text-center"
+                className="flex h-[433px] flex-col items-center justify-center gap-6 bg-surface px-6 text-center"
               >
-                <p className="font-heading text-[25px] text-dark">
+                <p className="font-heading text-[25px] text-ivory">
                   {m.name}
                   <br />
                   <span className="font-body text-[18px] text-body">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Our Professional | Interno",
+  title: "Our Professional | Design By Chris",
 };
 
 const members = [
@@ -31,7 +31,7 @@ export default function TeamPage() {
               className="flex flex-col items-center gap-4 text-center"
             >
               <div className="h-[280px] w-full rounded-[30px] bg-placeholder sm:h-[433px]" />
-              <p className="font-heading text-[22px] text-dark sm:text-[25px]">
+              <p className="font-heading text-[22px] text-ivory sm:text-[25px]">
                 {name}
                 <br />
                 <span className="font-body text-[16px] text-body sm:text-[18px]">

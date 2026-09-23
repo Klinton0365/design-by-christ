@@ -6,7 +6,7 @@ import TeamStrip from "@/components/TeamStrip";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "About Us | Interno",
+  title: "About Us | Design By Chris",
 };
 
 export default function AboutPage() {
@@ -38,7 +38,7 @@ export default function AboutPage() {
       <TeamStrip />
 
       <section className="mx-auto flex max-w-[800px] flex-col items-center gap-14 px-6 py-20 text-center">
-        <h2 className="font-heading text-[36px] text-dark sm:text-[50px]">
+        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
           Creative project? Let&apos;s have a productive talk.
         </h2>
         <ContactForm />

@@ -71,12 +71,12 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <button aria-label="Search" className="text-ivory opacity-80 hover:text-gold hover:opacity-100">
+          {/* <button aria-label="Search" className="text-ivory opacity-80 hover:text-gold hover:opacity-100">
             <svg viewBox="0 0 21 21" className="h-5 w-5" fill="none">
               <circle cx="9" cy="9" r="7.25" stroke="currentColor" strokeWidth="1.5" />
               <path d="M14.5 14.5 19 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
-          </button>
+          </button> */}
         </nav>
       </div>
     </header>

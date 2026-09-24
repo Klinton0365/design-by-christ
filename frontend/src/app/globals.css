@@ -57,7 +57,7 @@
 
 @theme {
   --font-heading: var(--font-playfair);
-  --font-body: var(--font-jost);
+  --font-body: var(--font-instrument-serif);
 
   --color-base: var(--raw-base);
   --color-surface: var(--raw-surface);

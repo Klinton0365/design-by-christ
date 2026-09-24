@@ -77,13 +77,13 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-3">
-            <span className="font-body text-[13px] uppercase tracking-[0.25em] text-body">
+            {/* <span className="font-body text-[13px] uppercase tracking-[0.25em] text-body">
               Dark
-            </span>
+            </span> */}
             <ThemeToggle />
-            <span className="font-body text-[13px] uppercase tracking-[0.25em] text-body">
+            {/* <span className="font-body text-[13px] uppercase tracking-[0.25em] text-body">
               Light
-            </span>
+            </span> */}
           </div>
         </div>
       </div>

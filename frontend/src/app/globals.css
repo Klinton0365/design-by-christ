@@ -130,24 +130,3 @@ body * {
   background-clip: text;
   color: transparent;
 }
-
-/* Theme toggle — pendant-lamp switch, driven entirely by the [data-theme]
-   attribute on <html> so it reacts instantly with no JS state/flash. */
-[data-theme="light"] .theme-toggle-track {
-  opacity: 1;
-}
-
-[data-theme="light"] .theme-toggle-sparkle {
-  opacity: 1;
-}
-
-[data-theme="light"] .theme-toggle-knob {
-  transform: translateX(38px);
-  background: var(--color-gold);
-  color: var(--color-dark);
-}
-
-[data-theme="light"] .theme-toggle-bulb {
-  fill: currentColor;
-  fill-opacity: 0.9;
-}

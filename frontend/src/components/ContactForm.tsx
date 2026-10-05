@@ -54,7 +54,17 @@ export default function ContactForm({
         className="inline-flex w-fit items-center justify-center gap-2.5 self-start rounded-[18px] bg-dark px-9 py-6 font-body text-[18px] font-semibold text-white glow-gold transition-opacity hover:opacity-90"
       >
         Send Now
-        <span aria-hidden className="inline-block h-[13px] w-[15px] border-2 border-gold" />
+        <span aria-hidden className="inline-flex h-[15px] w-[15px] shrink-0 text-gold">
+          <svg viewBox="0 0 24 24" className="h-full w-full" fill="none">
+            <path
+              d="M5 12h14M13 6l6 6-6 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
       </button>
       {submitted && (
         <p className="font-body text-[16px] text-gold">

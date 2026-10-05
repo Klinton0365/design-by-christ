@@ -26,7 +26,17 @@ export default function ServiceCard({
         className="inline-flex items-center gap-3 font-body text-[18px] font-semibold tracking-wide text-body hover:text-ivory"
       >
         Read More
-        <span aria-hidden className="inline-block h-[13px] w-[15px] border-2 border-gold" />
+        <span aria-hidden className="inline-flex h-[15px] w-[15px] shrink-0 text-gold">
+          <svg viewBox="0 0 24 24" className="h-full w-full" fill="none">
+            <path
+              d="M5 12h14M13 6l6 6-6 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
       </Link>
     </div>
   );

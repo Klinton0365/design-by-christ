@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
 const navItems: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Project", href: "/project" },
@@ -23,6 +22,26 @@ export default function Header() {
         <Logo />
         <nav className="flex items-center gap-8">
           <ul className="flex items-center gap-8 font-body text-[20px] text-ivory">
+            <li>
+              <Link href="/" aria-label="Home" className="flex py-2">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path
+                    d="M3 9.5 12 2l9 7.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M5 8.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V8.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </li>
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link href={item.href} className="py-2">

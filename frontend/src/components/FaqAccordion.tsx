@@ -9,11 +9,13 @@ export default function FaqAccordion({
   items,
   imageSide = "right",
   defaultOpen = 1,
+  showImage = true,
 }: {
   heading: string;
   items: FaqItem[];
   imageSide?: "left" | "right";
   defaultOpen?: number;
+  showImage?: boolean;
 }) {
   const [openIndex, setOpenIndex] = useState<number>(defaultOpen);
 
@@ -68,7 +70,9 @@ export default function FaqAccordion({
           {heading}
         </h2>
         <div className="flex w-full flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-[60px]">
-          {imageSide === "left" ? (
+          {!showImage ? (
+            <div className="mx-auto w-full max-w-[760px]">{list}</div>
+          ) : imageSide === "left" ? (
             <>
               {image}
               {list}

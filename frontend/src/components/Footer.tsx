@@ -9,7 +9,6 @@ import ThemeToggle from "./ThemeToggle";
 const pageLinks = [
   { label: "About Us", href: "/about" },
   { label: "Our Projects", href: "/project" },
-  { label: "Our Team", href: "/team" },
   { label: "Contact Us", href: "/contact" },
   { label: "Services", href: "/services" },
   { label: "Walkthrough", href: "/walkthrough" },

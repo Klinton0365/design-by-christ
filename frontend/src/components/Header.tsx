@@ -4,45 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
-const navItems: { label: string; href: string; children?: { label: string; href: string }[] }[] = [
+const navItems: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
-  { label: "Walkthrough", href: "/walkthrough" },
-  {
-    label: "Pages",
-    href: "/about",
-    children: [
-      { label: "About Us", href: "/about" },
-      { label: "Our Team", href: "/team" },
-      { label: "Team Single", href: "/team/1" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "FAQ's", href: "/faq" },
-      { label: "Contact Us", href: "/contact" },
-    ],
-  },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Services", href: "/services" },
-      { label: "Service Single", href: "/services/1" },
-    ],
-  },
-  {
-    label: "Project",
-    href: "/project",
-    children: [
-      { label: "Our Project", href: "/project" },
-      { label: "Project Details", href: "/project/1" },
-    ],
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-    children: [
-      { label: "Blog", href: "/blog" },
-      { label: "Blog Details", href: "/blog/1" },
-    ],
-  },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Project", href: "/project" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -57,24 +24,10 @@ export default function Header() {
         <nav className="flex items-center gap-8">
           <ul className="flex items-center gap-8 font-body text-[20px] text-ivory">
             {navItems.map((item) => (
-              <li key={item.label} className="group relative">
+              <li key={item.label}>
                 <Link href={item.href} className="py-2">
                   {item.label}
                 </Link>
-                {item.children && (
-                  <ul className="glow-gold-sm invisible absolute left-1/2 top-full z-40 min-w-[200px] -translate-x-1/2 rounded-xl bg-surface py-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-                    {item.children.map((child) => (
-                      <li key={child.label}>
-                        <Link
-                          href={child.href}
-                          className="block whitespace-nowrap px-5 py-2 text-[16px] hover:text-gold"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </li>
             ))}
           </ul>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback, useSyncExternalStore } from "react";
-import Link from "next/link";
+import Button from "@/components/Button";
 import {
   motion,
   useScroll,
@@ -177,12 +177,12 @@ export default function WalkthroughScroll() {
   }
 
   return (
-    <div ref={containerRef} className="relative h-[500vh] w-full bg-[#F5F4F1]">
+    <div ref={containerRef} className="relative h-[500vh] w-full bg-base">
       {/* Slim scroll progress bar */}
       <motion.div
         aria-hidden
         style={{ scaleX: progressBarScale }}
-        className="fixed left-0 top-0 z-50 h-[2px] w-full origin-left bg-[#B08D57]"
+        className="fixed left-0 top-0 z-50 h-[2px] w-full origin-left bg-gold"
       />
 
       <div className="sticky top-0 h-screen w-full overflow-hidden">
@@ -194,9 +194,9 @@ export default function WalkthroughScroll() {
 
         {/* Loading state */}
         {!loaded && (
-          <div className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-[#F5F4F1]">
-            <div className="h-9 w-9 animate-spin rounded-full border-2 border-neutral-300 border-t-[#B08D57]" />
-            <span className="font-sans text-sm tracking-wide text-neutral-500">
+          <div className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-base">
+            <div className="h-9 w-9 animate-spin rounded-full border-2 border-border border-t-gold" />
+            <span className="font-body text-sm tracking-wide text-body">
               {loadProgress}%
             </span>
           </div>
@@ -208,7 +208,7 @@ export default function WalkthroughScroll() {
           className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
         >
           <Scrim />
-          <h1 className="relative font-sans text-[clamp(2.25rem,6vw,4.5rem)] font-medium tracking-tight text-neutral-900/90">
+          <h1 className="relative font-heading text-[clamp(2.25rem,6vw,4.5rem)] text-ivory">
             Step inside a home
             <br />
             designed to be felt.
@@ -217,10 +217,10 @@ export default function WalkthroughScroll() {
             style={{ opacity: hintOpacity }}
             className="relative mt-10 flex flex-col items-center gap-3"
           >
-            <span className="font-sans text-xs uppercase tracking-[0.3em] text-neutral-800/70">
+            <span className="font-body text-[13px] uppercase tracking-[0.35em] text-body/70">
               Scroll to walk through
             </span>
-            <span className="h-10 w-px animate-pulse bg-[#B08D57]" />
+            <span className="h-10 w-px animate-pulse bg-gold" />
           </motion.div>
         </motion.div>
 
@@ -231,7 +231,7 @@ export default function WalkthroughScroll() {
         >
           <div className="relative">
             <Scrim />
-            <p className="relative font-sans text-[clamp(1.5rem,3.4vw,2.5rem)] font-medium leading-[1.15] tracking-tight text-neutral-900/90">
+            <p className="relative font-heading text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1.15] text-ivory">
               Double-height volume.
               <br />
               Daylight that moves
@@ -248,7 +248,7 @@ export default function WalkthroughScroll() {
         >
           <div className="relative">
             <Scrim />
-            <p className="relative font-sans text-[clamp(1.5rem,3.4vw,2.5rem)] font-medium leading-[1.15] tracking-tight text-neutral-900/90">
+            <p className="relative font-heading text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1.15] text-ivory">
               Brass, timber and stone,
               <br />
               layered with intent.
@@ -262,18 +262,15 @@ export default function WalkthroughScroll() {
           className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
         >
           <Scrim size="lg" />
-          <h2 className="relative font-sans text-[clamp(2rem,5vw,3.5rem)] font-medium tracking-tight text-neutral-900/90">
+          <h2 className="relative font-heading text-[clamp(2rem,5vw,3.5rem)] text-ivory">
             See the whole picture.
           </h2>
-          <p className="relative mt-3 max-w-md font-sans text-base text-neutral-800/70">
+          <p className="relative mt-3 max-w-md font-body text-base text-body">
             Book a design consultation and let&apos;s draw up your next home.
           </p>
-          <Link
-            href="/contact"
-            className="relative mt-8 inline-flex items-center rounded-full bg-neutral-900 px-8 py-4 font-sans text-sm font-medium tracking-wide text-white transition-transform hover:scale-[1.03]"
-          >
+          <Button href="/contact" variant="gold" className="relative mt-8">
             Book a Design Consultation
-          </Link>
+          </Button>
         </motion.div>
       </div>
     </div>
@@ -284,7 +281,7 @@ function Scrim({ size = "md" }: { size?: "md" | "lg" }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute -z-10 rounded-[3rem] bg-white/55 blur-3xl ${
+      className={`pointer-events-none absolute -z-10 rounded-[3rem] bg-base/55 blur-3xl ${
         size === "lg" ? "-inset-16 sm:-inset-24" : "-inset-10 sm:-inset-16"
       }`}
     />
@@ -293,7 +290,7 @@ function Scrim({ size = "md" }: { size?: "md" | "lg" }) {
 
 function ReducedMotionFallback() {
   return (
-    <div className="flex flex-col bg-[#F5F4F1]">
+    <div className="flex flex-col bg-base">
       <div className="relative h-[70vh] w-full overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -304,19 +301,19 @@ function ReducedMotionFallback() {
       </div>
 
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 px-6 py-24 text-center">
-        <h1 className="font-sans text-4xl font-medium tracking-tight text-neutral-900/90">
+        <h1 className="font-heading text-4xl text-ivory">
           Step inside a home designed to be felt.
         </h1>
       </div>
 
       <div className="mx-auto flex max-w-xl flex-col items-start gap-4 px-6 py-16 text-left">
-        <p className="font-sans text-2xl font-medium tracking-tight text-neutral-900/90">
+        <p className="font-heading text-2xl text-ivory">
           Double-height volume. Daylight that moves through the room.
         </p>
       </div>
 
       <div className="mx-auto flex max-w-xl flex-col items-end gap-4 px-6 py-16 text-right">
-        <p className="font-sans text-2xl font-medium tracking-tight text-neutral-900/90">
+        <p className="font-heading text-2xl text-ivory">
           Brass, timber and stone, layered with intent.
         </p>
       </div>
@@ -331,18 +328,15 @@ function ReducedMotionFallback() {
       </div>
 
       <div className="mx-auto flex max-w-xl flex-col items-center gap-6 px-6 py-24 text-center">
-        <h2 className="font-sans text-3xl font-medium tracking-tight text-neutral-900/90">
+        <h2 className="font-heading text-3xl text-ivory">
           See the whole picture.
         </h2>
-        <p className="font-sans text-base text-neutral-800/70">
+        <p className="font-body text-base text-body">
           Book a design consultation and let&apos;s draw up your next home.
         </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center rounded-full bg-neutral-900 px-8 py-4 font-sans text-sm font-medium tracking-wide text-white"
-        >
+        <Button href="/contact" variant="gold">
           Book a Design Consultation
-        </Link>
+        </Button>
       </div>
     </div>
   );

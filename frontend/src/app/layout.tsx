@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Instrument_Serif } from "next/font/google";
+import { Cormorant_Garamond, Lora } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${playfairDisplay.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${cormorantGaramond.variable} ${lora.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-base text-body font-body">
         <Script

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const credits = [
   {
     title: "Fonts",
-    body: "This site pairs the free, open-licensed Google Fonts Playfair Display for headings and Instrument Serif for body text.",
+    body: "This site pairs the free, open-licensed Google Fonts Cormorant Garamond for headings and Lora for body text.",
   },
   {
     title: "Photography",

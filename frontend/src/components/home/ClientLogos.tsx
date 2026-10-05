@@ -1,17 +1,37 @@
-const logos = ["01", "02", "03", "04", "05"];
+const logos = [
+  "Aurelia Studio",
+  "Nova Haus",
+  "Lumen & Co",
+  "Meridian Interiors",
+  "Onyx Living",
+  "Vera & Co",
+];
 
 export default function ClientLogos() {
+  const loop = [...logos, ...logos];
+
   return (
-    <section className="mx-auto max-w-[1090px] px-6 py-10">
-      <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-6 opacity-70">
-        {logos.map((l) => (
-          <div
-            key={l}
-            className="flex h-[60px] w-[130px] items-center justify-center rounded border border-border bg-surface font-body text-sm text-body"
-          >
-            client {l}
-          </div>
-        ))}
+    <section className="border-y border-divider bg-surface/40 py-12">
+      <p className="mb-8 text-center font-body text-[14px] uppercase tracking-[0.35em] text-body/70">
+        Trusted By Homeowners &amp; Studios
+      </p>
+
+      <div className="relative mx-auto max-w-[1200px] overflow-hidden">
+        <div className="marquee-track flex w-max items-center gap-10 px-6">
+          {loop.map((name, i) => (
+            <div
+              key={`${name}-${i}`}
+              className="flex h-[64px] w-[190px] shrink-0 items-center justify-center rounded-xl border border-border bg-surface px-6 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            >
+              <span className="font-heading text-[19px] tracking-wide text-gold">
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-base to-transparent sm:w-28" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-base to-transparent sm:w-28" />
       </div>
     </section>
   );

@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 
 const navItems: { label: string; href: string; children?: { label: string; href: string }[] }[] = [
   { label: "Home", href: "/" },
+  { label: "Walkthrough", href: "/walkthrough" },
   {
     label: "Pages",
     href: "/about",
@@ -43,6 +47,9 @@ const navItems: { label: string; href: string; children?: { label: string; href:
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/walkthrough")) return null;
+
   return (
     <header className="relative z-30 w-full bg-base">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-9">

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import SocialIcons from "./SocialIcons";
 import ThemeToggle from "./ThemeToggle";
@@ -9,6 +12,7 @@ const pageLinks = [
   { label: "Our Team", href: "/team" },
   { label: "Contact Us", href: "/contact" },
   { label: "Services", href: "/services" },
+  { label: "Walkthrough", href: "/walkthrough" },
 ];
 
 const serviceLinks = [
@@ -20,6 +24,9 @@ const serviceLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/walkthrough")) return null;
+
   return (
     <footer className="bg-surface pb-9 pt-24">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-8 px-6">

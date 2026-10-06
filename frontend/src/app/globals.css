@@ -131,6 +131,51 @@ body * {
   color: transparent;
 }
 
+/* Nav link hover: a gold duplicate of the label sits on top of the base
+   ivory text, revealed/hidden via clip-path. Fill-in and fill-out use two
+   separate keyframe animations (not a reversed transition) so BOTH sweep
+   left-to-right — a single reversible transition can only ever retrace
+   its own path backwards, which would make the fill-out sweep the wrong
+   way. Disabled on touch devices so a tap never leaves a link stuck
+   half-filled. */
+.nav-link-fill-gold {
+  position: absolute;
+  inset: 0;
+  display: inline-block;
+  color: var(--color-gold);
+  white-space: nowrap;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link-fill-gold[data-phase="entering"] {
+    animation: nav-fill-in 0.45s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+
+  .nav-link-fill-gold[data-phase="leaving"] {
+    animation: nav-fill-out 0.45s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+}
+
+@keyframes nav-fill-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes nav-fill-out {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

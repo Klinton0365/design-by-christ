@@ -5,6 +5,9 @@ import { logoutAction } from "../actions";
 const NAV_ITEMS = [
   { label: "Dashboard", href: "/admin" },
   { label: "Leads", href: "/admin/leads" },
+  { label: "Services", href: "/admin/services" },
+  { label: "Projects", href: "/admin/projects" },
+  { label: "Blog", href: "/admin/blog" },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

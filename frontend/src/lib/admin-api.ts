@@ -8,11 +8,13 @@ export const ADMIN_TOKEN_COOKIE = "admin_token";
 
 export class AdminApiError extends Error {
   status: number;
+  errors?: Record<string, string[]>;
 
-  constructor(message: string, status: number) {
+  constructor(message: string, status: number, errors?: Record<string, string[]>) {
     super(message);
     this.name = "AdminApiError";
     this.status = status;
+    this.errors = errors;
   }
 }
 
@@ -23,12 +25,13 @@ export async function getAdminToken() {
 
 export async function adminApiFetch<T>(path: string, init?: RequestInit): Promise<T> {
   const token = await getAdminToken();
+  const isFormData = init?.body instanceof FormData;
 
   const res = await fetch(`${API_URL}${path}`, {
     ...init,
     cache: "no-store",
     headers: {
-      "Content-Type": "application/json",
+      ...(isFormData ? {} : { "Content-Type": "application/json" }),
       Accept: "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...init?.headers,
@@ -38,7 +41,7 @@ export async function adminApiFetch<T>(path: string, init?: RequestInit): Promis
   const body = await res.json().catch(() => null);
 
   if (!res.ok) {
-    throw new AdminApiError(body?.message ?? "Request failed.", res.status);
+    throw new AdminApiError(body?.message ?? "Request failed.", res.status, body?.errors);
   }
 
   return body as T;

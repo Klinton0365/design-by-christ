@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState, useCallback, useSyncExternalStore } from "react";
 import Button from "@/components/Button";
+import Modal from "@/components/ui/Modal";
+import EnquiryForm from "@/components/forms/EnquiryForm";
 import {
   motion,
   useScroll,
@@ -46,6 +48,7 @@ export default function WalkthroughScroll() {
 
   const [loaded, setLoaded] = useState(false);
   const [loadProgress, setLoadProgress] = useState(0);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   const reducedMotion = useReducedMotion();
 
@@ -268,11 +271,23 @@ export default function WalkthroughScroll() {
           <p className="relative mt-3 max-w-md font-body text-base text-body">
             Book a design consultation and let&apos;s draw up your next home.
           </p>
-          <Button href="/contact" variant="gold" className="relative mt-8">
+          <Button
+            variant="gold"
+            className="relative mt-8"
+            onClick={() => setEnquiryOpen(true)}
+          >
             Book a Design Consultation
           </Button>
         </motion.div>
       </div>
+
+      <Modal
+        open={enquiryOpen}
+        onClose={() => setEnquiryOpen(false)}
+        labelledBy="enquiry-modal-title"
+      >
+        <EnquiryForm onClose={() => setEnquiryOpen(false)} />
+      </Modal>
     </div>
   );
 }
@@ -289,6 +304,8 @@ function Scrim({ size = "md" }: { size?: "md" | "lg" }) {
 }
 
 function ReducedMotionFallback() {
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+
   return (
     <div className="flex flex-col bg-base">
       <div className="relative h-[70vh] w-full overflow-hidden">
@@ -334,10 +351,18 @@ function ReducedMotionFallback() {
         <p className="font-body text-base text-body">
           Book a design consultation and let&apos;s draw up your next home.
         </p>
-        <Button href="/contact" variant="gold">
+        <Button variant="gold" onClick={() => setEnquiryOpen(true)}>
           Book a Design Consultation
         </Button>
       </div>
+
+      <Modal
+        open={enquiryOpen}
+        onClose={() => setEnquiryOpen(false)}
+        labelledBy="enquiry-modal-title"
+      >
+        <EnquiryForm onClose={() => setEnquiryOpen(false)} />
+      </Modal>
     </div>
   );
 }

@@ -31,10 +31,10 @@ export default function Header() {
       items={menuItems}
       socialItems={socialItems}
       displaySocials
-      displayItemNumbering
+      displayItemNumbering={false}
       logo={<Logo />}
-      menuButtonColor="var(--color-ivory)"
-      openMenuButtonColor="var(--color-gold)"
+      menuButtonColor="#15110a"
+      openMenuButtonColor="#15110a"
       changeMenuColorOnOpen
       colors={["var(--color-gold-deep)", "var(--color-surface)"]}
       accentColor="var(--color-gold)"

@@ -124,7 +124,7 @@ const SHINE_BY_VARIANT: Record<"dark" | "gold", ShaderProps> = {
   gold: {
     radius: 18,
     lineColor: "#fff8e8",
-    baseColor: "#ffffff",
+    baseColor: "#1f1710",
     intensity: 0.9,
     shineSize: 10,
     shineFade: 40,
@@ -283,10 +283,15 @@ export default function Button({
 
   useSpecularShine(elRef, fxRef, SHINE_BY_VARIANT[variant], !reducedMotion);
 
+  // Tinted toward --color-dark (always near-black, in both the light and
+  // dark site themes) rather than white — a white tint only reads as glass
+  // against a dark backdrop; behind a light-theme page it washes out to
+  // white-on-white and the label disappears. Dark tint keeps the label
+  // legible no matter what's behind the button.
   const bg =
     variant === "dark"
-      ? "border border-white/10 bg-white/5 backdrop-blur-xl"
-      : "border border-white/25 bg-white/10 backdrop-blur-xl";
+      ? "border border-white/10 bg-dark/70 backdrop-blur-xl"
+      : "border border-white/25 bg-dark/60 backdrop-blur-xl";
   const iconColor = variant === "dark" ? "text-gold" : "text-white";
   const classes = `relative inline-flex items-center justify-center gap-2.5 rounded-[18px] ${bg} px-9 py-6 font-body text-[18px] font-semibold tracking-wide text-white glow-gold transition-opacity hover:opacity-90 ${className}`;
 

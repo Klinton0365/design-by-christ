@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import ImageTextSplit from "@/components/ImageTextSplit";
 import Counter from "@/components/home/Counter";
+import AnimatedText from "@/components/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Service Single | Design By Chris",
@@ -26,9 +27,9 @@ const pointsB = [
 function PointsList({ heading, points }: { heading: string; points: string[] }) {
   return (
     <div className="flex-1">
-      <h3 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+      <AnimatedText as="h3" className="font-heading text-[36px] text-ivory sm:text-[50px]">
         {heading}
-      </h3>
+      </AnimatedText>
       <ul className="mt-8 flex flex-col gap-5">
         {points.map((p, i) => (
           <li key={p} className="flex gap-4">
@@ -52,19 +53,16 @@ export default function ServiceSinglePage() {
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
         <div className="flex flex-col gap-8 sm:flex-row sm:gap-24">
-          <h2 className="max-w-[450px] font-heading text-[36px] leading-tight text-ivory sm:text-[50px]">
+          <AnimatedText as="h2" className="max-w-[450px] font-heading text-[36px] leading-tight text-ivory sm:text-[50px]">
             We set the trends of modern living Services.
-          </h2>
+          </AnimatedText>
           <div className="flex flex-col gap-6">
-            <p className="font-body text-[22px] leading-relaxed text-gold sm:text-[25px]">
-              It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout.
-            </p>
-            <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
-              A wonderful serenity has taken possession of my entire soul,
-              like these sweet mornings of spring which I enjoy with my
-              whole heart.
-            </p>
+            <AnimatedText as="p" className="font-body text-[22px] leading-relaxed text-gold sm:text-[25px]">
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            </AnimatedText>
+            <AnimatedText as="p" className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
+              A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+            </AnimatedText>
           </div>
         </div>
       </section>

@@ -1,3 +1,5 @@
+import AnimatedText from "@/components/AnimatedText";
+
 const logos = [
   "Aurelia Studio",
   "Nova Haus",
@@ -12,9 +14,12 @@ export default function ClientLogos() {
 
   return (
     <section className="border-y border-divider bg-surface/40 py-12">
-      <p className="mb-8 text-center font-body text-[14px] uppercase tracking-[0.35em] text-body/70">
+      <AnimatedText
+        as="p"
+        className="mb-8 text-center font-body text-[14px] uppercase tracking-[0.35em] text-body/70"
+      >
         Trusted By Homeowners &amp; Studios
-      </p>
+      </AnimatedText>
 
       <div className="relative mx-auto max-w-[1200px] overflow-hidden">
         <div className="marquee-track flex w-max items-center gap-10 px-6">

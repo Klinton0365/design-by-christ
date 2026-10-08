@@ -1,3 +1,5 @@
+import AnimatedText from "@/components/AnimatedText";
+
 export default function QuoteBlock({
   quote,
   attribution,
@@ -14,12 +16,12 @@ export default function QuoteBlock({
         >
           &ldquo;
         </span>
-        <p className="relative max-w-[750px] font-heading text-[26px] italic leading-snug text-ivory sm:text-[35px]">
+        <AnimatedText as="p" className="relative max-w-[750px] font-heading text-[26px] italic leading-snug text-ivory sm:text-[35px]">
           {quote}
-        </p>
-        <p className="relative font-body text-[20px] tracking-wide text-body sm:text-[25px]">
+        </AnimatedText>
+        <AnimatedText as="p" className="relative font-body text-[20px] tracking-wide text-body sm:text-[25px]">
           {attribution}
-        </p>
+        </AnimatedText>
       </div>
     </section>
   );

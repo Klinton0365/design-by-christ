@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "@/components/Button";
+import AnimatedText from "@/components/AnimatedText";
 
 const highlights = [
   {
@@ -20,15 +21,25 @@ export default function ServicesAbout() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-20 sm:py-28">
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
-        {highlights.map((h) => (
+        {highlights.map((h, i) => (
           <div
             key={h.title}
             className="flex flex-col items-center gap-5 text-center"
           >
-            <h3 className="font-heading text-[25px] text-ivory">{h.title}</h3>
-            <p className="font-body text-[18px] leading-relaxed text-body sm:text-[20px]">
+            <AnimatedText
+              as="h3"
+              delay={i * 0.1}
+              className="font-heading text-[25px] text-ivory"
+            >
+              {h.title}
+            </AnimatedText>
+            <AnimatedText
+              as="p"
+              delay={i * 0.1}
+              className="font-body text-[18px] leading-relaxed text-body sm:text-[20px]"
+            >
               {h.body}
-            </p>
+            </AnimatedText>
             <Link
               href="/services"
               className="inline-flex items-center gap-2.5 font-body text-[18px] font-semibold tracking-wide text-body hover:text-gold"
@@ -54,13 +65,18 @@ export default function ServicesAbout() {
 
       <div className="flex flex-col items-center gap-14 sm:flex-row sm:items-stretch sm:gap-16">
         <div className="flex w-full flex-col items-start gap-8 sm:max-w-[460px]">
-          <h2 className="font-heading text-[36px] leading-tight text-ivory sm:text-[48px]">
+          <AnimatedText
+            as="h2"
+            className="font-heading text-[36px] leading-tight text-ivory sm:text-[48px]"
+          >
             We Create The Art Of Stylish Living Stylishly
-          </h2>
-          <p className="font-body text-[18px] leading-relaxed text-body sm:text-[20px]">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-          </p>
+          </AnimatedText>
+          <AnimatedText
+            as="p"
+            className="font-body text-[18px] leading-relaxed text-body sm:text-[20px]"
+          >
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+          </AnimatedText>
 
           <div className="flex items-center gap-4">
             <span className="flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-full bg-cream">

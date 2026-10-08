@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import AnimatedText from "@/components/AnimatedText";
 
 type FaqItem = { question: string; answer?: string };
 
@@ -52,9 +53,13 @@ export default function FaqAccordion({
               </svg>
             </button>
             {isOpen && item.answer && (
-              <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
+              <AnimatedText
+                as="p"
+                delay={i * 0.1}
+                className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]"
+              >
                 {item.answer}
-              </p>
+              </AnimatedText>
             )}
             <hr className="border-gold" />
           </div>
@@ -66,9 +71,9 @@ export default function FaqAccordion({
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-14">
       <div className="flex flex-col items-center gap-12">
-        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+        <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">
           {heading}
-        </h2>
+        </AnimatedText>
         <div className="flex w-full flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-[60px]">
           {!showImage ? (
             <div className="mx-auto w-full max-w-[760px]">{list}</div>

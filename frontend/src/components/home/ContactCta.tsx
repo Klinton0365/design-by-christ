@@ -1,16 +1,17 @@
 import Button from "@/components/Button";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function ContactCta() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 pb-20">
       <div className="glow-gold flex flex-col items-center gap-8 rounded-[70px] bg-dark px-8 py-20 text-center sm:px-24">
         <div className="flex flex-col items-center gap-3">
-          <h2 className="font-heading text-[36px] text-white sm:text-[50px]">
+          <AnimatedText as="h2" className="font-heading text-[36px] text-white sm:text-[50px]">
             Ready to reimagine your space?
-          </h2>
-          <p className="max-w-[450px] font-body text-[18px] text-white sm:text-[22px]">
+          </AnimatedText>
+          <AnimatedText as="p" className="max-w-[450px] font-body text-[18px] text-white sm:text-[22px]">
             Let&apos;s design a room that tells your story.
-          </p>
+          </AnimatedText>
         </div>
         <Button href="/contact" variant="gold">
           Contact With Us

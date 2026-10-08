@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
+import AnimatedText from "@/components/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Restricted Page | Design By Chris",
@@ -13,13 +14,19 @@ export default function PasswordPage() {
       <section className="mx-auto max-w-[1200px] px-6 py-20">
         <div className="mx-auto flex max-w-[720px] flex-col items-center gap-10 rounded-[70px] bg-cream px-10 py-24 text-center">
           <div className="flex flex-col items-center gap-4">
-            <h1 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+            <AnimatedText
+              as="h1"
+              className="font-heading text-[36px] text-ivory sm:text-[50px]"
+            >
               Password Protected
-            </h1>
-            <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
+            </AnimatedText>
+            <AnimatedText
+              as="p"
+              className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]"
+            >
               This page is password protected. If you are the website admin,
               or have access to this page, please type your password below.
-            </p>
+            </AnimatedText>
           </div>
           <form className="flex w-full max-w-[480px] flex-col items-center gap-10">
             <label className="flex w-full flex-col">

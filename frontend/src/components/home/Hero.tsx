@@ -4,6 +4,7 @@ import { useEffect, useRef, useSyncExternalStore } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedText from "@/components/AnimatedText";
 
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
@@ -104,10 +105,12 @@ export default function Hero() {
             <br />
             Home Be Unique
           </h1>
-          <p className="relative mt-4 max-w-[480px] font-body text-[17px] leading-relaxed text-white/80 sm:text-[20px]">
-            There are many variations of the passages of lorem Ipsum from
-            available, variations of the passages.
-          </p>
+          <AnimatedText
+            as="p"
+            className="relative mt-4 max-w-[480px] font-body text-[17px] leading-relaxed text-white/80 sm:text-[20px]"
+          >
+            There are many variations of the passages of lorem Ipsum from available, variations of the passages.
+          </AnimatedText>
         </div>
 
         <div data-parallax-layer="cutout" className="pointer-events-none absolute inset-0">

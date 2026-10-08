@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import { ApiError, createLead } from "@/lib/api";
+import AnimatedText from "@/components/AnimatedText";
 
 const PROJECT_TYPES = ["Full Home", "Single Room", "Commercial", "Just Exploring"];
 
@@ -76,10 +77,10 @@ export default function EnquiryForm({ onClose }: { onClose: () => void }) {
         <h3 id="enquiry-modal-title" className="font-heading text-[28px] text-ivory">
           Let&apos;s Talk About Your Space
         </h3>
-        <p className="font-body text-[16px] leading-relaxed text-body">
+        <AnimatedText as="p" className="font-body text-[16px] leading-relaxed text-body">
           A few details so we can tailor the conversation — takes less than a
           minute.
-        </p>
+        </AnimatedText>
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-7">
@@ -157,9 +158,9 @@ export default function EnquiryForm({ onClose }: { onClose: () => void }) {
           <p className="font-body text-[15px] text-red-400">{error}</p>
         )}
 
-        <p className="text-center font-body text-[13px] text-body/70">
+        <AnimatedText as="p" className="text-center font-body text-[13px] text-body/70">
           No spam — just a real reply from our team.
-        </p>
+        </AnimatedText>
       </form>
     </div>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
+import AnimatedText from "@/components/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Project Details | Design By Chris",
@@ -34,15 +35,15 @@ export default function ProjectDetailsPage() {
           </div>
 
           <div className="flex flex-1 flex-col gap-3">
-            <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+            <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">
               Minimal Look Bedrooms
-            </h2>
-            <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
+            </AnimatedText>
+            <AnimatedText as="p" className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               sem vitae turpis dignissim maximus. Aliquam sollicitudin tellus
               massa, vel maximus purus posuere in. Praesent at nibh in mi
               fringilla mattis.
-            </p>
+            </AnimatedText>
           </div>
         </div>
 

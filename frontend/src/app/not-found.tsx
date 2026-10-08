@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function NotFound() {
   return (
@@ -7,9 +8,12 @@ export default function NotFound() {
         <span className="text-gold-shimmer font-heading text-[140px] leading-none sm:text-[220px]">
           404
         </span>
-        <p className="max-w-[500px] font-heading text-[28px] leading-snug text-ivory sm:text-[35px]">
+        <AnimatedText
+          as="p"
+          className="max-w-[500px] font-heading text-[28px] leading-snug text-ivory sm:text-[35px]"
+        >
           We are sorry, but the page you requested was not found
-        </p>
+        </AnimatedText>
         <Button href="/">Back To Home</Button>
       </div>
       <div className="glow-gold h-[300px] w-full rounded-bl-[150px] bg-placeholder sm:h-[500px] sm:w-[420px]" />

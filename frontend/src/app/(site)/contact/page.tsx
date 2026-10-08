@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import ContactForm from "@/components/ContactForm";
 import FaqAccordion from "@/components/FaqAccordion";
+import AnimatedText from "@/components/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Contact Us | Design By Chris",
@@ -36,9 +37,12 @@ export default function ContactPage() {
       <PageBanner title="Contact Us" breadcrumb="Home / Contact" />
 
       <section className="mx-auto flex max-w-[1200px] flex-col items-center gap-20 px-6 py-20">
-        <h2 className="max-w-[680px] text-center font-heading text-[36px] text-ivory sm:text-[50px]">
+        <AnimatedText
+          as="h2"
+          className="max-w-[680px] text-center font-heading text-[36px] text-ivory sm:text-[50px]"
+        >
           We love meeting new people and helping them.
-        </h2>
+        </AnimatedText>
 
         <div className="flex w-full flex-col items-start gap-14 sm:flex-row sm:gap-14">
           <div className="flex w-full max-w-[349px] flex-col gap-12 rounded-[50px] bg-cream px-8 py-16">

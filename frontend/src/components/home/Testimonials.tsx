@@ -1,3 +1,5 @@
+import AnimatedText from "@/components/AnimatedText";
+
 const testimonials = [
   {
     name: "Nattasha Mith",
@@ -17,11 +19,14 @@ export default function Testimonials() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-16">
       <div className="rounded-[70px] bg-cream px-6 py-16 sm:px-16">
-        <h2 className="mx-auto max-w-[550px] text-center font-heading text-[36px] leading-tight text-ivory sm:text-[50px]">
+        <AnimatedText
+          as="h2"
+          className="mx-auto max-w-[550px] text-center font-heading text-[36px] leading-tight text-ivory sm:text-[50px]"
+        >
           What People Think About Us
-        </h2>
+        </AnimatedText>
         <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:justify-center">
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
             <div
               key={t.name}
               className="glow-gold-sm flex w-full max-w-[370px] flex-col gap-6 rounded-[30px] bg-surface p-8"
@@ -36,9 +41,13 @@ export default function Testimonials() {
                   </span>
                 </p>
               </div>
-              <p className="font-body text-[18px] leading-relaxed text-body">
+              <AnimatedText
+                as="p"
+                delay={i * 0.1}
+                className="font-body text-[18px] leading-relaxed text-body"
+              >
                 {t.quote}
-              </p>
+              </AnimatedText>
             </div>
           ))}
         </div>

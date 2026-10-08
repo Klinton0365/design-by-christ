@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import CategoryTabs from "@/components/project/CategoryTabs";
 import Pagination from "@/components/project/Pagination";
+import AnimatedText from "@/components/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Our Project | Design By Chris",
@@ -37,12 +38,20 @@ export default function ProjectPage() {
               <div className="h-[350px] w-full bg-placeholder sm:h-[522px]" />
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-heading text-[25px] text-ivory">
+                  <AnimatedText
+                    as="h3"
+                    delay={i * 0.1}
+                    className="font-heading text-[25px] text-ivory"
+                  >
                     {title}
-                  </h3>
-                  <p className="font-body text-[22px] text-body">
+                  </AnimatedText>
+                  <AnimatedText
+                    as="p"
+                    delay={i * 0.1}
+                    className="font-body text-[22px] text-body"
+                  >
                     Decor / Architecture
-                  </p>
+                  </AnimatedText>
                 </div>
                 <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-cream">
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">

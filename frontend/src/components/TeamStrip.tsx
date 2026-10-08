@@ -1,4 +1,5 @@
 import SocialIcons from "@/components/SocialIcons";
+import AnimatedText from "@/components/AnimatedText";
 
 const members = [
   { name: null },
@@ -22,9 +23,9 @@ export default function TeamStrip({
   return (
     <section className={`${bg} py-16`}>
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-10 px-6">
-        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+        <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">
           {heading}
-        </h2>
+        </AnimatedText>
         <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-4">
           {members.map((m, i) =>
             m.name ? (

@@ -1,3 +1,5 @@
+import AnimatedText from "@/components/AnimatedText";
+
 const posts = [
   {
     title: "Let's Get Solution For Building Construction Work",
@@ -20,13 +22,15 @@ export default function BlogPreview() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-16">
       <div className="flex flex-col items-center gap-3 text-center">
-        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+        <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">
           Articles &amp; News
-        </h2>
-        <p className="max-w-[810px] font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
-          It is a long established fact that a reader will be distracted by
-          the readable content of a page when looking at its layout.
-        </p>
+        </AnimatedText>
+        <AnimatedText
+          as="p"
+          className="max-w-[810px] font-body text-[18px] leading-relaxed text-body sm:text-[22px]"
+        >
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+        </AnimatedText>
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-3">
@@ -43,9 +47,13 @@ export default function BlogPreview() {
               </span>
             </div>
             <div className="flex flex-col gap-5 px-3 pb-3">
-              <h3 className="font-heading text-[25px] leading-snug text-ivory">
+              <AnimatedText
+                as="h3"
+                delay={i * 0.1}
+                className="font-heading text-[25px] leading-snug text-ivory"
+              >
                 {post.title}
-              </h3>
+              </AnimatedText>
               <div className="flex items-center justify-between">
                 <span className="font-body text-[16px] text-body">
                   {post.date}

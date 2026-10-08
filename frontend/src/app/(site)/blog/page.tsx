@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import Pagination from "@/components/project/Pagination";
+import AnimatedText from "@/components/AnimatedText";
 
 export const metadata: Metadata = {
   title: "Articles & News | Design By Chris",
@@ -48,9 +49,9 @@ export default function BlogPage() {
       <PageBanner title="Articles & News" breadcrumb="Home / Blog" />
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
-        <h2 className="font-heading text-[36px] text-ivory sm:text-[50px]">
+        <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">
           Latest Post
-        </h2>
+        </AnimatedText>
         <Link
           href="/blog/1"
           className="mt-7 flex flex-col gap-8 rounded-[62px] border border-border p-6 sm:flex-row sm:items-center"
@@ -58,12 +59,12 @@ export default function BlogPage() {
           <div className="h-[280px] w-full rounded-[50px] bg-placeholder sm:h-[478px] sm:w-[569px]" />
           <div className="flex flex-1 flex-col gap-8">
             <div className="flex flex-col gap-5">
-              <h3 className="font-heading text-[25px] text-ivory">
+              <AnimatedText as="h3" className="font-heading text-[25px] text-ivory">
                 {featured.title}
-              </h3>
-              <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
+              </AnimatedText>
+              <AnimatedText as="p" className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
                 {featured.excerpt}
-              </p>
+              </AnimatedText>
             </div>
             <span className="font-body text-[16px] text-body">
               {featured.date}
@@ -71,9 +72,9 @@ export default function BlogPage() {
           </div>
         </Link>
 
-        <h2 className="mt-24 font-heading text-[36px] text-ivory sm:text-[50px]">
+        <AnimatedText as="h2" className="mt-24 font-heading text-[36px] text-ivory sm:text-[50px]">
           Articles &amp; News
-        </h2>
+        </AnimatedText>
         <div className="mt-10 grid grid-cols-1 gap-7 sm:grid-cols-3">
           {posts.map((post, i) => (
             <Link
@@ -89,9 +90,13 @@ export default function BlogPage() {
                 </span>
               </div>
               <div className="flex flex-col gap-5 px-3 pb-3">
-                <h3 className="font-heading text-[25px] leading-snug text-ivory">
+                <AnimatedText
+                  as="h3"
+                  delay={i * 0.1}
+                  className="font-heading text-[25px] leading-snug text-ivory"
+                >
                   {post.title}
-                </h3>
+                </AnimatedText>
                 <span className="font-body text-[16px] text-body">
                   {post.date}
                 </span>

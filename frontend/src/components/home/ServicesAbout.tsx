@@ -84,7 +84,9 @@ export default function ServicesAbout() {
             </div>
           </div>
 
-          <Button href="/contact">Get Free Estimate</Button>
+          <Button href="/contact" variant="gold">
+            Get Free Estimate
+          </Button>
         </div>
 
         <div className="h-[460px] w-full rounded-[40px] rounded-tl-[160px] bg-placeholder sm:h-[560px] sm:rounded-tl-[220px] lg:rounded-tl-[280px]" />

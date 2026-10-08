@@ -7,6 +7,7 @@ import {
   setCoverImageAction,
   uploadProjectImagesAction,
 } from "../../actions";
+import { getProjectCategories } from "../../categories";
 
 type Project = {
   title: string;
@@ -28,7 +29,10 @@ export default async function EditProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { data: project } = await adminApiFetch<{ data: Project }>(`/api/admin/projects/${slug}`);
+  const [{ data: project }, categories] = await Promise.all([
+    adminApiFetch<{ data: Project }>(`/api/admin/projects/${slug}`),
+    getProjectCategories(),
+  ]);
 
   const uploadAction = uploadProjectImagesAction.bind(null, slug);
   const setCoverAction = setCoverImageAction.bind(null, slug);
@@ -43,7 +47,7 @@ export default async function EditProjectPage({
         </Link>
       </div>
 
-      <EditProjectForm project={project} />
+      <EditProjectForm project={project} categories={categories} />
 
       <hr className="border-border" />
 

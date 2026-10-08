@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { TextField, TextAreaField, CheckboxField, FormError } from "@/components/admin/fields";
+import CategoryField from "@/components/admin/CategoryField";
 import SubmitButton from "@/components/admin/SubmitButton";
 import { updateProjectAction, type ProjectFormState } from "../../actions";
 
@@ -20,7 +21,13 @@ type Project = {
 
 const initialState: ProjectFormState = { error: null };
 
-export default function EditProjectForm({ project }: { project: Project }) {
+export default function EditProjectForm({
+  project,
+  categories,
+}: {
+  project: Project;
+  categories: string[];
+}) {
   const updateWithSlug = updateProjectAction.bind(null, project.slug);
   const [state, formAction] = useActionState(updateWithSlug, initialState);
 
@@ -28,7 +35,7 @@ export default function EditProjectForm({ project }: { project: Project }) {
     <form action={formAction} className="flex flex-col gap-6">
       <TextField label="Title" name="title" defaultValue={project.title} required />
       <TextField label="Slug" name="slug" defaultValue={project.slug} required />
-      <TextField label="Category" name="category" defaultValue={project.category} required />
+      <CategoryField categories={categories} defaultValue={project.category} />
       <TextField label="Client" name="client" defaultValue={project.client} />
       <TextField label="Tags (comma separated)" name="tags" defaultValue={project.tags.join(", ")} />
       <TextField label="Project Date" name="project_date" type="date" defaultValue={project.project_date} />

@@ -40,8 +40,12 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
+            // Uploads (project gallery, service/blog cover images) are served
+            // directly from the public/ directory rather than through the
+            // storage/app/public symlink, so the disk's root points straight
+            // at public_path() and its URLs have no /storage segment.
+            'root' => public_path(),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/'),
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

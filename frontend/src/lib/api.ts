@@ -68,3 +68,44 @@ export function createLead(payload: CreateLeadPayload) {
     body: JSON.stringify(payload),
   });
 }
+
+export type ProjectImage = {
+  id: number;
+  image_url: string;
+  is_cover: boolean;
+  sort_order: number;
+};
+
+export type Project = {
+  id: number;
+  title: string;
+  slug: string;
+  category: string;
+  client: string | null;
+  tags: string[];
+  project_date: string | null;
+  external_link: string | null;
+  description: string;
+  cover_image_url: string | null;
+  images: ProjectImage[];
+  created_at: string;
+};
+
+// Public marketing content changes rarely, so pages are revalidated hourly
+// (ISR) rather than refetched on every request.
+const CONTENT_REVALIDATE_SECONDS = 3600;
+
+export async function getProjects(category?: string) {
+  const qs = category ? `?category=${encodeURIComponent(category)}` : "";
+  const { data } = await apiFetch<{ data: Project[] }>(`/api/projects${qs}`, {
+    next: { revalidate: CONTENT_REVALIDATE_SECONDS },
+  });
+  return data;
+}
+
+export async function getProject(slug: string) {
+  const { data } = await apiFetch<{ data: Project }>(`/api/projects/${encodeURIComponent(slug)}`, {
+    next: { revalidate: CONTENT_REVALIDATE_SECONDS },
+  });
+  return data;
+}

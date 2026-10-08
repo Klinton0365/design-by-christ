@@ -11,7 +11,7 @@ export default function ServiceCard({
 }) {
   return (
     <div
-      className={`flex flex-col items-center gap-8 rounded-[30px] px-6 py-8 text-center ${
+      className={`flex flex-col items-center gap-8 rounded-[30px] px-6 py-8 text-center transition-colors duration-300 hover:bg-cream ${
         highlighted ? "bg-cream" : ""
       }`}
     >

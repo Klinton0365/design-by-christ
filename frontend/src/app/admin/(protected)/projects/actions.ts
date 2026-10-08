@@ -79,17 +79,30 @@ export async function deleteProjectAction(slug: string) {
   revalidatePath("/admin/projects");
 }
 
-export async function uploadProjectImagesAction(slug: string, formData: FormData) {
+export async function uploadProjectImagesAction(
+  slug: string,
+  formData: FormData
+): Promise<{ error: string | null }> {
   const payload = new FormData();
   const files = formData.getAll("images").filter((f): f is File => f instanceof File && f.size > 0);
   files.forEach((file) => payload.append("images[]", file));
 
-  await adminApiFetch(`/api/admin/projects/${slug}/images`, {
-    method: "POST",
-    body: payload,
-  });
+  try {
+    await adminApiFetch(`/api/admin/projects/${slug}/images`, {
+      method: "POST",
+      body: payload,
+    });
+  } catch (err) {
+    return {
+      error:
+        err instanceof AdminApiError
+          ? err.message
+          : "Could not upload the image(s). Try smaller images or fewer at once.",
+    };
+  }
 
   revalidatePath(`/admin/projects/${slug}/edit`);
+  return { error: null };
 }
 
 export async function setCoverImageAction(slug: string, imageId: number) {

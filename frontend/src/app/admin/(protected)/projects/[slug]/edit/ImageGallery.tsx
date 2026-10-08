@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 
 type ProjectImage = { id: number; image_url: string; is_cover: boolean };
 
@@ -11,11 +11,13 @@ export default function ImageGallery({
   deleteAction,
 }: {
   images: ProjectImage[];
-  uploadAction: (formData: FormData) => Promise<void>;
+  uploadAction: (formData: FormData) => Promise<{ error: string | null }>;
   setCoverAction: (imageId: number) => Promise<void>;
   deleteAction: (imageId: number) => Promise<void>;
 }) {
   const [isPending, startTransition] = useTransition();
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
@@ -66,8 +68,32 @@ export default function ImageGallery({
       <form
         ref={formRef}
         action={async (formData) => {
-          await uploadAction(formData);
-          formRef.current?.reset();
+          const hasFile = formData
+            .getAll("images")
+            .some((value) => value instanceof File && value.size > 0);
+
+          if (!hasFile) {
+            setUploadError("Select at least one image to upload.");
+            return;
+          }
+
+          setUploadError(null);
+          setIsUploading(true);
+          try {
+            const result = await uploadAction(formData);
+            if (result.error) {
+              setUploadError(result.error);
+              return;
+            }
+            formRef.current?.reset();
+          } catch {
+            // Anything thrown here happened before our own action code ran
+            // (e.g. the request body was rejected as too large) — never a
+            // validated backend message, so always show a generic fallback.
+            setUploadError("Could not upload the image(s). Try smaller images or fewer at once.");
+          } finally {
+            setIsUploading(false);
+          }
         }}
         className="flex flex-col gap-3"
       >
@@ -81,11 +107,15 @@ export default function ImageGallery({
             className="font-body text-[14px] text-body file:mr-4 file:rounded-xl file:border-0 file:bg-gold file:px-4 file:py-2 file:font-body file:text-[14px] file:font-semibold file:text-white"
           />
         </label>
+        {uploadError && (
+          <p className="font-body text-[13px] text-red-400">{uploadError}</p>
+        )}
         <button
           type="submit"
-          className="inline-flex w-fit items-center justify-center rounded-[18px] bg-dark px-6 py-3 font-body text-[14px] font-semibold text-white glow-gold transition-opacity hover:opacity-90"
+          disabled={isUploading}
+          className="inline-flex w-fit items-center justify-center rounded-[18px] bg-dark px-6 py-3 font-body text-[14px] font-semibold text-white glow-gold transition-opacity hover:opacity-90 disabled:opacity-60"
         >
-          Upload
+          {isUploading ? "Uploading…" : "Upload"}
         </button>
       </form>
     </div>

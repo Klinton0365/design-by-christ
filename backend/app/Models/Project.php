@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
     'external_link',
     'description',
     'is_published',
+    'show_on_home',
     'sort_order',
 ])]
 class Project extends Model
@@ -31,6 +32,7 @@ class Project extends Model
             'tags' => 'array',
             'project_date' => 'date',
             'is_published' => 'boolean',
+            'show_on_home' => 'boolean',
             'sort_order' => 'integer',
         ];
     }
@@ -48,5 +50,10 @@ class Project extends Model
     public function scopePublished(Builder $query): void
     {
         $query->where('is_published', true);
+    }
+
+    public function scopeShowOnHome(Builder $query): void
+    {
+        $query->where('show_on_home', true);
     }
 }

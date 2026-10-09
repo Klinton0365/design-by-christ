@@ -19,6 +19,7 @@ type Project = {
   external_link: string | null;
   description: string;
   is_published: boolean;
+  show_on_home: boolean;
   sort_order: number;
   images: { id: number; image_url: string; is_cover: boolean }[];
 };

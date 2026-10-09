@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -34,6 +35,17 @@ class ProjectController extends Controller
     public function update(ProjectRequest $request, Project $project): ProjectResource
     {
         $project->update($request->validated());
+
+        return new ProjectResource($project->refresh()->load('images'));
+    }
+
+    public function toggleHome(Request $request, Project $project): ProjectResource
+    {
+        $data = $request->validate([
+            'show_on_home' => ['required', 'boolean'],
+        ]);
+
+        $project->update($data);
 
         return new ProjectResource($project->refresh()->load('images'));
     }

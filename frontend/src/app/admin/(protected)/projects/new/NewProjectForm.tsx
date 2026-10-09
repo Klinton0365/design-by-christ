@@ -23,6 +23,7 @@ export default function NewProjectForm({ categories }: { categories: string[] })
       <TextAreaField label="Description" name="description" required rows={6} />
       <TextField label="Sort Order" name="sort_order" type="number" defaultValue={0} />
       <CheckboxField label="Published" name="is_published" defaultChecked />
+      <CheckboxField label="Show on Homepage" name="show_on_home" />
 
       <FormError error={state.error} />
 

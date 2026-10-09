@@ -32,6 +32,7 @@ class ProjectResource extends JsonResource
             'external_link' => $this->external_link,
             'description' => $this->description,
             'is_published' => $this->is_published,
+            'show_on_home' => $this->show_on_home,
             'sort_order' => $this->sort_order,
             'cover_image_url' => $coverImage
                 ? Storage::disk('public')->url($coverImage->image_path)

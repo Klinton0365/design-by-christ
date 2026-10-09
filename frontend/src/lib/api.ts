@@ -95,8 +95,12 @@ export type Project = {
 // (ISR) rather than refetched on every request.
 const CONTENT_REVALIDATE_SECONDS = 3600;
 
-export async function getProjects(category?: string) {
-  const qs = category ? `?category=${encodeURIComponent(category)}` : "";
+export async function getProjects(options: { category?: string; home?: boolean } = {}) {
+  const params = new URLSearchParams();
+  if (options.category) params.set("category", options.category);
+  if (options.home) params.set("home", "1");
+  const qs = params.size > 0 ? `?${params.toString()}` : "";
+
   const { data } = await apiFetch<{ data: Project[] }>(`/api/projects${qs}`, {
     next: { revalidate: CONTENT_REVALIDATE_SECONDS },
   });

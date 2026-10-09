@@ -16,6 +16,7 @@ class ProjectController extends Controller
             ->published()
             ->with('images')
             ->when($request->query('category'), fn ($q, $category) => $q->where('category', $category))
+            ->when($request->boolean('home'), fn ($q) => $q->showOnHome())
             ->orderBy('sort_order')
             ->get();
 

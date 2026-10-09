@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { adminApiFetch } from "@/lib/admin-api";
 import DeleteButton from "@/components/admin/DeleteButton";
-import { deleteProjectAction } from "./actions";
+import ToggleHomeButton from "@/components/admin/ToggleHomeButton";
+import { deleteProjectAction, toggleShowOnHomeAction } from "./actions";
 
 type Project = {
   id: number;
@@ -9,6 +10,7 @@ type Project = {
   slug: string;
   category: string;
   is_published: boolean;
+  show_on_home: boolean;
   sort_order: number;
   images: { id: number; image_url: string; is_cover: boolean }[];
 };
@@ -41,6 +43,7 @@ export default async function AdminProjectsPage() {
               <th className="px-5 py-4">Title</th>
               <th className="px-5 py-4">Category</th>
               <th className="px-5 py-4">Published</th>
+              <th className="px-5 py-4">Homepage</th>
               <th className="px-5 py-4"></th>
             </tr>
           </thead>
@@ -72,6 +75,13 @@ export default async function AdminProjectsPage() {
                   </td>
                   <td className="px-5 py-4 font-body text-[15px] text-body">
                     {project.is_published ? "Yes" : "No"}
+                  </td>
+                  <td className="px-5 py-4">
+                    <ToggleHomeButton
+                      slug={project.slug}
+                      showOnHome={project.show_on_home}
+                      action={toggleShowOnHomeAction}
+                    />
                   </td>
                   <td className="px-5 py-4">
                     <div className="flex items-center gap-4">

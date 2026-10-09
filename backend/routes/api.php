@@ -43,6 +43,7 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     Route::apiResource('projects', AdminProjectController::class)->parameters([
         'projects' => 'project',
     ]);
+    Route::patch('/projects/{project}/home', [AdminProjectController::class, 'toggleHome']);
     Route::post('/projects/{project}/images', [ProjectImageController::class, 'store']);
     Route::patch('/projects/{project}/images/{image}', [ProjectImageController::class, 'update']);
     Route::delete('/projects/{project}/images/{image}', [ProjectImageController::class, 'destroy']);

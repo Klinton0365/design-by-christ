@@ -40,6 +40,7 @@ class ProjectRequest extends FormRequest
             'external_link' => ['nullable', 'url', 'max:255'],
             'description' => ['required', 'string'],
             'is_published' => ['boolean'],
+            'show_on_home' => ['boolean'],
             'sort_order' => ['integer'],
         ];
     }

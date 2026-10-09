@@ -16,6 +16,7 @@ type Project = {
   external_link: string | null;
   description: string;
   is_published: boolean;
+  show_on_home: boolean;
   sort_order: number;
 };
 
@@ -43,6 +44,7 @@ export default function EditProjectForm({
       <TextAreaField label="Description" name="description" defaultValue={project.description} required rows={6} />
       <TextField label="Sort Order" name="sort_order" type="number" defaultValue={project.sort_order} />
       <CheckboxField label="Published" name="is_published" defaultChecked={project.is_published} />
+      <CheckboxField label="Show on Homepage" name="show_on_home" defaultChecked={project.show_on_home} />
 
       <FormError error={state.error} />
 

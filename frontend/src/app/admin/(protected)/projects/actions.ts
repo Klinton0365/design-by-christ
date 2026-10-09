@@ -17,6 +17,7 @@ function buildPayload(formData: FormData) {
   payload.set("description", String(formData.get("description") ?? ""));
   payload.set("sort_order", String(formData.get("sort_order") ?? "0"));
   payload.set("is_published", formData.get("is_published") === "1" ? "1" : "0");
+  payload.set("show_on_home", formData.get("show_on_home") === "1" ? "1" : "0");
 
   const tagsRaw = String(formData.get("tags") ?? "");
   const tags = tagsRaw
@@ -47,6 +48,7 @@ export async function createProjectAction(
   }
 
   revalidatePath("/admin/projects");
+  revalidatePath("/");
   redirect(`/admin/projects/${slug}/edit`);
 }
 
@@ -71,12 +73,24 @@ export async function updateProjectAction(
 
   revalidatePath("/admin/projects");
   revalidatePath(`/admin/projects/${slug}/edit`);
+  revalidatePath("/");
   return { error: null };
 }
 
 export async function deleteProjectAction(slug: string) {
   await adminApiFetch(`/api/admin/projects/${slug}`, { method: "DELETE" });
   revalidatePath("/admin/projects");
+  revalidatePath("/");
+}
+
+export async function toggleShowOnHomeAction(slug: string, nextValue: boolean) {
+  await adminApiFetch(`/api/admin/projects/${slug}/home`, {
+    method: "PATCH",
+    body: JSON.stringify({ show_on_home: nextValue }),
+  });
+
+  revalidatePath("/admin/projects");
+  revalidatePath("/");
 }
 
 export async function uploadProjectImagesAction(

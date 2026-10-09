@@ -1,17 +1,20 @@
 import AnimatedText from "@/components/AnimatedText";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 const testimonials = [
   {
     name: "Nattasha Mith",
-    location: "Sydney, USA",
+    designation: "Sydney, USA",
     quote:
-      "Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled it to make a type specimen.",
+      "From the cabinetry down to the lighting fixtures, every piece of furnishing was chosen with real intention. Our kitchen finally feels like the heart of the home.",
+    src: "/img/testimonial/pexels-alvin-aristo-256416321-12564075.jpg",
   },
   {
     name: "Raymond Galario",
-    location: "Sydney, Australia",
+    designation: "Sydney, Australia",
     quote:
-      "Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled it to make a type specimen.",
+      "They reworked our living room with warm wood tones and furniture that actually fits how we live. Guests always ask who designed the space.",
+    src: "/img/testimonial/pexels-denniz-futalan-339724-16316172.jpg",
   },
 ];
 
@@ -25,31 +28,9 @@ export default function Testimonials() {
         >
           What People Think About Us
         </AnimatedText>
-        <div className="mt-12 flex flex-col gap-6 sm:flex-row sm:justify-center">
-          {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              className="glow-gold-sm flex w-full max-w-[370px] flex-col gap-6 rounded-[30px] bg-surface p-8"
-            >
-              <div className="flex items-center gap-6">
-                <div className="h-[77px] w-[77px] shrink-0 rounded-full bg-placeholder" />
-                <p className="font-heading text-[22px] leading-snug text-ivory">
-                  {t.name}
-                  <br />
-                  <span className="font-body text-[16px] text-body">
-                    {t.location}
-                  </span>
-                </p>
-              </div>
-              <AnimatedText
-                as="p"
-                delay={i * 0.1}
-                className="font-body text-[18px] leading-relaxed text-body"
-              >
-                {t.quote}
-              </AnimatedText>
-            </div>
-          ))}
+
+        <div className="mt-12">
+          <AnimatedTestimonials testimonials={testimonials} />
         </div>
       </div>
     </section>

@@ -21,10 +21,14 @@ class ServiceController extends Controller
 
     public function store(ServiceRequest $request): ServiceResource
     {
-        $data = $request->safe()->except('image');
+        $data = $request->safe()->except(['image', 'detail_image']);
 
         if ($request->hasFile('image')) {
             $data['image_path'] = $request->file('image')->store('services', 'public');
+        }
+
+        if ($request->hasFile('detail_image')) {
+            $data['detail_image_path'] = $request->file('detail_image')->store('services', 'public');
         }
 
         $service = Service::create($data);
@@ -39,13 +43,20 @@ class ServiceController extends Controller
 
     public function update(ServiceRequest $request, Service $service): ServiceResource
     {
-        $data = $request->safe()->except('image');
+        $data = $request->safe()->except(['image', 'detail_image']);
 
         if ($request->hasFile('image')) {
             if ($service->image_path) {
                 Storage::disk('public')->delete($service->image_path);
             }
             $data['image_path'] = $request->file('image')->store('services', 'public');
+        }
+
+        if ($request->hasFile('detail_image')) {
+            if ($service->detail_image_path) {
+                Storage::disk('public')->delete($service->detail_image_path);
+            }
+            $data['detail_image_path'] = $request->file('detail_image')->store('services', 'public');
         }
 
         $service->update($data);
@@ -57,6 +68,10 @@ class ServiceController extends Controller
     {
         if ($service->image_path) {
             Storage::disk('public')->delete($service->image_path);
+        }
+
+        if ($service->detail_image_path) {
+            Storage::disk('public')->delete($service->detail_image_path);
         }
 
         $service->delete();

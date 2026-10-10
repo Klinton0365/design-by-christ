@@ -159,7 +159,7 @@ export type Service = {
   summary: string;
   description: string;
   image_url: string | null;
-  is_highlighted: boolean;
+  detail_image_url: string | null;
 };
 
 export async function getServices() {

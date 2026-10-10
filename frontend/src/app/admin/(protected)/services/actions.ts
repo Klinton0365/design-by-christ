@@ -13,12 +13,16 @@ function buildPayload(formData: FormData) {
   payload.set("summary", String(formData.get("summary") ?? ""));
   payload.set("description", String(formData.get("description") ?? ""));
   payload.set("sort_order", String(formData.get("sort_order") ?? "0"));
-  payload.set("is_highlighted", formData.get("is_highlighted") === "1" ? "1" : "0");
   payload.set("is_published", formData.get("is_published") === "1" ? "1" : "0");
 
   const image = formData.get("image");
   if (image instanceof File && image.size > 0) {
     payload.set("image", image);
+  }
+
+  const detailImage = formData.get("detail_image");
+  if (detailImage instanceof File && detailImage.size > 0) {
+    payload.set("detail_image", detailImage);
   }
 
   return payload;

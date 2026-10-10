@@ -22,7 +22,7 @@ class ServiceResource extends JsonResource
             'summary' => $this->summary,
             'description' => $this->description,
             'image_url' => $this->image_path ? Storage::disk('public')->url($this->image_path) : null,
-            'is_highlighted' => $this->is_highlighted,
+            'detail_image_url' => $this->detail_image_path ? Storage::disk('public')->url($this->detail_image_path) : null,
             'is_published' => $this->is_published,
             'sort_order' => $this->sort_order,
             'created_at' => $this->created_at?->toIso8601String(),

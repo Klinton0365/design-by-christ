@@ -8,7 +8,7 @@ type Service = {
   summary: string;
   description: string;
   image_url: string | null;
-  is_highlighted: boolean;
+  detail_image_url: string | null;
   is_published: boolean;
   sort_order: number;
 };

@@ -27,8 +27,8 @@ export default function NewServicePage() {
         <TextField label="Summary (card blurb)" name="summary" required />
         <TextAreaField label="Description" name="description" required rows={6} />
         <ImageField label="Image" name="image" />
+        <ImageField label="Detail Image" name="detail_image" />
         <TextField label="Sort Order" name="sort_order" type="number" defaultValue={0} />
-        <CheckboxField label="Highlighted" name="is_highlighted" />
         <CheckboxField label="Published" name="is_published" defaultChecked />
 
         <FormError error={state.error} />

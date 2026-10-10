@@ -35,7 +35,7 @@ class ServiceRequest extends FormRequest
             'summary' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'image' => ['nullable', 'image', 'max:5120'],
-            'is_highlighted' => ['boolean'],
+            'detail_image' => ['nullable', 'image', 'max:5120'],
             'is_published' => ['boolean'],
             'sort_order' => ['integer'],
         ];

@@ -15,12 +15,12 @@ class ServiceSeeder extends Seeder
         $body = 'There are many variations of the passages of lorem Ipsum available, majority.';
 
         $services = [
-            ['title' => 'Project Plan', 'highlighted' => false],
-            ['title' => 'Interior Work', 'highlighted' => false],
-            ['title' => 'Retail Design', 'highlighted' => false],
-            ['title' => '2D/3D Art Work', 'highlighted' => false],
-            ['title' => 'Space Planning', 'highlighted' => true],
-            ['title' => 'Decoration Work', 'highlighted' => false],
+            ['title' => 'Project Plan'],
+            ['title' => 'Interior Work'],
+            ['title' => 'Retail Design'],
+            ['title' => '2D/3D Art Work'],
+            ['title' => 'Space Planning'],
+            ['title' => 'Decoration Work'],
         ];
 
         foreach ($services as $i => $service) {
@@ -30,7 +30,6 @@ class ServiceSeeder extends Seeder
                     'title' => $service['title'],
                     'summary' => $body,
                     'description' => $body.' '.$body,
-                    'is_highlighted' => $service['highlighted'],
                     'is_published' => true,
                     'sort_order' => $i,
                 ]

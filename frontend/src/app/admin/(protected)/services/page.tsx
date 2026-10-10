@@ -8,7 +8,6 @@ type Service = {
   title: string;
   slug: string;
   summary: string;
-  is_highlighted: boolean;
   is_published: boolean;
   sort_order: number;
 };
@@ -38,7 +37,6 @@ export default async function AdminServicesPage() {
           <thead>
             <tr className="border-b border-border font-body text-[14px] uppercase tracking-wide text-body">
               <th className="px-5 py-4">Title</th>
-              <th className="px-5 py-4">Highlighted</th>
               <th className="px-5 py-4">Published</th>
               <th className="px-5 py-4">Order</th>
               <th className="px-5 py-4"></th>
@@ -51,9 +49,6 @@ export default async function AdminServicesPage() {
                 <tr key={service.id} className="border-b border-border last:border-0">
                   <td className="px-5 py-4 font-body text-[16px] text-ivory">
                     {service.title}
-                  </td>
-                  <td className="px-5 py-4 font-body text-[15px] text-body">
-                    {service.is_highlighted ? "Yes" : "—"}
                   </td>
                   <td className="px-5 py-4 font-body text-[15px] text-body">
                     {service.is_published ? "Yes" : "No"}

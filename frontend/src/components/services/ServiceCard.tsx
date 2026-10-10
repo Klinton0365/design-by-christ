@@ -1,43 +1,43 @@
-import Link from "next/link";
+"use client";
 
-export default function ServiceCard({
-  title,
-  body,
-  highlighted = false,
-}: {
-  title: string;
-  body: string;
-  highlighted?: boolean;
-}) {
+import Image from "next/image";
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import type { Service } from "@/lib/api";
+
+function ServiceDetail({ service }: { service: Service }) {
   return (
-    <div
-      className={`flex flex-col items-center gap-8 rounded-[30px] px-6 py-8 text-center transition-colors duration-300 hover:bg-cream ${
-        highlighted ? "bg-cream" : ""
-      }`}
-    >
-      <div className="flex flex-col items-center gap-3">
-        <h3 className="font-heading text-[25px] text-ivory">{title}</h3>
-        <p className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
-          {body}
-        </p>
-      </div>
-      <Link
-        href="/services/1"
-        className="inline-flex items-center gap-3 font-body text-[18px] font-semibold tracking-wide text-body hover:text-ivory"
-      >
-        Read More
-        <span aria-hidden className="inline-flex h-[15px] w-[15px] shrink-0 text-gold">
-          <svg viewBox="0 0 24 24" className="h-full w-full" fill="none">
-            <path
-              d="M5 12h14M13 6l6 6-6 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-      </Link>
+    <div className="mx-auto flex max-w-3xl flex-col gap-8">
+      <p className="font-body text-[18px] leading-relaxed text-body sm:text-[20px]">
+        {service.description}
+      </p>
+      {service.detail_image_url && (
+        <div className="relative h-[320px] w-full overflow-hidden rounded-[30px] bg-placeholder sm:h-[420px]">
+          <Image
+            src={service.detail_image_url}
+            alt={service.title}
+            fill
+            sizes="(min-width: 768px) 700px, 100vw"
+            className="object-cover"
+          />
+        </div>
+      )}
     </div>
   );
+}
+
+export default function ServiceCard({ services }: { services: Service[] }) {
+  const cards = services.map((service, index) => (
+    <Card
+      key={service.id}
+      index={index}
+      card={{
+        title: service.title,
+        category: "Our Service",
+        src: service.image_url ?? undefined,
+        content: <ServiceDetail service={service} />,
+      }}
+    />
+  ));
+
+  return <Carousel items={cards} />;
 }

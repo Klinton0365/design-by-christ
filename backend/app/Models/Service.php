@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
     'summary',
     'description',
     'image_path',
-    'is_highlighted',
+    'detail_image_path',
     'is_published',
     'sort_order',
 ])]
@@ -25,7 +25,6 @@ class Service extends Model
     protected function casts(): array
     {
         return [
-            'is_highlighted' => 'boolean',
             'is_published' => 'boolean',
             'sort_order' => 'integer',
         ];

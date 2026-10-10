@@ -2,7 +2,31 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
+
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(callback: () => void) {
+  const mq = window.matchMedia(REDUCED_MOTION_QUERY);
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
+
+function getReducedMotionSnapshot() {
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
+}
+
+function useReducedMotion() {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot
+  );
+}
 
 export type Testimonial = {
   quote: string;
@@ -34,10 +58,13 @@ function ArrowIcon({ direction }: { direction: "left" | "right" }) {
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
+  autoplayInterval = 5000,
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
+  autoplayInterval?: number;
 }) => {
+  const reducedMotion = useReducedMotion();
   const [active, setActive] = useState(0);
   // Each card's tilt starts at 0 (deterministic, matches SSR output) and is
   // only randomized client-side after mount — calling Math.random() during
@@ -68,11 +95,11 @@ export const AnimatedTestimonials = ({
   const isActive = (index: number) => index === active;
 
   useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
+    if (autoplay && !reducedMotion && testimonials.length > 1) {
+      const interval = setInterval(handleNext, autoplayInterval);
       return () => clearInterval(interval);
     }
-  }, [autoplay, handleNext]);
+  }, [autoplay, autoplayInterval, reducedMotion, handleNext, testimonials.length]);
 
   return (
     <div className="mx-auto w-full max-w-4xl">

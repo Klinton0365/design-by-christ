@@ -30,7 +30,7 @@ export default function Testimonials() {
         </AnimatedText>
 
         <div className="mt-12">
-          <AnimatedTestimonials testimonials={testimonials} />
+          <AnimatedTestimonials testimonials={testimonials} autoplay autoplayInterval={3000} />
         </div>
       </div>
     </section>

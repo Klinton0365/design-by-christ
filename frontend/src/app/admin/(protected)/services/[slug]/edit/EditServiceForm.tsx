@@ -12,7 +12,7 @@ type Service = {
   summary: string;
   description: string;
   image_url: string | null;
-  is_highlighted: boolean;
+  detail_image_url: string | null;
   is_published: boolean;
   sort_order: number;
 };
@@ -30,8 +30,8 @@ export default function EditServiceForm({ service }: { service: Service }) {
       <TextField label="Summary (card blurb)" name="summary" defaultValue={service.summary} required />
       <TextAreaField label="Description" name="description" defaultValue={service.description} required rows={6} />
       <ImageField label="Image" name="image" defaultImageUrl={service.image_url} />
+      <ImageField label="Detail Image" name="detail_image" defaultImageUrl={service.detail_image_url} />
       <TextField label="Sort Order" name="sort_order" type="number" defaultValue={service.sort_order} />
-      <CheckboxField label="Highlighted" name="is_highlighted" defaultChecked={service.is_highlighted} />
       <CheckboxField label="Published" name="is_published" defaultChecked={service.is_published} />
 
       <FormError error={state.error} />

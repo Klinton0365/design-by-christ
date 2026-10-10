@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/Button";
 import AnimatedText from "@/components/AnimatedText";
 
@@ -46,7 +47,15 @@ export default function AboutUs() {
           </Button>
         </div>
 
-        <div className="h-[460px] w-full rounded-[40px] rounded-tl-[160px] bg-placeholder sm:h-[560px] sm:rounded-tl-[220px] lg:rounded-tl-[280px]" />
+        <div className="relative h-[460px] w-full overflow-hidden rounded-[40px] rounded-tl-[160px] bg-placeholder sm:h-[560px] sm:rounded-tl-[220px] lg:rounded-tl-[280px]">
+          <Image
+            src="/img/about/living-room.jpg"
+            alt="Bright, elegant living room designed by Design By Chris"
+            fill
+            sizes="(min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BlogPostRequest;
 use App\Http\Resources\BlogPostResource;
 use App\Models\BlogPost;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -47,6 +48,17 @@ class BlogPostController extends Controller
             }
             $data['cover_image_path'] = $request->file('cover_image')->store('blog', 'public');
         }
+
+        $blogPost->update($data);
+
+        return new BlogPostResource($blogPost->refresh());
+    }
+
+    public function toggleHome(Request $request, BlogPost $blogPost): BlogPostResource
+    {
+        $data = $request->validate([
+            'show_on_home' => ['required', 'boolean'],
+        ]);
 
         $blogPost->update($data);
 

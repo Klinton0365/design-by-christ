@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { adminApiFetch } from "@/lib/admin-api";
 import DeleteButton from "@/components/admin/DeleteButton";
-import { deleteBlogPostAction } from "./actions";
+import ToggleHomeButton from "@/components/admin/ToggleHomeButton";
+import { deleteBlogPostAction, toggleShowOnHomeAction } from "./actions";
 
 type BlogPost = {
   id: number;
@@ -9,6 +10,7 @@ type BlogPost = {
   slug: string;
   author_name: string;
   is_published: boolean;
+  show_on_home: boolean;
   published_at: string | null;
 };
 
@@ -44,6 +46,7 @@ export default async function AdminBlogPage() {
               <th className="px-5 py-4">Title</th>
               <th className="px-5 py-4">Author</th>
               <th className="px-5 py-4">Published</th>
+              <th className="px-5 py-4">Homepage</th>
               <th className="px-5 py-4">Date</th>
               <th className="px-5 py-4"></th>
             </tr>
@@ -57,6 +60,13 @@ export default async function AdminBlogPage() {
                   <td className="px-5 py-4 font-body text-[15px] text-body">{post.author_name}</td>
                   <td className="px-5 py-4 font-body text-[15px] text-body">
                     {post.is_published ? "Yes" : "No"}
+                  </td>
+                  <td className="px-5 py-4">
+                    <ToggleHomeButton
+                      slug={post.slug}
+                      showOnHome={post.show_on_home}
+                      action={toggleShowOnHomeAction}
+                    />
                   </td>
                   <td className="px-5 py-4 font-body text-[15px] text-body">
                     {formatDate(post.published_at)}

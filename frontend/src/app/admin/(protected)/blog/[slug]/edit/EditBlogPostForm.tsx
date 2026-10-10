@@ -17,6 +17,7 @@ type BlogPost = {
   pull_quote: string | null;
   pull_quote_attribution: string | null;
   is_published: boolean;
+  show_on_home: boolean;
   published_at: string | null;
 };
 
@@ -53,6 +54,7 @@ export default function EditBlogPostForm({ post }: { post: BlogPost }) {
         defaultValue={toDatetimeLocal(post.published_at)}
       />
       <CheckboxField label="Published" name="is_published" defaultChecked={post.is_published} />
+      <CheckboxField label="Show on Homepage" name="show_on_home" defaultChecked={post.show_on_home} />
 
       <FormError error={state.error} />
 

@@ -51,4 +51,5 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     Route::apiResource('blog-posts', AdminBlogPostController::class)->parameters([
         'blog-posts' => 'blog_post',
     ]);
+    Route::patch('/blog-posts/{blog_post}/home', [AdminBlogPostController::class, 'toggleHome']);
 });

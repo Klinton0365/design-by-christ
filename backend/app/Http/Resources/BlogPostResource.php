@@ -29,6 +29,7 @@ class BlogPostResource extends JsonResource
             'pull_quote' => $this->pull_quote,
             'pull_quote_attribution' => $this->pull_quote_attribution,
             'is_published' => $this->is_published,
+            'show_on_home' => $this->show_on_home,
             'published_at' => $this->published_at?->toIso8601String(),
             'created_at' => $this->created_at?->toIso8601String(),
         ];

@@ -33,6 +33,7 @@ export default function NewBlogPostPage() {
         <TextField label="Pull Quote Attribution" name="pull_quote_attribution" />
         <TextField label="Published At" name="published_at" type="datetime-local" />
         <CheckboxField label="Published" name="is_published" defaultChecked />
+        <CheckboxField label="Show on Homepage" name="show_on_home" />
 
         <FormError error={state.error} />
 

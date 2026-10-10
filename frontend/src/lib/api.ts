@@ -113,3 +113,41 @@ export async function getProject(slug: string) {
   });
   return data;
 }
+
+export type BlogPost = {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  body: string;
+  cover_image_url: string | null;
+  tags: string[];
+  author_name: string;
+  pull_quote: string | null;
+  pull_quote_attribution: string | null;
+  is_published: boolean;
+  show_on_home: boolean;
+  published_at: string | null;
+  created_at: string;
+};
+
+export async function getBlogPosts(options: { page?: number; home?: boolean } = {}) {
+  const params = new URLSearchParams();
+  params.set("page", String(options.page ?? 1));
+  if (options.home) params.set("home", "1");
+
+  const { data, meta } = await apiFetch<{
+    data: BlogPost[];
+    meta: { current_page: number; last_page: number };
+  }>(`/api/blog?${params.toString()}`, {
+    next: { revalidate: CONTENT_REVALIDATE_SECONDS },
+  });
+  return { posts: data, currentPage: meta.current_page, totalPages: meta.last_page };
+}
+
+export async function getBlogPost(slug: string) {
+  const { data } = await apiFetch<{ data: BlogPost }>(`/api/blog/${encodeURIComponent(slug)}`, {
+    next: { revalidate: CONTENT_REVALIDATE_SECONDS },
+  });
+  return data;
+}

@@ -17,6 +17,7 @@ function buildPayload(formData: FormData) {
   payload.set("pull_quote_attribution", String(formData.get("pull_quote_attribution") ?? ""));
   payload.set("published_at", String(formData.get("published_at") ?? ""));
   payload.set("is_published", formData.get("is_published") === "1" ? "1" : "0");
+  payload.set("show_on_home", formData.get("show_on_home") === "1" ? "1" : "0");
 
   const tagsRaw = String(formData.get("tags") ?? "");
   const tags = tagsRaw
@@ -49,6 +50,8 @@ export async function createBlogPostAction(
   }
 
   revalidatePath("/admin/blog");
+  revalidatePath("/blog");
+  revalidatePath("/");
   redirect("/admin/blog");
 }
 
@@ -72,10 +75,28 @@ export async function updateBlogPostAction(
   }
 
   revalidatePath("/admin/blog");
+  revalidatePath("/blog");
+  revalidatePath(`/blog/${slug}`);
+  revalidatePath("/");
   redirect("/admin/blog");
 }
 
 export async function deleteBlogPostAction(slug: string) {
   await adminApiFetch(`/api/admin/blog-posts/${slug}`, { method: "DELETE" });
   revalidatePath("/admin/blog");
+  revalidatePath("/blog");
+  revalidatePath(`/blog/${slug}`);
+  revalidatePath("/");
+}
+
+export async function toggleShowOnHomeAction(slug: string, nextValue: boolean) {
+  await adminApiFetch(`/api/admin/blog-posts/${slug}/home`, {
+    method: "PATCH",
+    body: JSON.stringify({ show_on_home: nextValue }),
+  });
+
+  revalidatePath("/admin/blog");
+  revalidatePath("/blog");
+  revalidatePath(`/blog/${slug}`);
+  revalidatePath("/");
 }

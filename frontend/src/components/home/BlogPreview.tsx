@@ -1,24 +1,18 @@
+import Image from "next/image";
+import Link from "next/link";
 import AnimatedText from "@/components/AnimatedText";
+import { getBlogPosts } from "@/lib/api";
 
-const posts = [
-  {
-    title: "Let's Get Solution For Building Construction Work",
-    tag: "Kitchan Design",
-    date: "26 December, 2022",
-  },
-  {
-    title: "Low Cost Latest Invented Interior Designing Ideas",
-    tag: "Living Design",
-    date: "22 December, 2022",
-  },
-  {
-    title: "Best For Any Office & Business Interior Solution",
-    tag: "Interior Design",
-    date: "25 December, 2022",
-  },
-];
+function formatDate(iso: string | null) {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleDateString("en-US", { day: "2-digit", month: "long", year: "numeric" });
+}
 
-export default function BlogPreview() {
+export default async function BlogPreview() {
+  const { posts } = await getBlogPosts({ home: true });
+
+  if (posts.length === 0) return null;
+
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-16">
       <div className="flex flex-col items-center gap-3 text-center">
@@ -35,16 +29,28 @@ export default function BlogPreview() {
 
       <div className="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-3">
         {posts.map((post, i) => (
-          <article
-            key={post.title}
+          <Link
+            key={post.id}
+            href={`/blog/${post.slug}`}
             className={`flex flex-col gap-5 rounded-[62px] border border-border p-5 ${
               i === 1 ? "bg-cream" : "bg-surface"
             }`}
           >
-            <div className="relative h-[290px] w-full rounded-[45px] bg-placeholder-light">
-              <span className="absolute left-5 top-[228px] rounded-tr-lg rounded-bl-lg rounded-tl-lg bg-surface px-3 py-2 font-body text-[16px] text-body">
-                {post.tag}
-              </span>
+            <div className="relative h-[290px] w-full overflow-hidden rounded-[45px] bg-placeholder-light">
+              {post.cover_image_url && (
+                <Image
+                  src={post.cover_image_url}
+                  alt={post.title}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              )}
+              {post.tags[0] && (
+                <span className="absolute left-5 top-[228px] rounded-tr-lg rounded-bl-lg rounded-tl-lg bg-surface px-3 py-2 font-body text-[16px] text-body">
+                  {post.tags[0]}
+                </span>
+              )}
             </div>
             <div className="flex flex-col gap-5 px-3 pb-3">
               <AnimatedText
@@ -56,7 +62,7 @@ export default function BlogPreview() {
               </AnimatedText>
               <div className="flex items-center justify-between">
                 <span className="font-body text-[16px] text-body">
-                  {post.date}
+                  {formatDate(post.published_at ?? post.created_at)}
                 </span>
                 <div className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-cream">
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
@@ -71,7 +77,7 @@ export default function BlogPreview() {
                 </div>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>

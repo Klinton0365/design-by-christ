@@ -49,6 +49,7 @@ export async function createProjectAction(
 
   revalidatePath("/admin/projects");
   revalidatePath("/");
+  revalidatePath("/project");
   redirect(`/admin/projects/${slug}/edit`);
 }
 
@@ -74,6 +75,8 @@ export async function updateProjectAction(
   revalidatePath("/admin/projects");
   revalidatePath(`/admin/projects/${slug}/edit`);
   revalidatePath("/");
+  revalidatePath("/project");
+  revalidatePath(`/project/${slug}`);
   return { error: null };
 }
 
@@ -81,6 +84,8 @@ export async function deleteProjectAction(slug: string) {
   await adminApiFetch(`/api/admin/projects/${slug}`, { method: "DELETE" });
   revalidatePath("/admin/projects");
   revalidatePath("/");
+  revalidatePath("/project");
+  revalidatePath(`/project/${slug}`);
 }
 
 export async function toggleShowOnHomeAction(slug: string, nextValue: boolean) {
@@ -91,6 +96,8 @@ export async function toggleShowOnHomeAction(slug: string, nextValue: boolean) {
 
   revalidatePath("/admin/projects");
   revalidatePath("/");
+  revalidatePath("/project");
+  revalidatePath(`/project/${slug}`);
 }
 
 export async function uploadProjectImagesAction(
@@ -116,6 +123,9 @@ export async function uploadProjectImagesAction(
   }
 
   revalidatePath(`/admin/projects/${slug}/edit`);
+  revalidatePath("/");
+  revalidatePath("/project");
+  revalidatePath(`/project/${slug}`);
   return { error: null };
 }
 
@@ -130,9 +140,15 @@ export async function setCoverImageAction(slug: string, imageId: number) {
   });
 
   revalidatePath(`/admin/projects/${slug}/edit`);
+  revalidatePath("/");
+  revalidatePath("/project");
+  revalidatePath(`/project/${slug}`);
 }
 
 export async function deleteProjectImageAction(slug: string, imageId: number) {
   await adminApiFetch(`/api/admin/projects/${slug}/images/${imageId}`, { method: "DELETE" });
   revalidatePath(`/admin/projects/${slug}/edit`);
+  revalidatePath("/");
+  revalidatePath("/project");
+  revalidatePath(`/project/${slug}`);
 }

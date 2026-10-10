@@ -41,6 +41,7 @@ class BlogPostRequest extends FormRequest
             'pull_quote' => ['nullable', 'string', 'max:500'],
             'pull_quote_attribution' => ['nullable', 'string', 'max:255'],
             'is_published' => ['boolean'],
+            'show_on_home' => ['boolean'],
             'published_at' => ['nullable', 'date'],
         ];
     }

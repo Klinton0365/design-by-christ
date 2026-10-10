@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
     'pull_quote',
     'pull_quote_attribution',
     'is_published',
+    'show_on_home',
     'published_at',
 ])]
 class BlogPost extends Model
@@ -30,6 +31,7 @@ class BlogPost extends Model
         return [
             'tags' => 'array',
             'is_published' => 'boolean',
+            'show_on_home' => 'boolean',
             'published_at' => 'datetime',
         ];
     }
@@ -45,5 +47,10 @@ class BlogPost extends Model
             ->where(function (Builder $q) {
                 $q->whereNull('published_at')->orWhere('published_at', '<=', now());
             });
+    }
+
+    public function scopeShowOnHome(Builder $query): void
+    {
+        $query->where('show_on_home', true);
     }
 }

@@ -13,6 +13,7 @@ type BlogPost = {
   pull_quote: string | null;
   pull_quote_attribution: string | null;
   is_published: boolean;
+  show_on_home: boolean;
   published_at: string | null;
 };
 

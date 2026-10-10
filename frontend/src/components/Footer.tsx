@@ -5,24 +5,12 @@ import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import SocialIcons from "./SocialIcons";
 import ThemeToggle from "./ThemeToggle";
+import { MAIN_NAV_ITEMS } from "@/lib/site-nav";
+import type { Service } from "@/lib/api";
 
-const pageLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Our Projects", href: "/project" },
-  { label: "Contact Us", href: "/contact" },
-  { label: "Services", href: "/services" },
-  { label: "Walkthrough", href: "/walkthrough" },
-];
+const pageLinks = MAIN_NAV_ITEMS.filter((item) => item.label !== "Home");
 
-const serviceLinks = [
-  "Kitchan",
-  "Living Area",
-  "Bathroom",
-  "Dinning Hall",
-  "Bedroom",
-];
-
-export default function Footer() {
+export default function Footer({ services }: { services: Service[] }) {
   const pathname = usePathname();
   if (pathname?.startsWith("/walkthrough")) return null;
 
@@ -40,7 +28,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-[9px]">
-            <h3 className="font-heading text-[25px] text-ivory">Pages</h3>
+            <h3 className="font-heading text-[25px] text-ivory">Quick Links</h3>
             <ul className="font-body text-[18px] leading-[2.6] text-body">
               {pageLinks.map((l) => (
                 <li key={l.label}>
@@ -55,8 +43,12 @@ export default function Footer() {
           <div className="flex flex-col gap-[9px]">
             <h3 className="font-heading text-[25px] text-ivory">Services</h3>
             <ul className="font-body text-[18px] leading-[2.6] text-body">
-              {serviceLinks.map((s) => (
-                <li key={s}>{s}</li>
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link href="/services" className="hover:text-gold">
+                    {service.title}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

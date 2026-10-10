@@ -3,15 +3,13 @@
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import StaggeredMenu from "./StaggeredMenu";
+import { MAIN_NAV_ITEMS } from "@/lib/site-nav";
 
-const menuItems = [
-  { label: "Home", ariaLabel: "Go to the home page", link: "/" },
-  { label: "About Us", ariaLabel: "Learn about us", link: "/about" },
-  { label: "Services", ariaLabel: "View our services", link: "/services" },
-  { label: "Project", ariaLabel: "See our projects", link: "/project" },
-  { label: "Blog", ariaLabel: "Read our blog", link: "/blog" },
-  { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
-];
+const menuItems = MAIN_NAV_ITEMS.map((item) => ({
+  label: item.label,
+  ariaLabel: item.label === "Home" ? "Go to the home page" : `Go to ${item.label}`,
+  link: item.href,
+}));
 
 const socialItems = [
   { label: "Facebook", link: "#" },

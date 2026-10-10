@@ -151,3 +151,20 @@ export async function getBlogPost(slug: string) {
   });
   return data;
 }
+
+export type Service = {
+  id: number;
+  title: string;
+  slug: string;
+  summary: string;
+  description: string;
+  image_url: string | null;
+  is_highlighted: boolean;
+};
+
+export async function getServices() {
+  const { data } = await apiFetch<{ data: Service[] }>("/api/services", {
+    next: { revalidate: CONTENT_REVALIDATE_SECONDS },
+  });
+  return data;
+}

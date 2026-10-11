@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import ContactForm from "@/components/ContactForm";
 import FaqAccordion from "@/components/FaqAccordion";
+import Newsletter from "@/components/Newsletter";
 import AnimatedText from "@/components/AnimatedText";
+import { getFaqs } from "@/lib/api";
 
 export const metadata: Metadata = {
   title: "Contact Us | Design By Chris",
@@ -14,24 +16,9 @@ const details = [
   { label: "www.yourdomain.com" },
 ];
 
-const faqItems = [
-  {
-    question: "How does the Design By Chris process work?",
-    answer:
-      "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised.",
-  },
-  { question: "What cities do you currently operate in?" },
-  { question: "What kind of interior designers do you have?" },
-  { question: "How long does a typical project take?" },
-  {
-    question: "Can I use my existing furnishings?",
-    answer:
-      "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised.",
-  },
-  { question: "Do you offer free consultations?" },
-];
+export default async function ContactPage() {
+  const faqs = await getFaqs();
 
-export default function ContactPage() {
   return (
     <>
       <PageBanner
@@ -68,15 +55,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <FaqAccordion
-        heading="Frequently Asked Questions"
-        items={faqItems}
-        showImage={false}
-      />
+      {faqs.length > 0 && (
+        <FaqAccordion
+          heading="Frequently Asked Questions"
+          items={faqs.map((faq) => ({ question: faq.question, answer: faq.answer ?? undefined }))}
+          showImage={false}
+        />
+      )}
 
-      <section className="mx-auto max-w-[1200px] px-6 pb-20">
-        <div className="h-[300px] w-full rounded-[70px] bg-dark sm:h-[420px]" />
-      </section>
+      <Newsletter />
     </>
   );
 }

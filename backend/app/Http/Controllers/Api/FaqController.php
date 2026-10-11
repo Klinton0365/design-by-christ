@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Http\Resources\FaqResource;
+use App\Models\Faq;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+
+class FaqController extends Controller
+{
+    public function index(): AnonymousResourceCollection
+    {
+        $faqs = Faq::query()
+            ->published()
+            ->orderBy('sort_order')
+            ->get();
+
+        return FaqResource::collection($faqs);
+    }
+}

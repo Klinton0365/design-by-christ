@@ -185,3 +185,24 @@ export async function getServices() {
   });
   return data;
 }
+
+export type Faq = {
+  id: number;
+  question: string;
+  answer: string | null;
+  sort_order: number;
+};
+
+export async function getFaqs() {
+  const { data } = await apiFetch<{ data: Faq[] }>("/api/faqs", {
+    next: { revalidate: CONTENT_REVALIDATE_SECONDS },
+  });
+  return data;
+}
+
+export function subscribeNewsletter(email: string) {
+  return apiFetch<{ data: { id: number; email: string } }>("/api/newsletter", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}

@@ -2,13 +2,17 @@
 
 use App\Http\Controllers\Api\Admin\AuthController;
 use App\Http\Controllers\Api\Admin\BlogPostController as AdminBlogPostController;
+use App\Http\Controllers\Api\Admin\FaqController as AdminFaqController;
 use App\Http\Controllers\Api\Admin\LeadController as AdminLeadController;
+use App\Http\Controllers\Api\Admin\NewsletterSubscriberController;
 use App\Http\Controllers\Api\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Api\Admin\ProjectImageController;
 use App\Http\Controllers\Api\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Api\Admin\ServiceImageController;
 use App\Http\Controllers\Api\BlogPostController;
+use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\LeadController;
+use App\Http\Controllers\Api\NewsletterController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +28,12 @@ Route::get('/projects/{slug}', [ProjectController::class, 'show']);
 Route::get('/blog', [BlogPostController::class, 'index']);
 Route::get('/blog/{slug}', [BlogPostController::class, 'show']);
 
+Route::get('/faqs', [FaqController::class, 'index']);
+
 Route::post('/leads', [LeadController::class, 'store'])
+    ->middleware('throttle:10,1');
+
+Route::post('/newsletter', [NewsletterController::class, 'store'])
     ->middleware('throttle:10,1');
 
 Route::post('/admin/login', [AuthController::class, 'login'])
@@ -55,4 +64,10 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
         'blog-posts' => 'blog_post',
     ]);
     Route::patch('/blog-posts/{blog_post}/home', [AdminBlogPostController::class, 'toggleHome']);
+
+    Route::apiResource('faqs', AdminFaqController::class)->parameters([
+        'faqs' => 'faq',
+    ]);
+
+    Route::get('/newsletter-subscribers', [NewsletterSubscriberController::class, 'index']);
 });

@@ -7,6 +7,15 @@ export default function ThemeToggle() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useLayoutEffect(() => {
+    // Re-apply after React clears data-theme on the dev Strict Mode remount
+    // (the inline script in layout.tsx already set it correctly pre-paint;
+    // this is a no-op in production).
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored) document.documentElement.setAttribute("data-theme", stored);
+    } catch {
+      /* private browsing / storage disabled */
+    }
     if (inputRef.current) {
       inputRef.current.checked =
         document.documentElement.getAttribute("data-theme") === "light";

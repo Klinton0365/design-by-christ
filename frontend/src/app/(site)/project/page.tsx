@@ -14,12 +14,14 @@ export const metadata: Metadata = {
 export default async function ProjectPage({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string }>;
+  searchParams: Promise<{ category?: string; page?: string }>;
 }) {
-  const { category } = await searchParams;
-  const projects = await getProjects();
-  const categories = Array.from(new Set(projects.map((p) => p.category))).sort();
-  const visibleProjects = category ? projects.filter((p) => p.category === category) : projects;
+  const { category, page } = await searchParams;
+  const currentPage = Number(page) > 0 ? Number(page) : 1;
+  const { projects, categories, totalPages } = await getProjects({
+    category,
+    page: currentPage,
+  });
 
   return (
     <>
@@ -30,10 +32,20 @@ export default async function ProjectPage({
       />
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
+        <div className="mx-auto mb-16 flex max-w-[700px] flex-col items-center gap-3 text-center">
+          <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">
+            A Portfolio Built on Craft
+          </AnimatedText>
+          <AnimatedText as="p" className="font-body text-[18px] leading-relaxed text-body sm:text-[22px]">
+            Every space tells a different story. Browse the work below, or filter by category
+            to see what we&apos;ve designed for homes, offices, and everything in between.
+          </AnimatedText>
+        </div>
+
         <CategoryTabs categories={categories} active={category ?? null} />
 
         <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2">
-          {visibleProjects.map((project, i) => (
+          {projects.map((project, i) => (
             <Link
               key={project.id}
               href={`/project/${project.slug}`}
@@ -83,13 +95,18 @@ export default async function ProjectPage({
           ))}
         </div>
 
-        {visibleProjects.length === 0 && (
+        {projects.length === 0 && (
           <p className="mt-16 text-center font-body text-[18px] text-body">
             No projects in this category yet.
           </p>
         )}
 
-        <Pagination />
+        <Pagination
+          basePath="/project"
+          currentPage={currentPage}
+          pages={totalPages}
+          query={category ? { category } : undefined}
+        />
       </section>
     </>
   );

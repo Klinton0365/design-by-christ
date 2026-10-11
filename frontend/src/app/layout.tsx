@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Lora } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
+import { InlineScript } from "@/components/InlineScript";
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -31,12 +31,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${cormorantGaramond.variable} ${lora.variable} h-full antialiased`}
     >
+      <head>
+        <InlineScript html={THEME_INIT_SCRIPT} />
+      </head>
       <body className="min-h-full flex flex-col bg-base text-body font-body">
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
-        />
         {children}
       </body>
     </html>

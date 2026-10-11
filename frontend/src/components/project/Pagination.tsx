@@ -4,16 +4,24 @@ export default function Pagination({
   pages = 3,
   currentPage,
   basePath,
+  query,
 }: {
   pages?: number;
   currentPage?: number;
   basePath?: string;
+  query?: Record<string, string>;
 }) {
   const totalPages = pages;
   const active = currentPage ?? 1;
   const isInteractive = !!basePath;
 
   if (isInteractive && totalPages <= 1) return null;
+
+  const hrefFor = (page: number) => {
+    const params = new URLSearchParams(query);
+    params.set("page", String(page));
+    return `${basePath}?${params.toString()}`;
+  };
 
   return (
     <div className="mt-16 flex items-center justify-center gap-5">
@@ -24,7 +32,7 @@ export default function Pagination({
         const label = String(p).padStart(2, "0");
 
         return isInteractive ? (
-          <Link key={p} href={`${basePath}?page=${p}`} className={className}>
+          <Link key={p} href={hrefFor(p)} className={className}>
             {label}
           </Link>
         ) : (
@@ -36,7 +44,7 @@ export default function Pagination({
       {isInteractive ? (
         active < totalPages && (
           <Link
-            href={`${basePath}?page=${active + 1}`}
+            href={hrefFor(active + 1)}
             aria-label="Next page"
             className="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-gold"
           >

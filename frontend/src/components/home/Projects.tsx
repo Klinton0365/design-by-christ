@@ -4,7 +4,7 @@ import AnimatedText from "@/components/AnimatedText";
 import { getProjects } from "@/lib/api";
 
 export default async function Projects() {
-  const projects = await getProjects({ home: true });
+  const { projects } = await getProjects({ home: true });
 
   if (projects.length === 0) return null;
 

@@ -1,6 +1,24 @@
 import type { NextConfig } from "next";
 
-const apiUrl = new URL(process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000");
+const DEFAULT_API_URL = "http://localhost:8000";
+
+// `??` only falls back for null/undefined, not for an env var that's set but
+// left empty (e.g. a blank value in a hosting provider's dashboard) — guard
+// against that, and against a value missing its protocol, so a misconfigured
+// env var degrades to the dev default instead of crashing the whole build.
+function resolveApiUrl(): URL {
+  const raw = process.env.NEXT_PUBLIC_API_URL;
+  if (raw) {
+    try {
+      return new URL(raw);
+    } catch {
+      console.warn(`NEXT_PUBLIC_API_URL is set but not a valid URL: "${raw}". Falling back to ${DEFAULT_API_URL}.`);
+    }
+  }
+  return new URL(DEFAULT_API_URL);
+}
+
+const apiUrl = resolveApiUrl();
 const apiIsLocal = ["localhost", "127.0.0.1", "::1"].includes(apiUrl.hostname);
 
 const nextConfig: NextConfig = {

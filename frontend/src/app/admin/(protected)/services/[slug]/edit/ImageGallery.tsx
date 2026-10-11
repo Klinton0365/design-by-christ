@@ -1,0 +1,104 @@
+"use client";
+
+import { useRef, useState, useTransition } from "react";
+
+type ServiceImage = { id: number; image_url: string };
+
+export default function ImageGallery({
+  images,
+  uploadAction,
+  deleteAction,
+}: {
+  images: ServiceImage[];
+  uploadAction: (formData: FormData) => Promise<{ error: string | null }>;
+  deleteAction: (imageId: number) => Promise<void>;
+}) {
+  const [isPending, startTransition] = useTransition();
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  return (
+    <div className="flex flex-col gap-5">
+      <h2 className="font-heading text-[22px] text-ivory">Gallery</h2>
+
+      {images.length > 0 && (
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {images.map((image) => (
+            <div key={image.id} className="flex flex-col gap-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image.image_url}
+                alt=""
+                className="h-[120px] w-full rounded-xl border border-border object-cover"
+              />
+              <div className="flex items-center justify-end font-body text-[13px]">
+                <button
+                  type="button"
+                  disabled={isPending}
+                  onClick={() => {
+                    if (confirm("Remove this image?")) {
+                      startTransition(() => deleteAction(image.id));
+                    }
+                  }}
+                  className="text-red-400 hover:text-red-300"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <form
+        ref={formRef}
+        action={async (formData) => {
+          const hasFile = formData
+            .getAll("images")
+            .some((value) => value instanceof File && value.size > 0);
+
+          if (!hasFile) {
+            setUploadError("Select at least one image to upload.");
+            return;
+          }
+
+          setUploadError(null);
+          setIsUploading(true);
+          try {
+            const result = await uploadAction(formData);
+            if (result.error) {
+              setUploadError(result.error);
+              return;
+            }
+            formRef.current?.reset();
+          } catch {
+            setUploadError("Could not upload the image(s). Try smaller images or fewer at once.");
+          } finally {
+            setIsUploading(false);
+          }
+        }}
+        className="flex flex-col gap-3"
+      >
+        <label className="flex flex-col gap-2">
+          <span className="font-body text-[14px] text-body">Add images</span>
+          <input
+            type="file"
+            name="images"
+            accept="image/*"
+            multiple
+            className="font-body text-[14px] text-body file:mr-4 file:rounded-xl file:border-0 file:bg-gold file:px-4 file:py-2 file:font-body file:text-[14px] file:font-semibold file:text-white"
+          />
+        </label>
+        {uploadError && <p className="font-body text-[13px] text-red-400">{uploadError}</p>}
+        <button
+          type="submit"
+          disabled={isUploading}
+          className="inline-flex w-fit items-center justify-center rounded-[18px] bg-dark px-6 py-3 font-body text-[14px] font-semibold text-white glow-gold transition-opacity hover:opacity-90 disabled:opacity-60"
+        >
+          {isUploading ? "Uploading…" : "Upload"}
+        </button>
+      </form>
+    </div>
+  );
+}

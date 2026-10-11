@@ -14,36 +14,32 @@ class ServiceController extends Controller
 {
     public function index(): AnonymousResourceCollection
     {
-        $services = Service::query()->orderBy('sort_order')->get();
+        $services = Service::query()->with('images')->orderBy('sort_order')->get();
 
         return ServiceResource::collection($services);
     }
 
     public function store(ServiceRequest $request): ServiceResource
     {
-        $data = $request->safe()->except(['image', 'detail_image']);
+        $data = $request->safe()->except('image');
 
         if ($request->hasFile('image')) {
             $data['image_path'] = $request->file('image')->store('services', 'public');
         }
 
-        if ($request->hasFile('detail_image')) {
-            $data['detail_image_path'] = $request->file('detail_image')->store('services', 'public');
-        }
-
         $service = Service::create($data);
 
-        return new ServiceResource($service->refresh());
+        return new ServiceResource($service->refresh()->load('images'));
     }
 
     public function show(Service $service): ServiceResource
     {
-        return new ServiceResource($service);
+        return new ServiceResource($service->load('images'));
     }
 
     public function update(ServiceRequest $request, Service $service): ServiceResource
     {
-        $data = $request->safe()->except(['image', 'detail_image']);
+        $data = $request->safe()->except('image');
 
         if ($request->hasFile('image')) {
             if ($service->image_path) {
@@ -52,16 +48,9 @@ class ServiceController extends Controller
             $data['image_path'] = $request->file('image')->store('services', 'public');
         }
 
-        if ($request->hasFile('detail_image')) {
-            if ($service->detail_image_path) {
-                Storage::disk('public')->delete($service->detail_image_path);
-            }
-            $data['detail_image_path'] = $request->file('detail_image')->store('services', 'public');
-        }
-
         $service->update($data);
 
-        return new ServiceResource($service->refresh());
+        return new ServiceResource($service->refresh()->load('images'));
     }
 
     public function destroy(Service $service): Response
@@ -70,8 +59,8 @@ class ServiceController extends Controller
             Storage::disk('public')->delete($service->image_path);
         }
 
-        if ($service->detail_image_path) {
-            Storage::disk('public')->delete($service->detail_image_path);
+        foreach ($service->images as $image) {
+            Storage::disk('public')->delete($image->image_path);
         }
 
         $service->delete();

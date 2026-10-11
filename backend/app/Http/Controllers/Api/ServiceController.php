@@ -13,6 +13,7 @@ class ServiceController extends Controller
     {
         $services = Service::query()
             ->published()
+            ->with('images')
             ->orderBy('sort_order')
             ->get();
 
@@ -23,6 +24,7 @@ class ServiceController extends Controller
     {
         $service = Service::query()
             ->published()
+            ->with('images')
             ->where('slug', $slug)
             ->firstOrFail();
 

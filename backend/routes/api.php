@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\Admin\LeadController as AdminLeadController;
 use App\Http\Controllers\Api\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Api\Admin\ProjectImageController;
 use App\Http\Controllers\Api\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Api\Admin\ServiceImageController;
 use App\Http\Controllers\Api\BlogPostController;
 use App\Http\Controllers\Api\LeadController;
 use App\Http\Controllers\Api\ProjectController;
@@ -39,6 +40,8 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     Route::apiResource('services', AdminServiceController::class)->parameters([
         'services' => 'service',
     ]);
+    Route::post('/services/{service}/images', [ServiceImageController::class, 'store']);
+    Route::delete('/services/{service}/images/{image}', [ServiceImageController::class, 'destroy']);
 
     Route::apiResource('projects', AdminProjectController::class)->parameters([
         'projects' => 'project',

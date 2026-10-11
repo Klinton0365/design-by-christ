@@ -27,7 +27,6 @@ export default function NewServicePage() {
         <TextField label="Summary (card blurb)" name="summary" required />
         <TextAreaField label="Description" name="description" required rows={6} />
         <ImageField label="Image" name="image" />
-        <ImageField label="Detail Image" name="detail_image" />
         <TextField label="Sort Order" name="sort_order" type="number" defaultValue={0} />
         <CheckboxField label="Published" name="is_published" defaultChecked />
 
@@ -35,6 +34,10 @@ export default function NewServicePage() {
 
         <SubmitButton>Create Service</SubmitButton>
       </form>
+
+      <p className="font-body text-[14px] text-body">
+        You&apos;ll be able to upload gallery images after creating the service.
+      </p>
     </div>
   );
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'title',
@@ -13,7 +14,6 @@ use Illuminate\Database\Eloquent\Model;
     'summary',
     'description',
     'image_path',
-    'detail_image_path',
     'is_published',
     'sort_order',
 ])]
@@ -33,6 +33,11 @@ class Service extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(ServiceImage::class)->orderBy('sort_order');
     }
 
     public function scopePublished(Builder $query): void

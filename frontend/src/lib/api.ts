@@ -152,6 +152,12 @@ export async function getBlogPost(slug: string) {
   return data;
 }
 
+export type ServiceImage = {
+  id: number;
+  image_url: string;
+  sort_order: number;
+};
+
 export type Service = {
   id: number;
   title: string;
@@ -159,7 +165,7 @@ export type Service = {
   summary: string;
   description: string;
   image_url: string | null;
-  detail_image_url: string | null;
+  images: ServiceImage[];
 };
 
 export async function getServices() {

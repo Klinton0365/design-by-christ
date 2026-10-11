@@ -9,6 +9,7 @@ export interface StaggeredMenuItem {
   label: string;
   ariaLabel: string;
   link: string;
+  isActive?: boolean;
 }
 
 export interface StaggeredMenuSocialItem {
@@ -441,9 +442,10 @@ export default function StaggeredMenu({
               items.map((it, idx) => (
                 <li className="sm-panel-itemWrap" key={it.label + idx}>
                   <Link
-                    className="sm-panel-item"
+                    className={`sm-panel-item${it.isActive ? " is-active" : ""}`}
                     href={it.link}
                     aria-label={it.ariaLabel}
+                    aria-current={it.isActive ? "page" : undefined}
                     data-index={idx + 1}
                     onClick={closeMenu}
                   >

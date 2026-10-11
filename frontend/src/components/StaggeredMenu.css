@@ -281,6 +281,16 @@
   color: var(--sm-accent, #ca9a3e);
 }
 
+.sm-panel-item.is-active {
+  color: var(--sm-accent, #ca9a3e);
+}
+
+.sm-panel-item.is-active .sm-panel-itemLabel {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 2px;
+}
+
 .sm-panel-list[data-numbering] {
   counter-reset: smItem;
 }

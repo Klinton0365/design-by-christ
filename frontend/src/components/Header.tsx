@@ -5,11 +5,10 @@ import Logo from "./Logo";
 import StaggeredMenu from "./StaggeredMenu";
 import { MAIN_NAV_ITEMS } from "@/lib/site-nav";
 
-const menuItems = MAIN_NAV_ITEMS.map((item) => ({
-  label: item.label,
-  ariaLabel: item.label === "Home" ? "Go to the home page" : `Go to ${item.label}`,
-  link: item.href,
-}));
+function isNavItemActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 const socialItems = [
   { label: "Facebook", link: "#" },
@@ -21,6 +20,13 @@ const socialItems = [
 export default function Header() {
   const pathname = usePathname();
   if (pathname?.startsWith("/walkthrough")) return null;
+
+  const menuItems = MAIN_NAV_ITEMS.map((item) => ({
+    label: item.label,
+    ariaLabel: item.label === "Home" ? "Go to the home page" : `Go to ${item.label}`,
+    link: item.href,
+    isActive: isNavItemActive(pathname ?? "", item.href),
+  }));
 
   return (
     <StaggeredMenu

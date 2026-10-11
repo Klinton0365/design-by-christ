@@ -2,7 +2,25 @@ import "server-only";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const DEFAULT_API_URL = "http://localhost:8000";
+
+// A misconfigured env var (missing, empty, or not a valid URL — e.g. missing
+// its http(s):// prefix) must never crash every admin request; fall back to
+// the dev default and log so it's obvious why requests are failing.
+function resolveApiUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_API_URL;
+  if (raw) {
+    try {
+      new URL(raw);
+      return raw.replace(/\/$/, "");
+    } catch {
+      console.warn(`NEXT_PUBLIC_API_URL is set but not a valid URL: "${raw}". Falling back to ${DEFAULT_API_URL}.`);
+    }
+  }
+  return DEFAULT_API_URL;
+}
+
+const API_URL = resolveApiUrl();
 
 export const ADMIN_TOKEN_COOKIE = "admin_token";
 

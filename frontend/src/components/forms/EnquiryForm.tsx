@@ -7,7 +7,13 @@ import AnimatedText from "@/components/AnimatedText";
 
 const PROJECT_TYPES = ["Full Home", "Single Room", "Commercial", "Just Exploring"];
 
-export default function EnquiryForm({ onClose }: { onClose: () => void }) {
+export default function EnquiryForm({
+  onClose,
+  heading = "Let's Talk About Your Space",
+}: {
+  onClose: () => void;
+  heading?: string;
+}) {
   const pathname = usePathname();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -75,7 +81,7 @@ export default function EnquiryForm({ onClose }: { onClose: () => void }) {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
         <h3 id="enquiry-modal-title" className="font-heading text-[28px] text-ivory">
-          Let&apos;s Talk About Your Space
+          {heading}
         </h3>
         <AnimatedText as="p" className="font-body text-[16px] leading-relaxed text-body">
           A few details so we can tailor the conversation — takes less than a

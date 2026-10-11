@@ -1,4 +1,5 @@
 import { adminApiFetch } from "@/lib/admin-api";
+import LeadStatusSelect from "./LeadStatusSelect";
 
 type Lead = {
   id: number;
@@ -79,9 +80,7 @@ export default async function AdminLeadsPage() {
                     {SOURCE_LABELS[lead.source] ?? lead.source}
                   </td>
                   <td className="px-5 py-4">
-                    <span className="inline-flex rounded-full bg-base px-3 py-1 font-body text-[13px] uppercase tracking-wide text-gold">
-                      {lead.status}
-                    </span>
+                    <LeadStatusSelect leadId={lead.id} status={lead.status} />
                   </td>
                   <td className="px-5 py-4 font-body text-[15px] text-body">
                     {formatDate(lead.created_at)}

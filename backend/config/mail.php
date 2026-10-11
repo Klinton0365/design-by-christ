@@ -115,4 +115,18 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Notification Address
+    |--------------------------------------------------------------------------
+    |
+    | Where internal notifications (e.g. new lead submissions) are sent. This
+    | is deliberately separate from ADMIN_EMAIL (the admin panel login), since
+    | that address isn't guaranteed to be a real, checked inbox. Falls back to
+    | ADMIN_EMAIL only if no dedicated address is configured.
+    |
+    */
+
+    'admin_address' => env('MAIL_ADMIN_ADDRESS', env('ADMIN_EMAIL')),
+
 ];

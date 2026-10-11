@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import PageBanner from "@/components/PageBanner";
 import AnimatedText from "@/components/AnimatedText";
+import ProjectEnquiryCta from "@/components/project/ProjectEnquiryCta";
 import { ApiError, getProject } from "@/lib/api";
 
 function formatDate(value: string | null) {
@@ -115,6 +116,8 @@ export default async function ProjectDetailsPage({
               ))}
           </div>
         )}
+
+        <ProjectEnquiryCta projectTitle={project.title} />
       </section>
     </>
   );

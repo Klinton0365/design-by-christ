@@ -45,6 +45,7 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
     Route::get('/leads', [AdminLeadController::class, 'index']);
+    Route::patch('/leads/{lead}/status', [AdminLeadController::class, 'updateStatus']);
 
     Route::apiResource('services', AdminServiceController::class)->parameters([
         'services' => 'service',

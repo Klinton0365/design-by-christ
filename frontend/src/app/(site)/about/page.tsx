@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageBanner title="About Us" breadcrumb="Home / About Us" />
+      <PageBanner title="About Us" breadcrumb="Home / About Us" image="/img/about/living-room.jpg" />
 
       <ImageTextSplit
         heading="What We Do"
@@ -21,6 +21,7 @@ export default function AboutPage() {
         buttonLabel="Our Concept"
         buttonHref="/services"
         imageSide="right"
+        image="/img/hero/Modern Sunlit Living Room Cutout.png"
       />
 
       <QuoteBlock
@@ -34,9 +35,10 @@ export default function AboutPage() {
         buttonLabel="Our Portfolio"
         buttonHref="/project"
         imageSide="left"
+        image="/img/hero/Golden Hour Double-Height Luxury Living Room.png"
       />
 
-      <TeamStrip />
+      {/* <TeamStrip /> */}
 
       <section className="mx-auto flex max-w-[800px] flex-col items-center gap-14 px-6 py-20 text-center">
         <AnimatedText as="h2" className="font-heading text-[36px] text-ivory sm:text-[50px]">

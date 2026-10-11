@@ -34,7 +34,11 @@ const faqItems = [
 export default function ContactPage() {
   return (
     <>
-      <PageBanner title="Contact Us" breadcrumb="Home / Contact" />
+      <PageBanner
+        title="Contact Us"
+        breadcrumb="Home / Contact"
+        image="/img/hero/Modern Sunlit Living Room Cutout.png"
+      />
 
       <section className="mx-auto flex max-w-[1200px] flex-col items-center gap-20 px-6 py-20">
         <AnimatedText

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/Button";
 import AnimatedText from "@/components/AnimatedText";
 
@@ -7,6 +8,7 @@ type ImageTextSplitProps = {
   buttonLabel: string;
   buttonHref: string;
   imageSide?: "left" | "right";
+  image?: string;
 };
 
 export default function ImageTextSplit({
@@ -15,9 +17,20 @@ export default function ImageTextSplit({
   buttonLabel,
   buttonHref,
   imageSide = "right",
+  image,
 }: ImageTextSplitProps) {
-  const image = (
-    <div className="h-[320px] w-full rounded-[70px] bg-placeholder sm:h-[377px]" />
+  const imageBlock = (
+    <div className="relative h-[320px] w-full overflow-hidden rounded-[70px] bg-placeholder sm:h-[377px]">
+      {image && (
+        <Image
+          src={image}
+          alt={heading}
+          fill
+          sizes="(min-width: 640px) 45vw, 100vw"
+          className="object-cover"
+        />
+      )}
+    </div>
   );
 
   const text = (
@@ -39,13 +52,13 @@ export default function ImageTextSplit({
       <div className="flex flex-col items-center gap-10 sm:flex-row sm:gap-[90px]">
         {imageSide === "left" ? (
           <>
-            <div className="w-full sm:w-[45%]">{image}</div>
+            <div className="w-full sm:w-[45%]">{imageBlock}</div>
             {text}
           </>
         ) : (
           <>
             {text}
-            <div className="w-full sm:w-[45%]">{image}</div>
+            <div className="w-full sm:w-[45%]">{imageBlock}</div>
           </>
         )}
       </div>

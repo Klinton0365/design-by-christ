@@ -23,7 +23,11 @@ export default async function ProjectPage({
 
   return (
     <>
-      <PageBanner title="Our Project" breadcrumb="Home / Project" />
+      <PageBanner
+        title="Our Project"
+        breadcrumb="Home / Project"
+        image="/img/hero/Golden Hour Double-Height Luxury Living Room.png"
+      />
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
         <CategoryTabs categories={categories} active={category ?? null} />

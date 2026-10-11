@@ -11,7 +11,11 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <PageBanner title="Services" breadcrumb="Home / Services" />
+      <PageBanner
+        title="Services"
+        breadcrumb="Home / Services"
+        image="/img/hero/Modern Sunlit Living Room Cutout.png"
+      />
 
       <ServiceCard />
 

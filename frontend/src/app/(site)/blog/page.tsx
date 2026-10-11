@@ -28,7 +28,7 @@ export default async function BlogPage({
 
   return (
     <>
-      <PageBanner title="Articles & News" breadcrumb="Home / Blog" />
+      <PageBanner title="Articles & News" breadcrumb="Home / Blog" image="/img/about/living-room.jpg" />
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
         {featured && (
